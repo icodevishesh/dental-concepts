@@ -546,7 +546,7 @@ main .section:not(.feature-band):not(.menu) .button:not(.button-light):hover,.co
 .hero-photo{position:absolute;inset:0;z-index:-1;border-radius:0}
 .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,13,28,.45) 0%,rgba(3,13,28,.15) 38%,rgba(3,13,28,.95) 100%),linear-gradient(90deg,rgba(3,13,28,.75) 0%,rgba(3,13,28,0) 62%)}
 .hero-photo figcaption{z-index:1;background:none;opacity:.8}
-.hero-copy{min-height:inherit;justify-content:flex-end;padding:120px var(--gutter) clamp(48px,7vh,88px);width:min(var(--wrap) + 2*var(--gutter),100%);margin-inline:auto}
+.hero-copy{min-height:inherit;justify-content:flex-start;padding:clamp(24px,3vw,36px) var(--gutter) clamp(48px,7vh,88px);width:min(var(--wrap) + 2*var(--gutter),100%);margin-inline:auto}
 .hero h1{color:#fff;max-width:11ch}
 .hero .lead{color:var(--on-dark);max-width:30em;margin-top:24px}
 .hero .text-link{color:#fff;text-decoration-color:rgba(255,255,255,.5)}
@@ -658,7 +658,7 @@ main .section:not(.feature-band):not(.menu) .button:not(.button-light):hover,.co
   .util-inner span{display:none}
   .hero{min-height:560px}
   .hero-photo{aspect-ratio:auto}
-  .hero-copy{padding:140px var(--gutter) 44px}
+  .hero-copy{padding:clamp(20px,3vw,30px) var(--gutter) 44px}
   .feature-row{grid-template-columns:repeat(4,minmax(240px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1*var(--gutter));padding-inline:var(--gutter);padding-bottom:8px}
   .feature-card{scroll-snap-align:start}
   .partner-head,.section-head{grid-template-columns:1fr}
@@ -696,7 +696,7 @@ main .section:not(.feature-band):not(.menu) .button:not(.button-light):hover,.co
 .steps li::before{border-color:#0080ff;color:#005cdf}
 
 /* Home hero video: plays muted over the photo, which stays as the fallback */
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.78)}
 .hero-pause{position:absolute;right:16px;bottom:44px;z-index:2;padding:7px 16px;border:1.5px solid rgba(255,255,255,.6);border-radius:999px;background:rgba(40,40,40,.55);color:#fff;font:700 .7rem/1.2 var(--font);letter-spacing:.07em;text-transform:uppercase}
 .hero-pause:hover{background:#fff;color:var(--night)}
 @media (prefers-reduced-motion:reduce){.hero-video,.hero-pause{display:none}}
@@ -1494,15 +1494,14 @@ img.product-img{object-fit:contain !important;background:var(--studio)}
 main li{font-size:18px !important}
 @media (max-width:600px){main li{font-size:16px !important}}
 .hero{min-height:min(800px,calc(100vh - var(--header-h)))}
-/* hero: no colour overlay on the video; a soft text shadow keeps the white heading readable */
-.hero-photo::after{background:none}
-.hero h1,.hero .hero-meta{text-shadow:0 2px 18px rgba(0,0,0,.35)}
+/* hero: darkened gradient overlay so text remains sharp and legible over the video */
+.hero-photo::after{background:linear-gradient(90deg,rgba(4,14,34,.84) 0%,rgba(4,14,34,.66) 48%,rgba(4,14,34,.36) 100%),linear-gradient(180deg,rgba(4,14,34,.52) 0%,rgba(4,14,34,.22) 35%,rgba(4,14,34,.74) 100%);pointer-events:none}
+.hero h1,.hero .hero-meta{text-shadow:0 2px 20px rgba(0,0,0,.5)}
 .hero .button:hover,.hero .button:focus-visible{background:#005cdf;border-color:#005cdf;color:#fff}
 .hero .button.button-outline{background:#fff;border-color:#fff;color:#005cdf}.hero .button.button-outline:hover,.hero .button.button-outline:focus-visible{background:#005cdf;border-color:#005cdf;color:#fff}
 .hero .actions .button:not(.button-outline):hover,.hero .actions .button:not(.button-outline):focus-visible{background:#005cdf;border-color:#005cdf;color:#fff}
 .home .hero h1{max-width:none}@media (max-width:600px){.home .hero h1 .nowrap{white-space:normal}}
 .home .hero h1{font-size:max(2.1rem,calc(clamp(2.9rem,6.2vw,6.2rem) - 25px));font-weight:700;letter-spacing:-.03em}
-.hero-photo::after{background:linear-gradient(90deg,rgba(0,60,170,.28) 0%,rgba(0,70,190,.12) 45%,rgba(0,92,223,.06) 100%),linear-gradient(180deg,rgba(0,92,223,0) 75%,rgba(0,92,223,.3) 100%)}
 
 /* section headings (h2): bold, clamp(2.2rem, 4.2vw, 3rem) */
 main h2{font-weight:700 !important;font-size:clamp(2.2rem,4.2vw,3rem) !important;letter-spacing:-.03em}
@@ -1752,7 +1751,7 @@ main .empty-state h2,main .contact-card h2,main .contact-form h2,main .tool-card
 
 /* ===== doc content 2026-10: home hero lead + services turnaround table ===== */
 .hero .hero-h1-sub{display:block}
-.hero .hero-lead{margin-top:18px;max-width:36em;font-size:clamp(1rem,1.15vw,1.12rem);line-height:1.6;color:#fff;opacity:.92;text-shadow:0 1px 18px rgba(0,30,90,.25)}
+.hero .hero-lead{margin-top:18px;max-width:36em;font-size:clamp(1rem,1.15vw,1.12rem);line-height:1.6;color:#fff;opacity:1;text-shadow:0 2px 14px rgba(0,0,0,.45)}
 .tat{background:#fff}
 .tat-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,5vw,72px);align-items:start}
 .tat-head h2{margin-top:6px}
