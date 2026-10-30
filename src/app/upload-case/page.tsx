@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { getActiveRxFormUrl } from "@/lib/site-settings";
 
 export const metadata: Metadata = {
   title: "Upload a Case | Dental Concepts San Francisco",
@@ -52,7 +53,10 @@ const plannerRules = {
   },
 };
 
-export default function UploadCasePage() {
+export const dynamic = "force-dynamic";
+
+export default async function UploadCasePage() {
+  const rxFormUrl = await getActiveRxFormUrl().catch(() => "/assets/digital-rx.pdf");
   return (
     <>
       <Header />
@@ -60,7 +64,7 @@ export default function UploadCasePage() {
         <section className="page-head up-head"><div className="wrap">
           <nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Upload a case</li></ol></nav>
           <div className="page-head-grid"><h1>Upload a case</h1><div><p className="lead">Choose what you’re prescribing, add your practice details, then upload the digital scan files and the completed RX form. The summary shows the turnaround our RX form lists and what to include.</p>
-            <div className="actions"><a className="button button-light" href="/assets/digital-rx.pdf" download>Download the RX form</a><a className="text-link" href="/shipping-label">Sending a physical impression?</a></div></div></div>
+            <div className="actions"><a className="button button-light" href={rxFormUrl} download>Download the RX form</a><a className="text-link" href="/shipping-label">Sending a physical impression?</a></div></div></div>
           <ol className="up-progress" aria-label="Steps"><li><span>1</span>Restoration</li><li><span>2</span>Shade &amp; timing</li><li><span>3</span>Your details</li><li><span>4</span>Upload files</li></ol>
         </div></section>
         <section className="section up-section"><div className="wrap">
@@ -103,7 +107,7 @@ export default function UploadCasePage() {
                 <div className="up-drop" data-drop="rx" data-required="1">
                   <input type="file" id="up-rx" name="rx" multiple accept=".pdf,.jpg,.jpeg,.png,.heic" aria-describedby="up-rx-help" />
                   <label htmlFor="up-rx" className="up-drop-ui"><span className="up-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" /><path d="M14 3v5h5M9 13h6M9 17h4" /></svg></span>
-                    <strong>Completed RX form <span aria-hidden="true">*</span></strong><span>Drag the form here, or <u>browse</u></span><small id="up-rx-help">PDF, JPG or PNG. <a href="/assets/digital-rx.pdf" download>Download a blank RX form</a>.</small></label>
+                    <strong>Completed RX form <span aria-hidden="true">*</span></strong><span>Drag the form here, or <u>browse</u></span><small id="up-rx-help">PDF, JPG or PNG. <a href={rxFormUrl} download>Download a blank RX form</a>.</small></label>
                   <ul className="up-list" aria-live="polite"></ul><p className="up-err" data-err="rx"></p>
                 </div>
                 <div className="up-drop is-optional" data-drop="photos">
@@ -136,7 +140,7 @@ export default function UploadCasePage() {
           <div className="faq-head"><span className="eyebrow">Need help?</span><h2 id="faq-heading">Uploading a case</h2><p>Need a specific answer? Contact the lab team directly.</p><a className="text-link" href="/contact">Talk with the lab</a></div>
           <div className="faq-list">
             <details><summary>Which scan files can I upload?</summary><div className="faq-answer"><p>STL, PLY, OBJ, DCM or 3OXZ exports from iTero, Trios and similar scanners. You can also zip the whole export and upload the ZIP. Include the opposing arch and the bite.</p></div></details>
-            <details><summary>Do I still need the RX form?</summary><div className="faq-answer"><p>Yes. Upload a completed RX form with every case. You can <a href="/assets/digital-rx.pdf" download>download a blank RX form</a>, fill it in, then scan or photograph it.</p></div></details>
+            <details><summary>Do I still need the RX form?</summary><div className="faq-answer"><p>Yes. Upload a completed RX form with every case. You can <a href={rxFormUrl} download>download a blank RX form</a>, fill it in, then scan or photograph it.</p></div></details>
             <details><summary>What about digital implant cases?</summary><div className="faq-answer"><p>Write the implant system and size on the RX form, and upload a full arch gingival scan taken without the healing abutment.</p></div></details>
             <details><summary>I’m sending a physical impression. What do I do?</summary><div className="faq-answer"><p>Request a <a href="/shipping-label">shipping label</a>, and we’ll reply with the label and carrier details.</p></div></details>
             <details><summary>Is the turnaround a guarantee?</summary><div className="faq-answer"><p>No. The summary shows the in-lab working days printed on our RX form. Weekends, holidays and shipping aren’t counted, so confirm timing with the lab before you book the patient.</p></div></details>

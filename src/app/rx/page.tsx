@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { getActiveRxFormUrl } from "@/lib/site-settings";
 
 export const metadata: Metadata = {
   title: "Dental Lab RX Form & Prescription | Dental Concepts",
@@ -8,7 +9,10 @@ export const metadata: Metadata = {
     "Download the Dental Concepts laboratory prescription form. Price list information is coming soon; contact the lab for current pricing.",
 };
 
-export default function RxPage() {
+export const dynamic = "force-dynamic";
+
+export default async function RxPage() {
+  const rxFormUrl = await getActiveRxFormUrl().catch(() => "/assets/digital-rx.pdf");
   return (
     <>
       <Header />
@@ -17,9 +21,9 @@ export default function RxPage() {
           <div className="page-head-grid"><h1>RX form and lab pricing</h1><div><p className="lead">Download the current laboratory prescription form. Complete it with the case details before following the lab’s submission instructions.</p></div></div>
         </div></section>
         <section className="section flush-top"><div className="wrap rx-page">
-          <a className="rx-sheet-preview" href="/assets/digital-rx.pdf" download><img src="/assets/rx-form-preview.webp" width={900} height={693} alt="First page of the Dental Concepts RX form" fetchPriority="high" /></a>
+          <a className="rx-sheet-preview" href={rxFormUrl} download><img src="/assets/rx-form-preview.webp" width={900} height={693} alt="First page of the Dental Concepts RX form" fetchPriority="high" /></a>
           <div className="rx-page-copy"><span className="eyebrow">Download</span><h2>Dental Concepts prescription form</h2><p>The two-page form is provided as a PDF. Download and complete it for your case.</p>
-            <a className="button" href="/assets/digital-rx.pdf" download>Download the RX form (PDF)</a>
+            <a className="button" href={rxFormUrl} download>Download the RX form (PDF)</a>
             <div className="callout"><h3>Price list</h3><p>Our price list is coming soon. Contact Dental Concepts for current pricing.</p></div>
             <p>Need case submission instructions? <a className="text-link" href="/send-case">See how to start a case</a></p></div>
         </div></section>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { getActiveRxFormUrl } from "@/lib/site-settings";
 
 export const metadata: Metadata = {
   title: "Full Contour Zirconia Dental Crowns | Dental Concepts",
@@ -31,7 +32,10 @@ const serviceLd = {
   provider: { "@type": "LocalBusiness", name: "Dental Concepts", address: { "@type": "PostalAddress", streetAddress: "244 9th St", addressLocality: "San Francisco", addressRegion: "CA", postalCode: "94103", addressCountry: "US" } },
 };
 
-export default function Page() {
+export const dynamic = "force-dynamic";
+
+export default async function Page() {
+  const rxFormUrl = await getActiveRxFormUrl().catch(() => "/assets/digital-rx.pdf");
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
@@ -40,7 +44,7 @@ export default function Page() {
       <main id="main">
         <section className="pdp-hero"><div className="wrap pdp-hero-grid"><div className="pdp-hero-copy"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/services">Lab services</a></li><li><a href="/services#crowns">Crowns &amp; veneers</a></li><li aria-current="page">Full contour zirconia crowns</li></ol></nav>
         <h1>Full contour zirconia crowns from a zirconia dental lab</h1><p className="lead">Monolithic zirconia crowns milled from a single piece, designed digitally and finished by hand in San Francisco. Zirconia is where our founders started, back in 2006.</p>
-        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/assets/digital-rx.pdf" download>Download the RX form</a></div></div>
+        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href={rxFormUrl} download>Download the RX form</a></div></div>
         <figure className="pdp-hero-media"><img className="product-img" src="/assets/products/full-contour-zirconia-crowns.webp" width={1254} height={1254} alt="Full contour zirconia crowns" fetchPriority="high" decoding="async" /></figure></div></section>
         <section className="pdp-stats" aria-label="At a glance"><div className="wrap"><dl>
           <div><dt>7 days</dt><dd>In-lab working days for 1 to 3 units, per our RX form</dd></div>

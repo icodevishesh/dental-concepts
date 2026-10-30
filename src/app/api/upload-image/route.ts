@@ -1,19 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getCloudinary, cloudinaryIsConfigured } from "@/lib/cloudinary";
+import { requireAdminSession } from "@/lib/auth/require-admin";
+import { getCloudinaryClient, IntegrationNotConfiguredError, IntegrationDisabledError } from "@/lib/integrations/cloudinary";
 
 export async function POST(req: NextRequest) {
-  const adminPassword = process.env.ADMIN_PASSWORD;
-  const given = req.headers.get("x-admin-password");
-  if (adminPassword && given !== adminPassword) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  if (!cloudinaryIsConfigured()) {
-    return NextResponse.json(
-      { error: "Cloudinary is not configured. Add CLOUDINARY_* vars to .env.local." },
-      { status: 503 }
-    );
-  }
+  const session = await requireAdminSession(req);
+  if (session instanceof NextResponse) return session;
 
   const formData = await req.formData();
   const file = formData.get("file");
@@ -24,10 +15,20 @@ export async function POST(req: NextRequest) {
   const buffer = Buffer.from(await file.arrayBuffer());
   const base64 = `data:${file.type};base64,${buffer.toString("base64")}`;
 
-  const cloudinary = getCloudinary();
-  const result = await cloudinary.uploader.upload(base64, {
-    folder: "dental-concepts/blog",
-  });
-
-  return NextResponse.json({ url: result.secure_url, publicId: result.public_id });
+  try {
+    const cloudinary = await getCloudinaryClient();
+    const result = await cloudinary.uploader.upload(base64, {
+      folder: "dental-concepts/blog",
+    });
+    return NextResponse.json({ url: result.secure_url, publicId: result.public_id });
+  } catch (err) {
+    if (err instanceof IntegrationNotConfiguredError || err instanceof IntegrationDisabledError) {
+      return NextResponse.json(
+        { error: "Cloudinary is not configured. Set it up from Settings → Integrations." },
+        { status: 503 }
+      );
+    }
+    console.error("Image upload failed:", err instanceof Error ? err.message : err);
+    return NextResponse.json({ error: "Image upload failed" }, { status: 502 });
+  }
 }

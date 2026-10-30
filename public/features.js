@@ -4,6 +4,7 @@
    reduced motion, every section renders as plain, complete content. */
 (function () {
   'use strict';
+  if (location.pathname.indexOf('/admin') === 0) return; // admin panel has its own UI, skip the public site's floating dock/menu
   var doc = document, root = doc.documentElement;
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;

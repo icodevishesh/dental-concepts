@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { getActiveRxFormUrl } from "@/lib/site-settings";
 
 export const metadata: Metadata = {
   title: "Shipping Label | Dental Concepts San Francisco",
@@ -8,7 +9,10 @@ export const metadata: Metadata = {
     "Request a shipping label from Dental Concepts for a case going to the lab or work coming back, with packing guidance for dental cases.",
 };
 
-export default function ShippingLabelPage() {
+export const dynamic = "force-dynamic";
+
+export default async function ShippingLabelPage() {
+  const rxFormUrl = await getActiveRxFormUrl().catch(() => "/assets/digital-rx.pdf");
   return (
     <>
       <Header />
@@ -48,7 +52,7 @@ export default function ShippingLabelPage() {
           </div>
           <aside className="tool-aside"><span className="eyebrow">Packing your case</span><h2>Before the box is sealed</h2>
             <ul className="tick-list">
-              <li>Complete the <a href="/assets/digital-rx.pdf" download>RX form</a> and place it in the box with the case.</li>
+              <li>Complete the <a href={rxFormUrl} download>RX form</a> and place it in the box with the case.</li>
               <li>Disinfect impressions and seal them in a bag.</li>
               <li>Wrap models and bite registrations so they cannot move.</li>
               <li>Pack one case per bag, labelled with the doctor and case reference.</li>
