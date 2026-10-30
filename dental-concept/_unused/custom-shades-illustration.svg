@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Custom shade matching illustration</title>
+  <desc id="desc">Four porcelain shade samples arranged in a softly lit neutral studio setting.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fafbfd"/><stop offset="1" stop-color="#eaf1f7"/></linearGradient>
+    <linearGradient id="handle" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".5" stop-color="#edf0ed"/><stop offset="1" stop-color="#d7dedc"/></linearGradient>
+    <linearGradient id="tooth" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fffefa"/><stop offset=".65" stop-color="#f2eee3"/><stop offset="1" stop-color="#dcd7cb"/></linearGradient>
+    <filter id="shadow" x="-.3" y="-.3" width="1.6" height="1.8"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+  <rect width="1200" height="1100" fill="url(#bg)"/>
+  <circle cx="1035" cy="170" r="225" fill="#dceaff" opacity=".56"/>
+  <ellipse cx="600" cy="830" rx="450" ry="90" fill="#354b61" opacity=".15" filter="url(#shadow)"/>
+  <g transform="translate(135 135) rotate(-8 470 390)">
+    <rect x="54" y="70" width="884" height="640" rx="34" fill="#fff" stroke="#d7e0e7" stroke-width="3"/>
+    <rect x="83" y="99" width="826" height="582" rx="20" fill="#f7f8f6"/>
+    <path d="M108 528h780" stroke="#dbe2e5" stroke-width="2"/>
+    <g transform="translate(133 150)">
+      <g transform="translate(0 0)"><rect x="0" y="0" width="150" height="445" rx="70" fill="url(#handle)" stroke="#cbd5d9" stroke-width="3"/><path d="M23 46c0-27 23-49 52-49s52 22 52 49v126c0 48-23 88-52 88s-52-40-52-88Z" fill="url(#tooth)" stroke="#e2ded4" stroke-width="3"/><ellipse cx="75" cy="87" rx="27" ry="49" fill="#fff" opacity=".38"/></g>
+      <g transform="translate(183 0)"><rect x="0" y="0" width="150" height="445" rx="70" fill="url(#handle)" stroke="#cbd5d9" stroke-width="3"/><path d="M23 46c0-27 23-49 52-49s52 22 52 49v126c0 48-23 88-52 88s-52-40-52-88Z" fill="#f4f0e5" stroke="#e2ded4" stroke-width="3"/><ellipse cx="75" cy="87" rx="27" ry="49" fill="#fff" opacity=".34"/></g>
+      <g transform="translate(366 0)"><rect x="0" y="0" width="150" height="445" rx="70" fill="url(#handle)" stroke="#cbd5d9" stroke-width="3"/><path d="M23 46c0-27 23-49 52-49s52 22 52 49v126c0 48-23 88-52 88s-52-40-52-88Z" fill="#e9e2d2" stroke="#d8d0c0" stroke-width="3"/><ellipse cx="75" cy="87" rx="27" ry="49" fill="#fff" opacity=".3"/></g>
+      <g transform="translate(549 0)"><rect x="0" y="0" width="150" height="445" rx="70" fill="url(#handle)" stroke="#cbd5d9" stroke-width="3"/><path d="M23 46c0-27 23-49 52-49s52 22 52 49v126c0 48-23 88-52 88s-52-40-52-88Z" fill="#ddd5c4" stroke="#cfc6b5" stroke-width="3"/><ellipse cx="75" cy="87" rx="27" ry="49" fill="#fff" opacity=".26"/></g>
+    </g>
+    <circle cx="835" cy="139" r="10" fill="#005cdf"/><circle cx="870" cy="139" r="10" fill="#66a3ff"/><circle cx="835" cy="174" r="10" fill="#3a3a3a" opacity=".6"/>
+  </g>
+  <path d="M112 895h195" stroke="#c4d3e2" stroke-width="2"/><path d="M892 235h190" stroke="#c4d3e2" stroke-width="2"/>
+</svg>

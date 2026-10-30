@@ -1,0 +1,21 @@
+
+/* ===== admin-managed content: post author box, events (2026-10-29) ===== */
+.post-preview-bar{position:sticky;top:0;z-index:30;margin:0 !important;padding:10px 16px;text-align:center;background:#fff4e0;color:#5b3a00;font-weight:600;font-size:.95rem !important}
+.author-box{margin-top:clamp(40px,5vw,64px);padding:clamp(22px,3vw,32px);border:1px solid var(--line,#dde5ee);border-radius:22px;background:var(--paper,#f4f7f9)}
+#main .author-box-title{font-size:.8rem !important;letter-spacing:.16em;text-transform:uppercase;color:#005cdf;margin:0 0 16px}
+.author-row{display:flex;gap:18px;align-items:flex-start}
+.author-row+.author-row{margin-top:20px;padding-top:20px;border-top:1px solid var(--line,#dde5ee)}
+.author-ava{flex:none;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#e8f1ff center/cover no-repeat;color:#005cdf;font-weight:700;font-size:1.1rem}
+#main .author-name{margin:0;font-weight:700;color:#06255c;font-size:1.1rem !important}
+#main .author-role{margin:2px 0 0;color:#55606e;font-size:.95rem !important}
+#main .author-bio{margin:10px 0 0;font-size:1rem !important}
+.author-row .text-link{display:inline-block;margin-top:8px}
+.event-list{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.event-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,32px);align-items:start;padding:clamp(20px,3vw,32px);border:1px solid var(--line,#dde5ee);border-radius:24px;background:#fff;box-shadow:0 40px 80px -60px rgba(0,40,120,.35)}
+.event-img{grid-column:1/-1;aspect-ratio:21/8;border-radius:16px;background:#eef2f7 center/cover no-repeat}
+.event-date{display:grid;place-items:center;width:84px;padding:12px 0;border-radius:18px;background:#005cdf;color:#fff;text-align:center;line-height:1}
+.event-date span{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.event-date b{font-size:2.2rem;margin-top:4px}
+.event-text h2{margin:6px 0 10px;font-size:clamp(1.4rem,2.2vw,1.9rem) !important}
+#main .event-where{margin:10px 0 18px;color:#55606e;font-size:1rem !important}
+@media (max-width:640px){.event-card{grid-template-columns:1fr}.event-date{width:72px}.author-row{flex-direction:column}}

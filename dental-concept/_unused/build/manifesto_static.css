@@ -1,0 +1,11 @@
+
+/* ===== manifesto: static, centered, no scroll animation (2026-10-29) ===== */
+.manifesto,.fx .manifesto{height:auto}
+.manifesto-sticky,.fx .manifesto-sticky{position:relative;top:auto;height:auto;overflow:visible;padding-block:clamp(90px,10vw,150px)}
+.manifesto-sticky .wrap{display:flex;flex-direction:column;align-items:center;text-align:center}
+#main .manifesto .manifesto-text{max-width:24ch;margin-inline:auto;text-align:center}
+.fx .manifesto-text .w,.manifesto-text .w{color:#06255c}
+.manifesto-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:clamp(28px,3vw,44px)}
+.manifesto .tag,.fx .manifesto .tag{position:static;margin:0;opacity:1;cursor:default;transform:rotate(var(--rot,0deg));transition:transform .3s ease}
+.manifesto .tag.t1{--rot:-4deg}.manifesto .tag.t2{--rot:3deg}.manifesto .tag.t3{--rot:-2deg}
+.manifesto .tag:hover{transform:rotate(0deg) translateY(-2px)}
