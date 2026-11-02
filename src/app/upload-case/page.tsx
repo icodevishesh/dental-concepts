@@ -3,6 +3,7 @@ import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getActiveRxFormUrl } from "@/lib/site-settings";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Upload a Case | Dental Concepts San Francisco",
@@ -62,9 +63,9 @@ export default async function UploadCasePage() {
       <Header />
       <main id="main" className="planner-page">
         <section className="page-head up-head"><div className="wrap">
-          <nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Upload a case</li></ol></nav>
+          <nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><Link href="/">Home</Link></li><li aria-current="page">Upload a case</li></ol></nav>
           <div className="page-head-grid"><h1>Upload a case</h1><div><p className="lead">Choose what you’re prescribing, add your practice details, then upload the digital scan files and the completed RX form. The summary shows the turnaround our RX form lists and what to include.</p>
-            <div className="actions"><a className="button button-light" href={rxFormUrl} download>Download the RX form</a><a className="text-link" href="/shipping-label">Sending a physical impression?</a></div></div></div>
+            <div className="actions"><a className="button button-light" href={rxFormUrl} download>Download the RX form</a><Link className="text-link" href="/shipping-label">Sending a physical impression?</Link></div></div></div>
           <ol className="up-progress" aria-label="Steps"><li><span>1</span>Restoration</li><li><span>2</span>Shade &amp; timing</li><li><span>3</span>Your details</li><li><span>4</span>Upload files</li></ol>
         </div></section>
         <section className="section up-section"><div className="wrap">
@@ -123,7 +124,7 @@ export default async function UploadCasePage() {
                 <p className="up-status" role="status" aria-live="polite"></p>
               </fieldset>
             </div>
-            <aside className="planner-result up-summary" aria-labelledby="pr-heading"><h2 id="pr-heading">Your case</h2>
+            {/* <aside className="planner-result up-summary" aria-labelledby="pr-heading"><h2 id="pr-heading">Your case</h2>
               <div id="pr-body" aria-live="polite"><p className="pr-empty">Your turnaround and checklist appear here once you choose the restoration, shade and timing.</p></div>
               <ul className="up-check" aria-label="Upload checklist">
                 <li data-chk="plan">Restoration, shade and timing</li>
@@ -132,22 +133,22 @@ export default async function UploadCasePage() {
                 <li data-chk="rx">Completed RX form</li>
               </ul>
               <p className="up-help">Questions before you upload? Call <a href="tel:+18007005227">1-800-700-LABS</a>.</p>
-            </aside>
+            </aside> */}
           </form>
-          <noscript><p className="note">This page needs JavaScript to upload files. Call <a href="tel:+18007005227">1-800-700-LABS</a> or <a href="/contact">contact the lab</a> to arrange your case.</p></noscript>
+          <noscript><p className="note">This page needs JavaScript to upload files. Call <a href="tel:+18007005227">1-800-700-LABS</a> or <Link href="/contact">contact the lab</Link> to arrange your case.</p></noscript>
         </div></section>
         <section className="section faq tinted" aria-labelledby="faq-heading"><div className="wrap faq-grid">
-          <div className="faq-head"><span className="eyebrow">Need help?</span><h2 id="faq-heading">Uploading a case</h2><p>Need a specific answer? Contact the lab team directly.</p><a className="text-link" href="/contact">Talk with the lab</a></div>
+          <div className="faq-head"><span className="eyebrow">Need help?</span><h2 id="faq-heading">Uploading a case</h2><p>Need a specific answer? Contact the lab team directly.</p><Link className="text-link" href="/contact">Talk with the lab</Link></div>
           <div className="faq-list">
             <details><summary>Which scan files can I upload?</summary><div className="faq-answer"><p>STL, PLY, OBJ, DCM or 3OXZ exports from iTero, Trios and similar scanners. You can also zip the whole export and upload the ZIP. Include the opposing arch and the bite.</p></div></details>
             <details><summary>Do I still need the RX form?</summary><div className="faq-answer"><p>Yes. Upload a completed RX form with every case. You can <a href={rxFormUrl} download>download a blank RX form</a>, fill it in, then scan or photograph it.</p></div></details>
             <details><summary>What about digital implant cases?</summary><div className="faq-answer"><p>Write the implant system and size on the RX form, and upload a full arch gingival scan taken without the healing abutment.</p></div></details>
-            <details><summary>I’m sending a physical impression. What do I do?</summary><div className="faq-answer"><p>Request a <a href="/shipping-label">shipping label</a>, and we’ll reply with the label and carrier details.</p></div></details>
+            <details><summary>I’m sending a physical impression. What do I do?</summary><div className="faq-answer"><p>Request a <Link href="/shipping-label">shipping label</Link>, and we’ll reply with the label and carrier details.</p></div></details>
             <details><summary>Is the turnaround a guarantee?</summary><div className="faq-answer"><p>No. The summary shows the in-lab working days printed on our RX form. Weekends, holidays and shipping aren’t counted, so confirm timing with the lab before you book the patient.</p></div></details>
             <details><summary>How should I name the patient?</summary><div className="faq-answer"><p>Use a patient ID or initials rather than the full name. The lab will match the case to your RX form.</p></div></details>
           </div></div></section>
         <section className="visit"><div className="wrap visit-grid">
-          <div className="visit-lead"><h2>Prefer to talk it through?</h2><p>Call <a href="tel:+18007005227">1-800-700-LABS</a> before you upload, and a technician will help you plan the case.</p><a className="button button-light" href="/contact">Contact the lab</a></div>
+          <div className="visit-lead"><h2>Prefer to talk it through?</h2><p>Call <a href="tel:+18007005227">1-800-700-LABS</a> before you upload, and a technician will help you plan the case.</p><Link className="button button-light" href="/contact">Contact the lab</Link></div>
         </div></section>
       </main>
       <script

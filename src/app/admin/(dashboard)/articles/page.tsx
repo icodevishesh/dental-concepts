@@ -256,8 +256,8 @@ export default function AdminArticlesPage() {
     <div>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
-          <h2 className="text-xl font-semibold text-gray-900">Manage Blog Articles</h2>
-          <p className="text-xs text-gray-500">
+          <h2 className="text-lg font-semibold text-gray-900 !mb-2">Manage Blog Articles</h2>
+          <p className="!text-sm text-gray-500">
             Create, edit, or delete articles and clinical insights published on the website.
           </p>
         </div>

@@ -262,6 +262,12 @@ html:not(.js) .process-tabs{display:none}
 .process.is-enhanced .process-panel:not(.is-on){visibility:hidden;opacity:0}
 .fx .process{height:calc(100vh + 2400px)}
 .fx .process-sticky{padding-block:24px}
+.fx .process-head{margin-bottom:12px}
+.fx .process .eyebrow{margin-bottom:8px}
+.fx .process-tab{min-height:38px}
+.fx .process-panels{margin-top:16px}
+.fx .process-panel{padding:clamp(16px,2vw,24px)}
+.fx .process .pp-img{max-height:max(220px, calc(100vh - var(--header-h) - 255px))}
 .fx .process.is-enhanced .process-panel{transition:opacity .5s,visibility 0s .5s}
 .fx .process.is-enhanced .process-panel .pp-copy>*,.fx .process.is-enhanced .process-panel .pp-img{transition:transform .6s var(--ease-out),opacity .5s;transform:translateY(24px);opacity:0}
 .fx .process.is-enhanced .process-panel.is-on{transition-delay:0s}
@@ -504,6 +510,7 @@ main .benefits .benefit:not(.is-light) p{color:#cfdcf2}
 .up-progress li.is-ok{border-color:#9cc4ff}
 .up-progress li.is-ok span{background:#005cdf;color:#fff}
 .up-section{padding-top:clamp(32px,4vw,56px)}
+.up-form{grid-template-columns:1fr;max-width:760px;margin-inline:auto}
 .up-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}
 .up-grid label{display:block;color:#06255c;font-weight:600;font-size:.95rem}
 .up-grid .up-wide{grid-column:1/-1}

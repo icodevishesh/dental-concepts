@@ -696,7 +696,7 @@ main .section:not(.feature-band):not(.menu) .button:not(.button-light):hover,.co
 .steps li::before{border-color:#0080ff;color:#005cdf}
 
 /* Home hero video: plays muted over the photo, which stays as the fallback */
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.78)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.9)}
 .hero-pause{position:absolute;right:16px;bottom:44px;z-index:2;padding:7px 16px;border:1.5px solid rgba(255,255,255,.6);border-radius:999px;background:rgba(40,40,40,.55);color:#fff;font:700 .7rem/1.2 var(--font);letter-spacing:.07em;text-transform:uppercase}
 .hero-pause:hover{background:#fff;color:var(--night)}
 @media (prefers-reduced-motion:reduce){.hero-video,.hero-pause{display:none}}
@@ -1495,7 +1495,7 @@ main li{font-size:18px !important}
 @media (max-width:600px){main li{font-size:16px !important}}
 .hero{min-height:min(800px,calc(100vh - var(--header-h)))}
 /* hero: darkened gradient overlay so text remains sharp and legible over the video */
-.hero-photo::after{background:linear-gradient(90deg,rgba(4,14,34,.84) 0%,rgba(4,14,34,.66) 48%,rgba(4,14,34,.36) 100%),linear-gradient(180deg,rgba(4,14,34,.52) 0%,rgba(4,14,34,.22) 35%,rgba(4,14,34,.74) 100%);pointer-events:none}
+.hero-photo::after{background:linear-gradient(90deg,rgba(4,14,34,.5) 0%,rgba(4,14,34,.4) 48%,rgba(4,14,34,.22) 100%),linear-gradient(180deg,rgba(4,14,34,.32) 0%,rgba(4,14,34,.14) 35%,rgba(4,14,34,.45) 100%);pointer-events:none}
 .hero h1,.hero .hero-meta{text-shadow:0 2px 20px rgba(0,0,0,.5)}
 .hero .button:hover,.hero .button:focus-visible{background:#005cdf;border-color:#005cdf;color:#fff}
 .hero .button.button-outline{background:#fff;border-color:#fff;color:#005cdf}.hero .button.button-outline:hover,.hero .button.button-outline:focus-visible{background:#005cdf;border-color:#005cdf;color:#fff}

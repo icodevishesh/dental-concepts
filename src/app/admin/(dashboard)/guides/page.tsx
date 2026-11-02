@@ -145,8 +145,8 @@ export default function AdminGuidesPage() {
     <div>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
-          <h2 className="text-xl font-semibold text-gray-900">Manage Guides</h2>
-          <p className="text-xs text-gray-500">Add or remove practical guides shown on the Guides page.</p>
+          <h2 className="text-xl font-semibold text-gray-900 !mb-2">Manage Guides</h2>
+          <p className="!text-sm text-gray-500">Add or remove practical guides shown on the Guides page.</p>
         </div>
         <button
           onClick={openAddModal}

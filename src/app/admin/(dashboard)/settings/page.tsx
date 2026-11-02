@@ -9,8 +9,8 @@ export default function AdminSettingsPage() {
   return (
     <div className="max-w-2xl space-y-8">
       <div>
-        <h2 className="text-xl font-semibold text-gray-900">Settings</h2>
-        <p className="text-xs text-gray-500">RX form, admin password, and third-party integrations.</p>
+        <h2 className="text-xl font-semibold text-gray-900 !mb-2">Settings</h2>
+        <p className="!text-sm text-gray-500">RX form, admin password, and third-party integrations.</p>
       </div>
 
       <RxFormCard />
@@ -68,10 +68,9 @@ function RxFormCard() {
   return (
     <section className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
       <div className="flex items-start gap-3 mb-4">
-        <FileText className="w-5 h-5 text-blue-glow mt-0.5" />
         <div>
-          <h3 className="text-sm font-semibold text-gray-900">RX form</h3>
-          <p className="text-xs text-gray-500 mt-0.5">
+          <h3 className="!text-sm font-semibold text-gray-900">RX form</h3>
+          <p className="!text-xs text-gray-500 mt-0.5">
             Upload the current prescription form PDF. It replaces the form linked across the site immediately.
           </p>
         </div>
@@ -101,7 +100,7 @@ function RxFormCard() {
       <button
         onClick={() => fileInputRef.current?.click()}
         disabled={isUploading}
-        className="bg-blue-default hover:bg-blue-bright text-white font-semibold py-2 px-4 rounded-lg text-xs transition-all cursor-pointer flex items-center gap-1.5 shadow disabled:opacity-50"
+        className="bg-blue-default hover:bg-blue-bright !text-white font-semibold py-2 px-4 rounded-lg !text-xs transition-all cursor-pointer flex items-center gap-1.5 shadow disabled:opacity-50"
       >
         <Upload className="w-3.5 h-3.5" />
         {isUploading ? "Uploading…" : "Upload new RX form (PDF)"}
@@ -159,8 +158,8 @@ function PasswordCard() {
 
   return (
     <section className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-      <h3 className="text-sm font-semibold text-gray-900 mb-1">Admin password</h3>
-      <p className="text-xs text-gray-500 mb-4">Change the password used to sign in to this admin panel.</p>
+      <h3 className="!text-sm font-semibold text-gray-900 mb-1">Admin password</h3>
+      <p className="!text-xs text-gray-500 !mb-4">Change the password used to sign in to this admin panel.</p>
 
       <form onSubmit={handleSubmit} className="space-y-3 max-w-sm">
         <div>
@@ -207,7 +206,7 @@ function PasswordCard() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="bg-blue-default hover:bg-blue-bright text-white font-semibold py-2 px-4 rounded-lg text-xs cursor-pointer disabled:opacity-50 transition-colors"
+          className="bg-blue-default hover:bg-blue-bright !text-white font-semibold py-2 px-4 rounded-lg !text-xs cursor-pointer disabled:opacity-50 transition-colors"
         >
           {isSubmitting ? "Saving…" : "Change password"}
         </button>
@@ -225,8 +224,8 @@ function IntegrationsLinkCard() {
       <div className="flex items-start gap-3">
         <Plug className="w-5 h-5 text-blue-glow mt-0.5" />
         <div>
-          <h3 className="text-sm font-semibold text-gray-900">Integrations</h3>
-          <p className="text-xs text-gray-500 mt-0.5">Manage UPS Shipping and Cloudinary credentials.</p>
+          <h3 className="!text-sm font-semibold text-gray-900">Integrations</h3>
+          <p className="!text-xs text-gray-500 mt-0.5">Manage UPS Shipping and Cloudinary credentials.</p>
         </div>
       </div>
       <ChevronRight className="w-4 h-4 text-gray-400" />

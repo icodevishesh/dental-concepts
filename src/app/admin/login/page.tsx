@@ -8,6 +8,7 @@ function LoginForm() {
   const searchParams = useSearchParams();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
 
@@ -39,8 +40,8 @@ function LoginForm() {
         onSubmit={handleSubmit}
         className="w-full max-w-sm bg-navy-card border border-white/10 rounded-2xl p-8 shadow-2xl"
       >
-        <h1 className="text-lg font-semibold text-white mb-1">Admin login</h1>
-        <p className="text-xs text-muted-dark mb-6">Sign in to manage the Dental Concepts site.</p>
+        <h1 className="text-md font-semibold text-center !text-white !mb-4">Admin login</h1>
+        <p className="text-xs text-muted-dark !mb-6 text-center">Sign in to manage the site.</p>
 
         <label className="block mb-4">
           <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">
@@ -56,12 +57,12 @@ function LoginForm() {
           />
         </label>
 
-        <label className="block mb-6">
+        <label className="block !mb-1">
           <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">
             Password
           </span>
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             autoComplete="current-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -70,7 +71,19 @@ function LoginForm() {
           />
         </label>
 
-        {error && <p className="text-red-400 text-xs mb-4">{error}</p>}
+        <label className="flex items-center gap-2 !mb-4">
+          <span className="text-[10px] text-gray-400 uppercase tracking-wider">
+            Show Password
+          </span>
+        <input
+          id="check"
+          type="checkbox"
+          value={showPassword}
+          onChange={() => setShowPassword((prev) => !prev)}
+        />
+        </label>
+
+        {error && <p className="text-red-400 text-xs !mb-4">{error}</p>}
 
         <button
           type="submit"

@@ -97,8 +97,8 @@ export default function AdminIntegrationsPage() {
   return (
     <div className="max-w-3xl space-y-6">
       <div>
-        <h2 className="text-xl font-semibold text-gray-900">Integrations</h2>
-        <p className="text-xs text-gray-500">
+        <h2 className="!text-3xl !font-semibold text-gray-900">Integrations</h2>
+        <p className="!text-xs text-gray-500">
           Configure third-party API credentials. Changes take effect immediately, no restart required.
         </p>
       </div>
@@ -227,15 +227,15 @@ function IntegrationCard({
       <div className="flex items-start justify-between gap-4 mb-4">
         <div>
           <div className="flex items-center gap-2.5">
-            <h3 className="text-sm font-semibold text-gray-900">{config.title}</h3>
+            <h3 className="!text-sm font-semibold text-gray-900">{config.title}</h3>
             <StatusBadge status={view.connectionStatus} />
           </div>
-          <p className="text-xs text-gray-500 mt-1">{config.description}</p>
+          <p className="!text-xs text-gray-500 mt-1">{config.description}</p>
           {view.updatedAt && (
-            <p className="text-[11px] text-gray-400 mt-1">Last updated {new Date(view.updatedAt).toLocaleString()}</p>
+            <p className="!text-[11px] text-gray-400 mt-1">Last updated {new Date(view.updatedAt).toLocaleString()}</p>
           )}
           {view.connectionStatus === "failed" && view.lastError && (
-            <p className="text-[11px] text-red-400 mt-1">{view.lastError}</p>
+            <p className="!text-[11px] text-red-400 mt-1">{view.lastError}</p>
           )}
         </div>
         <button
@@ -307,7 +307,7 @@ function IntegrationCard({
           <button
             type="submit"
             disabled={isSaving}
-            className="bg-blue-default hover:bg-blue-bright text-white font-semibold py-2 px-4 rounded-lg text-xs cursor-pointer disabled:opacity-50 transition-colors"
+            className="bg-blue-default hover:bg-blue-bright !text-white font-semibold py-2 px-4 rounded-lg !text-xs cursor-pointer disabled:opacity-50 transition-colors"
           >
             {isSaving ? "Saving…" : "Save Configuration"}
           </button>
@@ -315,7 +315,7 @@ function IntegrationCard({
             type="button"
             onClick={handleTest}
             disabled={isTesting}
-            className="bg-transparent hover:bg-gray-100 border border-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg text-xs cursor-pointer disabled:opacity-50 transition-colors"
+            className="bg-transparent hover:bg-gray-100 border border-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg !text-xs cursor-pointer disabled:opacity-50 transition-colors"
           >
             {isTesting ? "Testing…" : "Test Connection"}
           </button>
