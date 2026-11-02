@@ -1,13 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireAdminSession } from "@/lib/auth/require-admin";
-import { createBlog, getAllBlogsAdmin, validateBlogInput } from "@/lib/blog";
+import { createBlog, getBlogsPagedAdmin, validateBlogInput } from "@/lib/blog";
+
+const PER_PAGE = 5;
 
 export async function GET(req: NextRequest) {
   const session = await requireAdminSession(req);
   if (session instanceof NextResponse) return session;
 
-  const articles = await getAllBlogsAdmin();
-  return NextResponse.json(articles.map((a) => ({ ...a, _id: a._id?.toString() })));
+  const page = Math.max(1, Number(req.nextUrl.searchParams.get("page")) || 1);
+  const { articles, total, totalPages } = await getBlogsPagedAdmin(page, PER_PAGE);
+
+  return NextResponse.json({
+    articles: articles.map((a) => ({ ...a, _id: a._id?.toString() })),
+    total,
+    page,
+    totalPages,
+    perPage: PER_PAGE,
+  });
 }
 
 export async function POST(req: NextRequest) {

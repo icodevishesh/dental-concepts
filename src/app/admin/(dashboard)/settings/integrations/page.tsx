@@ -97,7 +97,7 @@ export default function AdminIntegrationsPage() {
   return (
     <div className="max-w-3xl space-y-6">
       <div>
-        <h2 className="!text-3xl !font-semibold text-gray-900">Integrations</h2>
+        <h2 className="!text-lg !font-semibold text-gray-900">Integrations</h2>
         <p className="!text-xs text-gray-500">
           Configure third-party API credentials. Changes take effect immediately, no restart required.
         </p>

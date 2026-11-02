@@ -121,6 +121,28 @@ export async function getAllBlogsAdmin(): Promise<BlogDoc[]> {
   return db.collection<BlogDoc>(COLLECTION).find({}).sort({ publishedAt: -1 }).toArray();
 }
 
+export interface GetBlogsPagedResult {
+  articles: BlogDoc[];
+  total: number;
+  page: number;
+  totalPages: number;
+}
+
+export async function getBlogsPagedAdmin(page: number, perPage: number): Promise<GetBlogsPagedResult> {
+  const db = await getDb();
+  const collection = db.collection<BlogDoc>(COLLECTION);
+  const total = await collection.countDocuments();
+  const totalPages = Math.max(1, Math.ceil(total / perPage));
+  const safePage = Math.min(Math.max(1, page), totalPages);
+  const articles = await collection
+    .find({})
+    .sort({ publishedAt: -1 })
+    .skip((safePage - 1) * perPage)
+    .limit(perPage)
+    .toArray();
+  return { articles, total, page: safePage, totalPages };
+}
+
 export async function getBlogByIdAdmin(id: string): Promise<BlogDoc | null> {
   if (!ObjectId.isValid(id)) return null;
   const db = await getDb();

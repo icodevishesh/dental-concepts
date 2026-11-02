@@ -31,6 +31,28 @@ export async function getAllGuides(): Promise<GuideDoc[]> {
   return db.collection<GuideDoc>(COLLECTION).find({}).sort({ publishedAt: -1 }).toArray();
 }
 
+export interface GetGuidesPagedResult {
+  guides: GuideDoc[];
+  total: number;
+  page: number;
+  totalPages: number;
+}
+
+export async function getGuidesPaged(page: number, perPage: number): Promise<GetGuidesPagedResult> {
+  const db = await getDb();
+  const collection = db.collection<GuideDoc>(COLLECTION);
+  const total = await collection.countDocuments();
+  const totalPages = Math.max(1, Math.ceil(total / perPage));
+  const safePage = Math.min(Math.max(1, page), totalPages);
+  const guides = await collection
+    .find({})
+    .sort({ publishedAt: -1 })
+    .skip((safePage - 1) * perPage)
+    .limit(perPage)
+    .toArray();
+  return { guides, total, page: safePage, totalPages };
+}
+
 export async function getGuideById(id: string): Promise<GuideDoc | null> {
   if (!ObjectId.isValid(id)) return null;
   const db = await getDb();

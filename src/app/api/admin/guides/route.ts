@@ -1,13 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireAdminSession } from "@/lib/auth/require-admin";
-import { createGuide, getAllGuides, validateGuideInput } from "@/lib/guides";
+import { createGuide, getGuidesPaged, validateGuideInput } from "@/lib/guides";
+
+const PER_PAGE = 5;
 
 export async function GET(req: NextRequest) {
   const session = await requireAdminSession(req);
   if (session instanceof NextResponse) return session;
 
-  const guides = await getAllGuides();
-  return NextResponse.json(guides.map((g) => ({ ...g, _id: g._id?.toString() })));
+  const page = Math.max(1, Number(req.nextUrl.searchParams.get("page")) || 1);
+  const { guides, total, totalPages } = await getGuidesPaged(page, PER_PAGE);
+
+  return NextResponse.json({
+    guides: guides.map((g) => ({ ...g, _id: g._id?.toString() })),
+    total,
+    page,
+    totalPages,
+    perPage: PER_PAGE,
+  });
 }
 
 export async function POST(req: NextRequest) {

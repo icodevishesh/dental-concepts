@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import toast from "react-hot-toast";
-import { Edit2, Trash2, Plus, X, Upload, ImageIcon } from "lucide-react";
+import { Edit2, Trash2, Plus, X, Upload, ImageIcon, ChevronLeft, ChevronRight } from "lucide-react";
 
 const guideSchema = z.object({
   title: z.string().min(1, "Title is required"),
@@ -25,6 +25,9 @@ interface GuideResource extends GuideFormValues {
 
 export default function AdminGuidesPage() {
   const [guides, setGuides] = useState<GuideResource[]>([]);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [total, setTotal] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingGuide, setEditingGuide] = useState<GuideResource | null>(null);
@@ -44,22 +47,26 @@ export default function AdminGuidesPage() {
 
   const watchedImageUrl = watch("coverImage");
 
-  const fetchGuides = async () => {
+  const fetchGuides = useCallback(async (targetPage: number) => {
     setIsLoading(true);
     try {
-      const res = await fetch("/api/admin/guides");
+      const res = await fetch(`/api/admin/guides?page=${targetPage}`);
       if (!res.ok) throw new Error("Failed to fetch guides");
-      setGuides(await res.json());
+      const json = await res.json();
+      setGuides(json.guides);
+      setPage(json.page);
+      setTotalPages(json.totalPages);
+      setTotal(json.total);
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Error loading guides");
     } finally {
       setIsLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
-    fetchGuides();
-  }, []);
+    fetchGuides(1);
+  }, [fetchGuides]);
 
   const handleImageUpload = async (file: File) => {
     setIsUploading(true);
@@ -120,7 +127,7 @@ export default function AdminGuidesPage() {
       if (!res.ok) throw new Error(data.error || "Failed to save guide");
       toast.success(editingGuide ? "Guide updated" : "Guide added");
       closeModal();
-      fetchGuides();
+      fetchGuides(page);
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Error saving guide");
     } finally {
@@ -135,7 +142,7 @@ export default function AdminGuidesPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed to delete");
       toast.success("Guide deleted");
-      fetchGuides();
+      fetchGuides(page);
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Error deleting guide");
     }
@@ -145,12 +152,12 @@ export default function AdminGuidesPage() {
     <div>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 !mb-2">Manage Guides</h2>
+          <h2 className="!text-lg font-semibold text-gray-900 !mb-2">Manage Guides</h2>
           <p className="!text-sm text-gray-500">Add or remove practical guides shown on the Guides page.</p>
         </div>
         <button
           onClick={openAddModal}
-          className="bg-blue-default hover:bg-blue-bright text-white font-semibold py-2 px-4 rounded-lg text-xs transition-all cursor-pointer flex items-center gap-1.5 shadow"
+          className="bg-blue-default hover:bg-blue-bright !text-white font-semibold py-2 px-4 rounded-lg !text-xs transition-all cursor-pointer flex items-center gap-1.5 shadow"
         >
           <Plus className="w-4 h-4" />
           Add Guide
@@ -210,6 +217,32 @@ export default function AdminGuidesPage() {
               ))}
             </tbody>
           </table>
+        </div>
+      )}
+
+      {!isLoading && guides.length > 0 && (
+        <div className="flex items-center justify-between mt-6">
+          <p className="!text-xs text-gray-500">
+            Page {page} of {totalPages} &middot; {total} total
+          </p>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => fetchGuides(page - 1)}
+              disabled={page <= 1}
+              className="p-1.5 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 border-none cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+              title="Previous page"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => fetchGuides(page + 1)}
+              disabled={page >= totalPages}
+              className="p-1.5 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 border-none cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+              title="Next page"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       )}
 
@@ -305,13 +338,13 @@ export default function AdminGuidesPage() {
               </div>
 
               <div className="border-t border-gray-200 pt-5 flex items-center justify-end gap-3">
-                <button type="button" onClick={closeModal} className="bg-transparent hover:bg-gray-100 border border-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg text-xs cursor-pointer">
+                <button type="button" onClick={closeModal} className="bg-transparent hover:bg-gray-100 border border-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg !text-xs cursor-pointer">
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSubmitting || isUploading}
-                  className="bg-blue-default hover:bg-blue-bright text-white font-semibold py-2 px-5 rounded-lg text-xs cursor-pointer disabled:opacity-50 disabled:pointer-events-none transition-colors shadow"
+                  className="bg-blue-default hover:bg-blue-bright !text-white font-semibold py-2 px-5 rounded-lg !text-xs cursor-pointer disabled:opacity-50 disabled:pointer-events-none transition-colors shadow"
                 >
                   {isSubmitting ? "Saving…" : editingGuide ? "Save Changes" : "Add Guide"}
                 </button>

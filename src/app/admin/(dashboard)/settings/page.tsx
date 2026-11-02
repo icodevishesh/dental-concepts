@@ -9,7 +9,7 @@ export default function AdminSettingsPage() {
   return (
     <div className="max-w-2xl space-y-8">
       <div>
-        <h2 className="text-xl font-semibold text-gray-900 !mb-2">Settings</h2>
+        <h2 className="!text-lg font-semibold text-gray-900 !mb-2">Settings</h2>
         <p className="!text-sm text-gray-500">RX form, admin password, and third-party integrations.</p>
       </div>
 

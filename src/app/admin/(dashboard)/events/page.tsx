@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import toast from "react-hot-toast";
-import { Edit2, Trash2, Plus, X } from "lucide-react";
+import { Edit2, Trash2, Plus, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const eventSchema = z.object({
   title: z.string().min(1, "Title is required"),
@@ -24,6 +24,9 @@ interface EventResource extends EventFormValues {
 
 export default function AdminEventsPage() {
   const [events, setEvents] = useState<EventResource[]>([]);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [total, setTotal] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingEvent, setEditingEvent] = useState<EventResource | null>(null);
@@ -36,23 +39,27 @@ export default function AdminEventsPage() {
     formState: { errors },
   } = useForm<EventFormValues>({ resolver: zodResolver(eventSchema) });
 
-  const fetchEvents = async () => {
+  const fetchEvents = useCallback(async (targetPage: number) => {
     setIsLoading(true);
     try {
-      const res = await fetch("/api/admin/events");
+      const res = await fetch(`/api/admin/events?page=${targetPage}`);
       if (!res.ok) throw new Error("Failed to fetch events");
-      setEvents(await res.json());
+      const json = await res.json();
+      setEvents(json.events);
+      setPage(json.page);
+      setTotalPages(json.totalPages);
+      setTotal(json.total);
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Error loading events");
     } finally {
       setIsLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- standard fetch-on-mount
-    fetchEvents();
-  }, []);
+    fetchEvents(1);
+  }, [fetchEvents]);
 
   const openAddModal = () => {
     setEditingEvent(null);
@@ -82,7 +89,7 @@ export default function AdminEventsPage() {
       if (!res.ok) throw new Error(data.error || "Failed to save event");
       toast.success(editingEvent ? "Event updated" : "Event added");
       closeModal();
-      fetchEvents();
+      fetchEvents(page);
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Error saving event");
     } finally {
@@ -97,7 +104,7 @@ export default function AdminEventsPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed to delete");
       toast.success("Event deleted");
-      fetchEvents();
+      fetchEvents(page);
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Error deleting event");
     }
@@ -107,12 +114,12 @@ export default function AdminEventsPage() {
     <div>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 !mb-2">Manage Events</h2>
+          <h2 className="!text-lg font-semibold text-gray-900 !mb-2">Manage Events</h2>
           <p className="!text-sm text-gray-500">Add, update, or remove events shown on the Events page.</p>
         </div>
         <button
           onClick={openAddModal}
-          className="bg-blue-default hover:bg-blue-bright text-white font-semibold py-2 px-4 rounded-lg text-xs transition-all cursor-pointer flex items-center gap-1.5 shadow"
+          className="bg-blue-default hover:bg-blue-bright !text-white font-semibold py-2 px-4 rounded-lg !text-xs transition-all cursor-pointer flex items-center gap-1.5 shadow"
         >
           <Plus className="w-4 h-4" />
           Add Event
@@ -165,6 +172,32 @@ export default function AdminEventsPage() {
         </div>
       )}
 
+      {!isLoading && events.length > 0 && (
+        <div className="flex items-center justify-between mt-6">
+          <p className="!text-xs text-gray-500">
+            Page {page} of {totalPages} &middot; {total} total
+          </p>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => fetchEvents(page - 1)}
+              disabled={page <= 1}
+              className="p-1.5 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 border-none cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+              title="Previous page"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => fetchEvents(page + 1)}
+              disabled={page >= totalPages}
+              className="p-1.5 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 border-none cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+              title="Next page"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
+
       {isModalOpen && (
         <div className="fixed inset-0 z-[5000] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-white border border-gray-200 rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl flex flex-col" style={{ maxHeight: "95vh" }}>
@@ -213,13 +246,13 @@ export default function AdminEventsPage() {
               </div>
 
               <div className="border-t border-gray-200 pt-5 flex items-center justify-end gap-3">
-                <button type="button" onClick={closeModal} className="bg-transparent hover:bg-gray-100 border border-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg text-xs cursor-pointer">
+                <button type="button" onClick={closeModal} className="bg-transparent hover:bg-gray-100 border border-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg !text-xs cursor-pointer">
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-blue-default hover:bg-blue-bright text-white font-semibold py-2 px-5 rounded-lg text-xs cursor-pointer disabled:opacity-50 disabled:pointer-events-none transition-colors shadow"
+                  className="bg-blue-default hover:bg-blue-bright !text-white font-semibold py-2 px-5 rounded-lg !text-xs cursor-pointer disabled:opacity-50 disabled:pointer-events-none transition-colors shadow"
                 >
                   {isSubmitting ? "Saving…" : editingEvent ? "Save Changes" : "Add Event"}
                 </button>

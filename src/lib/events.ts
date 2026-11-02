@@ -29,6 +29,28 @@ export async function getAllEvents(): Promise<EventDoc[]> {
   return db.collection<EventDoc>(COLLECTION).find({}).sort({ date: 1 }).toArray();
 }
 
+export interface GetEventsPagedResult {
+  events: EventDoc[];
+  total: number;
+  page: number;
+  totalPages: number;
+}
+
+export async function getEventsPaged(page: number, perPage: number): Promise<GetEventsPagedResult> {
+  const db = await getDb();
+  const collection = db.collection<EventDoc>(COLLECTION);
+  const total = await collection.countDocuments();
+  const totalPages = Math.max(1, Math.ceil(total / perPage));
+  const safePage = Math.min(Math.max(1, page), totalPages);
+  const events = await collection
+    .find({})
+    .sort({ date: 1 })
+    .skip((safePage - 1) * perPage)
+    .limit(perPage)
+    .toArray();
+  return { events, total, page: safePage, totalPages };
+}
+
 export async function getEventById(id: string): Promise<EventDoc | null> {
   if (!ObjectId.isValid(id)) return null;
   const db = await getDb();

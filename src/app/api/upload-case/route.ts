@@ -3,8 +3,7 @@ import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 import { randomUUID } from "crypto";
 import { getDb } from "@/lib/mongodb";
-
-const UPLOAD_ROOT = path.join(process.cwd(), "uploads");
+import { UPLOAD_ROOT } from "@/lib/cases";
 
 function safeName(name: string) {
   const base = path.basename(name).replace(/[^a-zA-Z0-9._-]/g, "_");

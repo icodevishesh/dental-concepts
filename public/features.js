@@ -644,7 +644,7 @@
     cf.addEventListener('change', function (e) { if (e.target.id) { touched[e.target.id] = 1; showErr(e.target); } update(); });
     cf.addEventListener('focusout', function (e) { if (e.target.id && (e.target.required || e.target === phone)) { touched[e.target.id] = 1; showErr(e.target); } });
     // replace app.js's handler: validation, pending state, success and failure
-    cf.addEventListener('submit', function (e) {
+    cf.addEventListener('submit', async function (e) {
       e.preventDefault(); e.stopImmediatePropagation();
       if (btn.classList.contains('is-pending')) return;
       var bad = fields.concat(phone ? [phone] : []).filter(function (f) { touched[f.id] = 1; showErr(f); return !f.checkValidity(); });
@@ -661,6 +661,21 @@
       var lines = ['Name: ' + fd.get('firstName') + ' ' + fd.get('lastName'), 'Practice: ' + fd.get('practice'), 'Practice email: ' + fd.get('email'), 'Phone: ' + (fd.get('phone') || 'Not provided'), 'Topic: ' + topic, 'Preferred contact method: ' + (fd.get('preference') || 'Email')];
       if (fd.get('source')) lines.push('Heard about us: ' + fd.get('source'));
       lines.push('', 'Message:', String(fd.get('message') || ''));
+
+      // Save the lead before handing off to mailto (awaited + bounded, so
+      // location.href below can't cut the request off before it's sent).
+      var save = fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: fd.get('firstName'), lastName: fd.get('lastName'), practice: fd.get('practice'),
+          email: fd.get('email'), phone: fd.get('phone') || '', topic: topic,
+          preference: fd.get('preference') || 'Email', source: fd.get('source') || '',
+          message: fd.get('message') || '', recipient: to
+        })
+      }).catch(function (err) { console.error('[contact] lead save failed', err); });
+      await Promise.race([save, new Promise(function (resolve) { setTimeout(resolve, 2500); })]);
+
       var href = 'mailto:' + to + '?subject=' + encodeURIComponent('Dental Concepts inquiry: ' + topic) + '&body=' + encodeURIComponent(lines.join('\n'));
       var left = false;
       var onBlur = function () { left = true; };
