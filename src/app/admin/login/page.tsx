@@ -78,7 +78,7 @@ function LoginForm() {
         <input
           id="check"
           type="checkbox"
-          value={showPassword}
+          checked={showPassword}
           onChange={() => setShowPassword((prev) => !prev)}
         />
         </label>
