@@ -35,6 +35,7 @@ const INTEGRATIONS: {
   description: string;
   secretFields: SecretFieldConfig[];
   settingFields: SettingFieldConfig[];
+  setupSteps?: string[];
 }[] = [
   {
     name: "ups",
@@ -66,6 +67,17 @@ const INTEGRATIONS: {
       { key: "apiSecret", label: "API secret" },
     ],
     settingFields: [{ key: "cloudName", label: "Cloud name", type: "text" }],
+    setupSteps: [
+      "Open Cloudinary Console.",
+      "Log in to your Cloudinary account.",
+      "Go to the Dashboard.",
+      "Find and copy your Cloud Name under Product Environment.",
+      "Navigate to Settings → API Keys.",
+      "Copy your API Key.",
+      "Find the API Secret and click the reveal option.",
+      "Complete email verification if prompted.",
+      "Copy your API Key, Secret and Cloud name and paste here.",
+    ],
   },
 ];
 
@@ -253,6 +265,19 @@ function IntegrationCard({
           />
         </button>
       </div>
+
+      {config.setupSteps && (
+        <details className="mb-4 bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5">
+          <summary className="!text-xs font-semibold text-blue-default cursor-pointer select-none">
+            How to find these values
+          </summary>
+          <ol className="list-decimal list-inside space-y-1 mt-2.5 !text-xs text-gray-600">
+            {config.setupSteps.map((step, i) => (
+              <li key={i}>{step}</li>
+            ))}
+          </ol>
+        </details>
+      )}
 
       <form onSubmit={handleSave} className="space-y-3">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
