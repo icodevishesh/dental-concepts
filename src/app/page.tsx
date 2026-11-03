@@ -3,6 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
+import { getAllTestimonials } from "@/lib/testimonials";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Dental Laboratory in San Francisco, USA | Dental Concepts",
@@ -25,7 +28,9 @@ const faqLd = {
   ],
 };
 
-export default function Home() {
+export default async function Home() {
+  const testimonials = await getAllTestimonials().catch(() => []);
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
@@ -137,11 +142,18 @@ export default function Home() {
           <div className="section-head"><span className="eyebrow">Testimonials</span><h2 id="quotes-heading">What dentists say about the lab</h2><p>In their own words, from practices that send us their cases.</p></div>
           <div className="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Testimonials">
             <div className="carousel-view"><div className="carousel-track">
-              <figure className="carousel-slide quote-card is-placeholder" role="group" aria-roledescription="slide" aria-label="1 of 3"><blockquote><p>Placeholder 1: paste a real quote from a dentist here, in their own words.</p></blockquote><figcaption><strong>Dentist’s name</strong><span>Practice name, city</span></figcaption></figure>
-              <figure className="carousel-slide quote-card is-placeholder" role="group" aria-roledescription="slide" aria-label="2 of 3"><blockquote><p>Placeholder 2: paste a real quote from a dentist here, in their own words.</p></blockquote><figcaption><strong>Dentist’s name</strong><span>Practice name, city</span></figcaption></figure>
-              <figure className="carousel-slide quote-card is-placeholder" role="group" aria-roledescription="slide" aria-label="3 of 3"><blockquote><p>Placeholder 3: paste a real quote from a dentist here, in their own words.</p></blockquote><figcaption><strong>Dentist’s name</strong><span>Practice name, city</span></figcaption></figure>
+              {testimonials.length > 0 ? (
+                testimonials.map((t, i) => (
+                  <figure key={t._id?.toString()} className="carousel-slide quote-card" role="group" aria-roledescription="slide" aria-label={`${i + 1} of ${testimonials.length}`}>
+                    <blockquote><p>{t.quote}</p></blockquote>
+                    <figcaption><strong>{t.name}</strong><span>{t.practice}</span></figcaption>
+                  </figure>
+                ))
+              ) : (
+                <figure className="carousel-slide quote-card is-placeholder" role="group" aria-roledescription="slide" aria-label="1 of 1"><blockquote><p>Paste a real quote from a dentist here, in their own words.</p></blockquote><figcaption><strong>Dentist’s name</strong><span>Practice name, city</span></figcaption></figure>
+              )}
             </div></div>
-            <div className="carousel-ctrl"><button className="carousel-prev" type="button" aria-label="Previous testimonial"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></button><p className="carousel-status" aria-live="polite">Slide 1 of 3</p><button className="carousel-next" type="button" aria-label="Next testimonial"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></button></div>
+            <div className="carousel-ctrl"><button className="carousel-prev" type="button" aria-label="Previous testimonial"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></button><p className="carousel-status" aria-live="polite">{`Slide 1 of ${Math.max(testimonials.length, 1)}`}</p><button className="carousel-next" type="button" aria-label="Next testimonial"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></button></div>
           </div>
         </div></section>
 

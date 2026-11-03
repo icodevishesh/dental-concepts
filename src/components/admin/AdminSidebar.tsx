@@ -3,14 +3,15 @@
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
-import { Newspaper, BookOpen, CalendarDays, Inbox, FolderOpen, Settings, LogOut } from "lucide-react";
+import { Newspaper, BookOpen, CalendarDays, Inbox, FolderOpen, Quote, Settings, LogOut } from "lucide-react";
 
 const NAV_ITEMS = [
   { href: "/admin/cases", label: "Cases", icon: FolderOpen },
   { href: "/admin/leads", label: "Leads", icon: Inbox },
   { href: "/admin/articles", label: "Articles", icon: Newspaper },
   { href: "/admin/guides", label: "Guides", icon: BookOpen },
-  { href: "/admin/events", label: "Events", icon: CalendarDays },  
+  { href: "/admin/events", label: "Events", icon: CalendarDays },
+  { href: "/admin/testimonials", label: "Testimonials", icon: Quote },
   { href: "/admin/settings", label: "Settings", icon: Settings },
 ];
 
