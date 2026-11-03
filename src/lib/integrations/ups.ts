@@ -3,6 +3,20 @@ import { getDecryptedCredentials } from "./integration-settings";
 export class IntegrationNotConfiguredError extends Error {}
 export class IntegrationDisabledError extends Error {}
 export class UpsAuthError extends Error {}
+export class UpsShipmentError extends Error {}
+
+// The lab's own address — used as Shipper on every shipment, and as
+// ShipFrom/ShipTo depending on shipment direction (see createUpsShipment).
+const LAB_SHIPPER = {
+  name: "Dental Concepts",
+  attentionName: "Dental Concepts Lab",
+  phone: "8007005227",
+  addressLine: "244 9th Street",
+  city: "San Francisco",
+  stateProvinceCode: "CA",
+  postalCode: "94103",
+  countryCode: "US",
+};
 
 export interface UpsConfig {
   clientId: string;
@@ -77,6 +91,115 @@ export async function getUpsAccessToken(): Promise<string> {
     throw new UpsAuthError("UPS did not return an access token.");
   }
   return data.access_token;
+}
+
+export interface UpsAddress {
+  name: string;
+  attentionName?: string;
+  phone: string;
+  addressLine: string;
+  city: string;
+  stateProvinceCode: string;
+  postalCode: string;
+  countryCode?: string;
+}
+
+export interface CreateUpsShipmentInput {
+  /** "new" = case going from the practice to the lab. "return" = work going from the lab back to the practice. */
+  direction: "new" | "return";
+  practiceAddress: UpsAddress;
+  weightLbs: number;
+}
+
+export interface CreateUpsShipmentResult {
+  trackingNumber: string;
+  labelBase64: string;
+}
+
+function toUpsParty(addr: UpsAddress) {
+  return {
+    Name: addr.name,
+    AttentionName: addr.attentionName || addr.name,
+    Phone: { Number: addr.phone.replace(/[^0-9]/g, "") },
+    Address: {
+      AddressLine: addr.addressLine,
+      City: addr.city,
+      StateProvinceCode: addr.stateProvinceCode,
+      PostalCode: addr.postalCode,
+      CountryCode: addr.countryCode || "US",
+    },
+  };
+}
+
+/** Creates a UPS Ground shipment and returns its tracking number and base64 PDF label. */
+export async function createUpsShipment(input: CreateUpsShipmentInput): Promise<CreateUpsShipmentResult> {
+  const config = await getUpsConfig();
+  const token = await getUpsAccessToken();
+  const baseUrl = getUpsBaseUrl(config.environment);
+
+  const lab = toUpsParty({ ...LAB_SHIPPER, phone: LAB_SHIPPER.phone });
+  const practice = toUpsParty(input.practiceAddress);
+  const shipFrom = input.direction === "new" ? practice : lab;
+  const shipTo = input.direction === "new" ? lab : practice;
+
+  const body = {
+    ShipmentRequest: {
+      Request: { RequestOption: "nonvalidate" },
+      Shipment: {
+        Shipper: { ...lab, ShipperNumber: config.accountNumber },
+        ShipFrom: shipFrom,
+        ShipTo: shipTo,
+        Service: { Code: "03", Description: "Ground" },
+        Package: [
+          {
+            Packaging: { Code: "02", Description: "Customer Supplied Package" },
+            PackageWeight: {
+              UnitOfMeasurement: { Code: "LBS" },
+              Weight: String(input.weightLbs),
+            },
+          },
+        ],
+        PaymentInformation: {
+          ShipmentCharge: [{ Type: "01", BillShipper: { AccountNumber: config.accountNumber } }],
+        },
+      },
+      LabelSpecification: {
+        LabelImageFormat: { Code: "PDF" },
+      },
+    },
+  };
+
+  let res: Response;
+  try {
+    res = await fetch(`${baseUrl}/api/shipments/v2409/ship`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(body),
+    });
+  } catch {
+    throw new UpsShipmentError("Could not reach the UPS API. Check your network connection and try again.");
+  }
+
+  const data = await res.json().catch(() => null);
+
+  if (!res.ok) {
+    const upsMessage = data?.response?.errors?.[0]?.message;
+    throw new UpsShipmentError(upsMessage || `UPS rejected the shipment request (HTTP ${res.status}).`);
+  }
+
+  const packageResult = data?.ShipmentResponse?.ShipmentResults?.PackageResults;
+  const pkg = Array.isArray(packageResult) ? packageResult[0] : packageResult;
+  const trackingNumber = pkg?.TrackingNumber;
+  const labelBase64 = pkg?.ShippingLabel?.GraphicImage;
+
+  if (!trackingNumber || !labelBase64) {
+    throw new UpsShipmentError("UPS did not return a label for this shipment.");
+  }
+
+  return { trackingNumber, labelBase64 };
 }
 
 export async function testUpsConnection(): Promise<{ ok: boolean; message: string }> {
