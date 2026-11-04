@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import toast from "react-hot-toast";
-import { CheckCircle2, XCircle, HelpCircle, Loader2 } from "lucide-react";
+import { CheckCircle2, XCircle, HelpCircle, Loader2, FileText } from "lucide-react";
 
 type ConnectionStatus = "not_configured" | "not_tested" | "connected" | "failed";
 
@@ -267,13 +267,19 @@ function IntegrationCard({
       </div>
 
       {config.setupSteps && (
-        <details className="mb-4 bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5">
-          <summary className="!text-xs font-semibold text-blue-default cursor-pointer select-none">
-            How to find these values
+        <details className="mb-4 border border-blue-100 rounded-xl overflow-hidden">
+          <summary className="flex items-center gap-2 px-4 py-3 bg-blue-50 cursor-pointer select-none group">
+            <FileText className="w-3.5 h-3.5 text-blue-default transition-transform group-open:rotate-90" />
+            <span className="!text-xs font-semibold text-blue-default">How to find these values</span>
           </summary>
-          <ol className="list-decimal list-inside space-y-1 mt-2.5 !text-xs text-gray-600">
+          <ol className="divide-y divide-gray-100 bg-white">
             {config.setupSteps.map((step, i) => (
-              <li key={i}>{step}</li>
+              <li key={i} className="flex items-start gap-3 px-4 py-2.5">
+                <span className="mt-px flex-shrink-0 w-5 h-5 rounded-full bg-blue-default text-white text-[10px] font-bold flex items-center justify-center">
+                  {i + 1}
+                </span>
+                <span className="!text-xs text-gray-600 leading-5">{step}</span>
+              </li>
             ))}
           </ol>
         </details>
