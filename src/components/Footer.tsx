@@ -24,6 +24,7 @@ export default function Footer({ photoCredits = false }: { photoCredits?: boolea
           <div className="footer-column">
             <h2>The lab</h2>
             <a href="/about">About</a>
+            <a href="/gallery">Gallery</a>
             <a href="/blog">Articles</a>
             <a href="/guides">Guides</a>
             <a href="/rx">RX form</a>
@@ -50,7 +51,7 @@ export default function Footer({ photoCredits = false }: { photoCredits?: boolea
         <div className="footer-bottom">
           <span>© 2026 Dental Concepts, San Francisco, California</span>
           {photoCredits ? (
-            <a href="/gallery#credits">Photo credits</a>
+            <a href="/gallery/credits">Photo credits</a>
           ) : (
             <span className="footer-partner">Digital Partner <a href="https://www.vuilive.com" target="_blank" rel="noopener">VUILIVE</a></span>
           )}

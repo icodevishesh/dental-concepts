@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllTestimonials } from "@/lib/testimonials";
+import { getLatestGalleryImages } from "@/lib/gallery";
 
 export const dynamic = "force-dynamic";
 
@@ -28,8 +29,19 @@ const faqLd = {
   ],
 };
 
+const mosaicSlots = [
+  { className: "is-tall", href: "/full-contour-zirconia-crowns", src: "/assets/products/full-contour-zirconia-crowns.webp", width: 1254, height: 1254, alt: "Full contour zirconia crowns" },
+  { className: "", href: "/implant-crowns", src: "/assets/products/implant-crowns.webp", width: 1254, height: 1254, alt: "Implant crowns" },
+  { className: "", href: "/custom-abutments", src: "/assets/products/custom-abutments.webp", width: 1254, height: 1254, alt: "Custom abutments" },
+  { className: "is-wide", href: "/about", src: "/assets/lab-technicians.webp", width: 1672, height: 941, alt: "Technicians at work in the lab" },
+  { className: "", href: "/temporary-crowns-abutments", src: "/assets/products/temporary-crowns-abutments.webp", width: 1254, height: 1254, alt: "Temporary crowns and abutments" },
+  { className: "", href: "/model-printing", src: "/assets/products/model-printing.webp", width: 1254, height: 1254, alt: "Printed models" },
+  { className: "is-tall", href: "/lithium-disilicate", src: "/assets/products/lithium-disilicate.webp", width: 1254, height: 1254, alt: "Lithium disilicate restorations" },
+];
+
 export default async function Home() {
   const testimonials = await getAllTestimonials().catch(() => []);
+  const galleryImages = await getLatestGalleryImages(8).catch(() => []);
 
   return (
     <>
@@ -92,7 +104,7 @@ export default async function Home() {
           <div className="reel-backdrop" data-reel-close></div>
           <div className="reel-panel"><h2 className="visually-hidden" id="reel-title">Lab film</h2>
             <video playsInline muted loop preload="none" poster="/assets/lab-technicians.webp" data-src="https://videos.pexels.com/video-files/8704970/8704970-hd_1280_720_30fps.mp4" aria-describedby="reel-desc"></video>
-            <p className="reel-desc" id="reel-desc">Silent footage: a technician shapes and finishes a dental restoration at the bench. There is no narration. Representative stock footage, credited on the <Link href="/gallery#credits">gallery page</Link>.</p>
+            <p className="reel-desc" id="reel-desc">Silent footage: a technician shapes and finishes a dental restoration at the bench. There is no narration. Representative stock footage, credited on the <Link href="/gallery/credits">photo credits page</Link>.</p>
             <div className="reel-bar"><button className="reel-play" type="button">Pause</button><button className="reel-mute" type="button">Unmute</button><button className="reel-close" type="button" data-reel-close>Close</button></div>
           </div>
         </div>
@@ -158,15 +170,20 @@ export default async function Home() {
         </div></section>
 
         <section className="section mosaic-section" aria-labelledby="mosaic-heading"><div className="wrap">
-          <div className="center-head"><span className="eyebrow">From the bench</span><h2 id="mosaic-heading">Restorations we make every week</h2><p>Representative photos for now. Our own case gallery is on the way.</p></div>
+          <div className="center-head"><span className="eyebrow">From the bench</span><h2 id="mosaic-heading">Restorations we make every week</h2><p>{galleryImages.length > 0 ? "A look at recent work from our bench." : "Representative photos for now. Our own case gallery is on the way."}</p></div>
           <ul className="mosaic">
-            <li className="mosaic-item is-tall"><Link href="/full-contour-zirconia-crowns"><Image src="/assets/products/full-contour-zirconia-crowns.webp" width={1254} height={1254} alt="Full contour zirconia crowns" loading="lazy" /></Link></li>
-            <li className="mosaic-item"><Link href="/implant-crowns"><Image src="/assets/products/implant-crowns.webp" width={1254} height={1254} alt="Implant crowns" loading="lazy" /></Link></li>
-            <li className="mosaic-item"><Link href="/custom-abutments"><Image src="/assets/products/custom-abutments.webp" width={1254} height={1254} alt="Custom abutments" loading="lazy" /></Link></li>
-            <li className="mosaic-item is-wide"><Link href="/about"><Image src="/assets/lab-technicians.webp" width={1672} height={941} alt="Technicians at work in the lab" loading="lazy" /></Link></li>
-            <li className="mosaic-item"><Link href="/temporary-crowns-abutments"><Image src="/assets/products/temporary-crowns-abutments.webp" width={1254} height={1254} alt="Temporary crowns and abutments" loading="lazy" /></Link></li>
-            <li className="mosaic-item"><Link href="/model-printing"><Image src="/assets/products/model-printing.webp" width={1254} height={1254} alt="Printed models" loading="lazy" /></Link></li>
-            <li className="mosaic-item is-tall"><Link href="/lithium-disilicate"><Image src="/assets/products/lithium-disilicate.webp" width={1254} height={1254} alt="Lithium disilicate restorations" loading="lazy" /></Link></li>
+            {mosaicSlots.map((slot, i) => {
+              const real = galleryImages[i];
+              return (
+                <li key={slot.href} className={`mosaic-item${slot.className ? ` ${slot.className}` : ""}`}>
+                  {real ? (
+                    <Link href="/gallery"><Image src={real.url} width={slot.width} height={slot.height} alt={real.alt} loading="lazy" /></Link>
+                  ) : (
+                    <Link href={slot.href}><Image src={slot.src} width={slot.width} height={slot.height} alt={slot.alt} loading="lazy" /></Link>
+                  )}
+                </li>
+              );
+            })}
             <li className="mosaic-item"><Link href="/gold-crowns" className="is-gold"><Image src="/assets/gold-crown.webp" width={478} height={454} alt="Gold crown" loading="lazy" /></Link></li>
           </ul></div></section>
 
