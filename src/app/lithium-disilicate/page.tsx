@@ -17,8 +17,6 @@ const faqLd = {
     { "@type": "Question", name: "Why does the RX form ask for a stump shade?", acceptedAnswer: { "@type": "Answer", text: "Lithium disilicate is translucent, so the color of the prepared tooth can show through the restoration. Knowing the stump shade lets the technician plan for it." } },
     { "@type": "Question", name: "How long do E.max crowns take?", acceptedAnswer: { "@type": "Answer", text: "Our E.max crowns lab works to the timeline on our RX form: 10 in-lab working days for 1 to 3 units and for 4 or more. Call the lab about cases of 8 units or more." } },
     { "@type": "Question", name: "Should I choose E.max or zirconia for a crown?", acceptedAnswer: { "@type": "Answer", text: "E.max is a common choice for front teeth and premolars where translucency matters. Full contour zirconia is often preferred for molars and heavy biters. The call is yours, and we’re happy to talk through a specific case." } },
-    { "@type": "Question", name: "Is anything extra needed for anterior cases?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our RX form asks for a pre-op or study model with every anterior case, along with the shade and stump shade." } },
-    { "@type": "Question", name: "Can I book a custom shade visit?", acceptedAnswer: { "@type": "Answer", text: "Yes. Call (415) 558-9717 to book. Visits take about 15 to 20 minutes at our lab on 9th Street." } },
   ],
 };
 
@@ -67,8 +65,6 @@ export default function Page() {
             <details><summary>Why does the RX form ask for a stump shade?</summary><div className="faq-answer"><p>Lithium disilicate is translucent, so the color of the prepared tooth can show through the restoration. Knowing the stump shade lets the technician plan for it.</p></div></details>
             <details><summary>How long do E.max crowns take?</summary><div className="faq-answer"><p>Our E.max crowns lab works to the timeline on our RX form: 10 in-lab working days for 1 to 3 units and for 4 or more. Call the lab about cases of 8 units or more.</p></div></details>
             <details><summary>Should I choose E.max or zirconia for a crown?</summary><div className="faq-answer"><p>E.max is a common choice for front teeth and premolars where translucency matters. Full contour zirconia is often preferred for molars and heavy biters. The call is yours, and we’re happy to talk through a specific case.</p></div></details>
-            <details><summary>Is anything extra needed for anterior cases?</summary><div className="faq-answer"><p>Yes. Our RX form asks for a pre-op or study model with every anterior case, along with the shade and stump shade.</p></div></details>
-            <details><summary>Can I book a custom shade visit?</summary><div className="faq-answer"><p>Yes. Call <a href="tel:+14155589717">(415) 558-9717</a> to book. Visits take about 15 to 20 minutes at our lab on 9th Street.</p></div></details>
           </div></div></section>
         <section className="visit"><div className="wrap visit-grid">
           <div className="visit-lead"><h2>Case-specific questions?</h2><p>Call <a href="tel:+18007005227">1-800-700-LABS</a> or email the team before you send patient records, and we’ll confirm the best way to get the case to us.</p><a className="button button-light" href="/contact">Contact the lab</a></div></div></section>

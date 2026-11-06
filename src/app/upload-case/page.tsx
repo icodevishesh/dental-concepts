@@ -145,7 +145,6 @@ export default async function UploadCasePage() {
             <details><summary>What about digital implant cases?</summary><div className="faq-answer"><p>Write the implant system and size on the RX form, and upload a full arch gingival scan taken without the healing abutment.</p></div></details>
             <details><summary>I’m sending a physical impression. What do I do?</summary><div className="faq-answer"><p>Request a <Link href="/shipping-label">shipping label</Link>, and we’ll reply with the label and carrier details.</p></div></details>
             <details><summary>Is the turnaround a guarantee?</summary><div className="faq-answer"><p>No. The summary shows the in-lab working days printed on our RX form. Weekends, holidays and shipping aren’t counted, so confirm timing with the lab before you book the patient.</p></div></details>
-            <details><summary>How should I name the patient?</summary><div className="faq-answer"><p>Use a patient ID or initials rather than the full name. The lab will match the case to your RX form.</p></div></details>
           </div></div></section>
         <section className="visit"><div className="wrap visit-grid">
           <div className="visit-lead"><h2>Prefer to talk it through?</h2><p>Call <a href="tel:+18007005227">1-800-700-LABS</a> before you upload, and a technician will help you plan the case.</p><Link className="button button-light" href="/contact">Contact the lab</Link></div>

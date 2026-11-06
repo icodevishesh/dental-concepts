@@ -27,9 +27,6 @@ export default function Footer({ photoCredits = false }: { photoCredits?: boolea
             <a href="/gallery">Gallery</a>
             <a href="/blog">Articles</a>
             <a href="/guides">Guides</a>
-            <a href="/rx">RX form</a>
-            <a href="/upload-case">Upload a case</a>
-            <a href="/send-case">Send a case</a>
             <a href="/contact">Contact</a>
           </div>
           <div className="footer-column">

@@ -17,8 +17,6 @@ const faqLd = {
     { "@type": "Question", name: "How long does an implant temporary crown take?", acceptedAnswer: { "@type": "Answer", text: "Our RX form lists provisionals at 10 in-lab working days for 1 to 3 units and for 4 or more. Timing for implant temporaries depends on the case, so confirm it with the lab." } },
     { "@type": "Question", name: "Can a temporary follow a digital wax-up?", acceptedAnswer: { "@type": "Answer", text: "Yes, that’s a common reason to order one. Mention the wax-up on the RX form, and see our digital wax-up page for how the plan is made." } },
     { "@type": "Question", name: "Can I send a digital scan?", acceptedAnswer: { "@type": "Answer", text: "Yes. Tick “Digital imp scan” on the RX form. We accept scans from iTero, Trios and similar systems. Contact the lab to confirm how to send the files." } },
-    { "@type": "Question", name: "Can the lab supply the implant parts?", acceptedAnswer: { "@type": "Answer", text: "Yes. Tick “Lab to provide parts” on the RX form and write in the implant system and size." } },
-    { "@type": "Question", name: "What does the warranty cover for provisionals?", acceptedAnswer: { "@type": "Answer", text: "Our RX form covers provisionals for up to six months, for the cost of materials and workmanship, once the restoration is returned to us. Restrictions apply." } },
   ],
 };
 
@@ -67,8 +65,6 @@ export default function Page() {
             <details><summary>How long does an implant temporary crown take?</summary><div className="faq-answer"><p>Our RX form lists provisionals at 10 in-lab working days for 1 to 3 units and for 4 or more. Timing for implant temporaries depends on the case, so confirm it with the lab.</p></div></details>
             <details><summary>Can a temporary follow a digital wax-up?</summary><div className="faq-answer"><p>Yes, that’s a common reason to order one. Mention the wax-up on the RX form, and see our digital wax-up page for how the plan is made.</p></div></details>
             <details><summary>Can I send a digital scan?</summary><div className="faq-answer"><p>Yes. Tick “Digital imp scan” on the RX form. We accept scans from iTero, Trios and similar systems. Contact the lab to confirm how to send the files.</p></div></details>
-            <details><summary>Can the lab supply the implant parts?</summary><div className="faq-answer"><p>Yes. Tick “Lab to provide parts” on the RX form and write in the implant system and size.</p></div></details>
-            <details><summary>What does the warranty cover for provisionals?</summary><div className="faq-answer"><p>Our RX form covers provisionals for up to six months, for the cost of materials and workmanship, once the restoration is returned to us. Restrictions apply.</p></div></details>
           </div></div></section>
         <section className="visit"><div className="wrap visit-grid">
           <div className="visit-lead"><h2>Case-specific questions?</h2><p>Call <a href="tel:+18007005227">1-800-700-LABS</a> or email the team before you send patient records, and we’ll confirm the best way to get the case to us.</p><a className="button button-light" href="/contact">Contact the lab</a></div></div></section>

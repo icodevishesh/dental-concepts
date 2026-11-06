@@ -17,7 +17,6 @@ const faqLd = {
     { "@type": "Question", name: "Are your restorations made in the USA?", acceptedAnswer: { "@type": "Answer", text: "Yes. We design, make and finish restorations at our dental laboratory on 9th Street in San Francisco. Cases aren’t sent overseas." } },
     { "@type": "Question", name: "What technology does the lab use?", acceptedAnswer: { "@type": "Answer", text: "We design on 3Shape, mill on Roland equipment and accept digital impressions from iTero, Trios and similar scanners. A technician finishes every case by hand." } },
     { "@type": "Question", name: "Where is the lab, and when is it open?", acceptedAnswer: { "@type": "Answer", text: "244 9th Street, San Francisco, CA 94103. We’re open Monday to Friday, 9 AM to 5 PM." } },
-    { "@type": "Question", name: "Can I schedule a custom shade visit?", acceptedAnswer: { "@type": "Answer", text: "Yes. Call (415) 558-9717 to book. Visits take about 15 to 20 minutes." } },
   ],
 };
 
@@ -86,7 +85,6 @@ export default function AboutPage() {
             <details><summary>Are your restorations made in the USA?</summary><div className="faq-answer"><p>Yes. We design, make and finish restorations at our dental laboratory on 9th Street in San Francisco. Cases aren’t sent overseas.</p></div></details>
             <details><summary>What technology does the lab use?</summary><div className="faq-answer"><p>We design on 3Shape, mill on Roland equipment and accept digital impressions from iTero, Trios and similar scanners. A technician finishes every case by hand.</p></div></details>
             <details><summary>Where is the lab, and when is it open?</summary><div className="faq-answer"><p>244 9th Street, San Francisco, CA 94103. We’re open Monday to Friday, 9 AM to 5 PM.</p></div></details>
-            <details><summary>Can I schedule a custom shade visit?</summary><div className="faq-answer"><p>Yes. Call <a href="tel:+14155589717">(415) 558-9717</a> to book. Visits take about 15 to 20 minutes.</p></div></details>
           </div></div></section>
         <section className="visit"><div className="wrap visit-grid">
           <div className="visit-lead"><h2>Come meet the people behind your restorations</h2><p>Visit us at 244 9th Street in San Francisco, or contact the team about lab services and shade appointments.</p><a className="button button-light" href="/contact">Contact the lab</a></div></div></section>

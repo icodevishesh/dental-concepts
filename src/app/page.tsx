@@ -23,9 +23,6 @@ const faqLd = {
     { "@type": "Question", name: "How long does a case take?", acceptedAnswer: { "@type": "Answer", text: "Our RX form lists restorations at 10 to 15 days and implant cases at 3 to 4 weeks. Full contour zirconia is quicker, at 7 in-lab days for one to three units. Working days don’t include weekends, holidays or shipping, so confirm timing with the lab before you schedule the patient." } },
     { "@type": "Question", name: "Do you offer rush service?", acceptedAnswer: { "@type": "Answer", text: "Yes, on most products, for up to 4 units. Pre-schedule it with the Lab Manager or Implant Coordinator at (415) 558-9716. Cases needed within 7 business days carry a $100 per unit surcharge, with an additional $100 per unit within 5 days. Anything under 3 days needs management approval and a quote." } },
     { "@type": "Question", name: "Can I send a digital scan?", acceptedAnswer: { "@type": "Answer", text: "Yes. Tick “Digital imp scan” on the RX form. We work with scans from iTero, Trios and similar systems. Digital implant cases need a full arch gingival scan without the healing abutment. Contact the lab to confirm how to send your files." } },
-    { "@type": "Question", name: "How do I book a custom shade appointment?", acceptedAnswer: { "@type": "Answer", text: "Call (415) 558-9717. Shade visits take about 15 to 20 minutes at our lab on 9th Street. When your patient can’t come in, email shade photos to photos@dentalconceptssf.com instead." } },
-    { "@type": "Question", name: "What warranty do your restorations carry?", acceptedAnswer: { "@type": "Answer", text: "We repair or replace a failed final fixed restoration at no charge for materials and workmanship for up to one year (restrictions apply). Provisionals and auxiliary services are covered for six months, and implant abutments follow the implant company’s guidelines. The restoration needs to be returned to the lab." } },
-    { "@type": "Question", name: "How can a new doctor open an account?", acceptedAnswer: { "@type": "Answer", text: "Email accounts@dentalconceptssf.com or use our contact form. Then download the RX form, and you’re ready to send your first case." } },
   ],
 };
 
@@ -151,7 +148,7 @@ export default async function Home() {
           </div></section>
 
         <section className="section quotes" aria-labelledby="quotes-heading"><div className="wrap">
-          <div className="section-head"><span className="eyebrow">Testimonials</span><h2 id="quotes-heading">What dentists say about the lab</h2><p>In their own words, from practices that send us their cases.</p></div>
+          <div className="section-head"><span className="eyebrow">Testimonials</span><h2 id="quotes-heading">What dentists say about the lab</h2><p>In their own words, from practices that send us their cases.</p><Link className="text-link" href="/services#testimonials">Read all reviews</Link></div>
           <div className="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Testimonials">
             <div className="carousel-view"><div className="carousel-track">
               {testimonials.length > 0 ? (
@@ -203,9 +200,6 @@ export default async function Home() {
             <details><summary>How long does a case take?</summary><div className="faq-answer"><p>Our RX form lists restorations at 10 to 15 days and implant cases at 3 to 4 weeks. Full contour zirconia is quicker, at 7 in-lab days for one to three units. Working days don’t include weekends, holidays or shipping, so confirm timing with the lab before you schedule the patient.</p></div></details>
             <details><summary>Do you offer rush service?</summary><div className="faq-answer"><p>Yes, on most products, for up to 4 units. Pre-schedule it with the Lab Manager or Implant Coordinator at <a href="tel:+14155589716">(415) 558-9716</a>. Cases needed within 7 business days carry a $100 per unit surcharge, with an additional $100 per unit within 5 days. Anything under 3 days needs management approval and a quote.</p></div></details>
             <details><summary>Can I send a digital scan?</summary><div className="faq-answer"><p>Yes. Tick “Digital imp scan” on the RX form. We work with scans from iTero, Trios and similar systems. Digital implant cases need a full arch gingival scan without the healing abutment. Contact the lab to confirm how to send your files.</p></div></details>
-            <details><summary>How do I book a custom shade appointment?</summary><div className="faq-answer"><p>Call <a href="tel:+14155589717">(415) 558-9717</a>. Shade visits take about 15 to 20 minutes at our lab on 9th Street. When your patient can’t come in, email shade photos to <a href="mailto:photos@dentalconceptssf.com">photos@dentalconceptssf.com</a> instead.</p></div></details>
-            <details><summary>What warranty do your restorations carry?</summary><div className="faq-answer"><p>We repair or replace a failed final fixed restoration at no charge for materials and workmanship for up to one year (restrictions apply). Provisionals and auxiliary services are covered for six months, and implant abutments follow the implant company’s guidelines. The restoration needs to be returned to the lab.</p></div></details>
-            <details><summary>How can a new doctor open an account?</summary><div className="faq-answer"><p>Email <a href="mailto:accounts@dentalconceptssf.com">accounts@dentalconceptssf.com</a> or use our <Link href="/contact">contact form</Link>. Then download the RX form, and you’re ready to send your first case.</p></div></details>
           </div></div></section>
       </main>
       <Footer />

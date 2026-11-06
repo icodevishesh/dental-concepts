@@ -103,8 +103,8 @@ figcaption a{text-underline-offset:2px}
 .facts-grid dd{margin:2px 0 0;font-size:.95rem}
 
 /* ------------------------------------------------ section heads */
-.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)}
-.section-head p{max-width:32em}
+.section-head{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:clamp(32px,4vw,56px)}
+.section-head p{max-width:36em;margin:0}
 
 /* ------------------------------------------------ service index (RX form motif) */
 .rx-menu{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,3vw,48px);align-items:start}
@@ -589,7 +589,6 @@ main .section:not(.feature-band):not(.menu) .button:not(.button-light):hover,.co
 .partner-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(32px,4vw,56px)}
 .partner-points article,.partner-points article:last-child{padding:28px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .partner-points h3{font-size:1.35rem}
-.section-head{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}
 .numbers{padding-top:0}
 .number-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0}
 .number-grid div{padding:28px 32px 30px;border:1px solid var(--line);border-radius:8px;background:#fff}
@@ -712,28 +711,28 @@ main .section:not(.feature-band):not(.menu) .button:not(.button-light):hover,.co
 
 /* Home services: photo cards, two large then rows of three */
 .svc-grid-section{background:var(--paper)}
-.svc-grid-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 48px;flex-wrap:wrap;margin-bottom:clamp(32px,4vw,56px)}
+.svc-grid-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 48px;flex-wrap:wrap;margin-bottom:clamp(16px,2vw,28px)}
 .svc-grid-head h2{max-width:22ch}
-.svc-grid-head p{margin-top:18px;max-width:34em;font-size:1.08rem}
-.svc-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.svc-grid-head p{margin-top:12px;max-width:34em;font-size:1rem}
+.svc-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
 .svc-card{grid-column:span 2;display:flex}
 .svc-card.is-big{grid-column:span 3}
 .svc-card a{display:flex;flex-direction:column;width:100%;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:var(--body);transition:border-color .2s,box-shadow .25s,transform .25s}
 .svc-card a:hover,.svc-card a:focus-visible{border-color:#9cc4ff;box-shadow:0 24px 48px -28px rgba(0,60,150,.45);transform:translateY(-3px)}
-.svc-card-photo{position:relative;display:block;aspect-ratio:3/2;overflow:hidden;background:#2f2f2f}
-.svc-card.is-big .svc-card-photo{aspect-ratio:1000/620}
+.svc-card-photo{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:#2f2f2f}
+.svc-card.is-big .svc-card-photo{aspect-ratio:4/3}
 .svc-card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .svc-card a:hover .svc-card-photo img{transform:scale(1.04)}
 .svc-card-photo.is-product{background:var(--enamel)}
-.svc-card-photo.is-product img{object-fit:contain;padding:9% 0;mix-blend-mode:multiply}
-.svc-card-arrow{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:#fff;color:#005cdf;display:grid;place-items:center;box-shadow:0 4px 14px -6px rgba(0,0,0,.4);transition:background-color .2s,color .2s}
+.svc-card-photo.is-product img{object-fit:contain;padding:7% 0;mix-blend-mode:multiply}
+.svc-card-arrow{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:#fff;color:#005cdf;display:grid;place-items:center;box-shadow:0 4px 14px -6px rgba(0,0,0,.4);transition:background-color .2s,color .2s}
 .svc-card a:hover .svc-card-arrow{background:var(--blue-grad);color:#fff}
-.svc-card-text{display:flex;flex-direction:column;flex:1;padding:22px 24px 24px}
-.svc-card-cat{color:#005cdf;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
-.svc-card strong{margin-top:8px;color:var(--ink);font-weight:600;font-size:1.3rem;line-height:1.2;letter-spacing:-.015em}
-.svc-card.is-big strong{font-size:1.6rem}
-.svc-card-desc{margin-top:8px;font-size:.98rem;line-height:1.5}
-.svc-card-more{margin-top:auto;padding-top:18px;color:#005cdf;font-weight:600;font-size:.95rem}
+.svc-card-text{display:flex;flex-direction:column;flex:1;padding:14px 18px 16px}
+.svc-card-cat{color:#005cdf;font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.svc-card strong{margin-top:5px;color:var(--ink);font-weight:600;font-size:1.1rem;line-height:1.2;letter-spacing:-.015em}
+.svc-card.is-big strong{font-size:1.3rem}
+.svc-card-desc{margin-top:5px;font-size:.9rem;line-height:1.45}
+.svc-card-more{margin-top:auto;padding-top:12px;color:#005cdf;font-weight:600;font-size:.9rem}
 .svc-card-more::after{content:"";display:inline-block;width:18px;height:1.5px;margin-left:8px;vertical-align:middle;background:currentColor;transition:width .2s}
 .svc-card a:hover .svc-card-more::after{width:30px}
 @media (max-width:980px){.svc-card,.svc-card.is-big{grid-column:span 3}.svc-card.is-big strong{font-size:1.3rem}}
@@ -866,8 +865,8 @@ a.lab-tile strong::after{content:"";display:inline-block;width:20px;height:1.5px
 .about-us+.vm{border-top:1px solid var(--line)}
 
 /* About: team as a full-width row of cards */
-.team>div:first-child{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px clamp(40px,6vw,96px);align-items:end}
-.team>div:first-child h2{grid-row:span 2}
+.team>div:first-child{display:grid;grid-template-columns:1fr;gap:12px clamp(40px,6vw,96px);align-items:start}
+.team>div:first-child h2{grid-row:unset}
 .team>div:first-child p{margin:0}
 .team>div:first-child .text-link{justify-self:start}
 .team .people{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(32px,4vw,56px)}
@@ -1460,10 +1459,10 @@ main p:not(.post-meta):not(.note):not(.role):not(.form-privacy):not(.required-no
 /* lab product images: shown whole (square, no cropping) on their own studio grey */
 :root{--studio:#d4cfcc}
 img.product-img{object-fit:contain !important;background:var(--studio)}
-.svc-card-photo:has(.product-img),.svc-card.is-big .svc-card-photo:has(.product-img){aspect-ratio:1/1;background:var(--studio)}
+.svc-card-photo:has(.product-img),.svc-card.is-big .svc-card-photo:has(.product-img){aspect-ratio:4/3;background:var(--studio)}
 .svc-photo:has(.product-img),.feature-photo:has(.product-img),.row-thumb:has(.product-img),.post-thumb:has(.product-img),.post-photo:has(.product-img){background:var(--studio)}
 .svc-photo .product-img{width:100%;height:100%}
-.svc-card-photo.is-product,.svc-card.is-big .svc-card-photo.is-product{aspect-ratio:1/1}
+.svc-card-photo.is-product,.svc-card.is-big .svc-card-photo.is-product{aspect-ratio:4/3}
 
 /* rounded corners on every card and image */
 .feature-card,.svc-card a,.quote-card,.partner-points article,.kf-card,.vm-card,.people article,.svc-about-grid article,.tool-card,.tool-aside,.contact-card,.empty-state,.press-about,.rx-card,.ways-media,.post-thumb,.post-photo,.cat-photo,.map,.callout,.way-thumb{border-radius:20px;overflow:hidden}
@@ -1634,7 +1633,7 @@ main .empty-state h2,main .contact-card h2,main .contact-form h2,main .tool-card
 .pdp-checks li{display:flex;gap:12px;align-items:flex-start;color:var(--ink)}
 .pdp-checks svg{flex:none;margin-top:3px;width:22px;height:22px;padding:4px;border-radius:50%;background:#005cdf;color:#fff}
 .pdp-panel .text-link{margin-top:24px;display:inline-block}
-.pdp-panel-media{aspect-ratio:1;border-radius:20px;overflow:hidden;background:var(--studio)}
+.pdp-panel-media{aspect-ratio:4/3;max-height:440px;border-radius:20px;overflow:hidden;background:var(--studio)}
 .pdp-panel-media img{width:100%;height:100%;object-fit:cover}
 .pdp-panel-media.is-gold{background:#f1ebe0}
 .pdp-panel-media.is-gold img{object-fit:contain;padding:12%}
@@ -1661,8 +1660,8 @@ main .empty-state h2,main .contact-card h2,main .contact-form h2,main .tool-card
 .pdp-quote{background:#fff}
 .pdp-quote-card{max-width:52rem;margin:clamp(28px,3vw,44px) auto 0}
 
-.pdp-start-grid{display:grid;grid-template-columns:minmax(0,1.3fr) auto;gap:32px clamp(40px,6vw,96px);align-items:center;padding:clamp(28px,4vw,56px);background:#fff;border:1px solid var(--line);border-radius:28px}
-.pdp-start-grid p{margin-top:14px;max-width:34em}
+.pdp-start-grid{display:grid;grid-template-columns:minmax(0,1.3fr) auto;gap:32px clamp(40px,6vw,96px);align-items:center;padding:clamp(28px,4vw,56px);background:#005cdf;color:#fff;border:1px solid #005cdf;border-radius:28px}
+.pdp-start-grid p{margin-top:14px;max-width:34em;color:#cce0ff}
 .pdp-start-grid .actions{margin:0}
 
 @media (max-width:980px){
@@ -1676,8 +1675,9 @@ main .empty-state h2,main .contact-card h2,main .contact-form h2,main .tool-card
 .pdp-materials .center-head p,.pdp-quality .center-head p{color:var(--body)}
 .home main .pdp-step h3,.home main .pdp-panel h3{font-weight:700}
 .pdp-step-media.is-product img{object-fit:cover}
-.pdp-start-grid .button-light{background:#fff;border-color:#005cdf;color:#005cdf}
-.pdp-start-grid .button-light:hover{background:#005cdf;color:#fff}
+.pdp-start-grid .button-light{background:#fff;border-color:#fff;color:#005cdf}
+.pdp-start-grid .button-light:hover{background:#e6f0ff;border-color:#e6f0ff;color:#004abf}
+.pdp-start-grid h2{color:#fff !important}
 /* product pages: tab bar adapts to 3 or 4 options, gold hero, "you are here" tag */
 .pdp-tabs[data-count="3"] .pdp-tablist{grid-template-columns:repeat(3,minmax(0,1fr))}
 .pdp-hero-media.is-gold{background:#f1ebe0}

@@ -17,9 +17,6 @@ const faqLd = {
     { "@type": "Question", name: "How long do custom abutments take?", acceptedAnswer: { "@type": "Answer", text: "Our RX form lists implant crowns and abutments at 15 in-lab working days for 1 to 3 units, and implant cases at 3 to 4 weeks in total. Call the lab about 4 or more units." } },
     { "@type": "Question", name: "Can you make the crown and the abutment together?", acceptedAnswer: { "@type": "Answer", text: "Yes. See our implant crowns page, and note on the RX form whether you want them cemented in the lab or supplied as two pieces." } },
     { "@type": "Question", name: "Can you make a placement jig?", acceptedAnswer: { "@type": "Answer", text: "Yes. Tick “Placement Jig” on the RX form, and we’ll make a jig to help you seat the abutment in the position it was designed for." } },
-    { "@type": "Question", name: "What does the warranty cover for abutments?", acceptedAnswer: { "@type": "Answer", text: "Implant abutments are covered according to the guidelines set by the implant company, as stated on our RX form. Restrictions apply, and the abutment must be returned to us." } },
-    { "@type": "Question", name: "What do digital implant cases need?", acceptedAnswer: { "@type": "Answer", text: "A full arch gingival scan taken without the healing abutment, as our RX form notes, plus the implant system and size. Tick “Digital imp scan” and contact the lab to confirm how to send the files." } },
-    { "@type": "Question", name: "Can the lab supply the implant parts?", acceptedAnswer: { "@type": "Answer", text: "Yes. Tick “Lab to provide parts” on the RX form and write in the implant system and size." } },
   ],
 };
 
@@ -68,9 +65,6 @@ export default function Page() {
             <details><summary>How long do custom abutments take?</summary><div className="faq-answer"><p>Our RX form lists implant crowns and abutments at 15 in-lab working days for 1 to 3 units, and implant cases at 3 to 4 weeks in total. Call the lab about 4 or more units.</p></div></details>
             <details><summary>Can you make the crown and the abutment together?</summary><div className="faq-answer"><p>Yes. See our implant crowns page, and note on the RX form whether you want them cemented in the lab or supplied as two pieces.</p></div></details>
             <details><summary>Can you make a placement jig?</summary><div className="faq-answer"><p>Yes. Tick “Placement Jig” on the RX form, and we’ll make a jig to help you seat the abutment in the position it was designed for.</p></div></details>
-            <details><summary>What does the warranty cover for abutments?</summary><div className="faq-answer"><p>Implant abutments are covered according to the guidelines set by the implant company, as stated on our RX form. Restrictions apply, and the abutment must be returned to us.</p></div></details>
-            <details><summary>What do digital implant cases need?</summary><div className="faq-answer"><p>A full arch gingival scan taken without the healing abutment, as our RX form notes, plus the implant system and size. Tick “Digital imp scan” and contact the lab to confirm how to send the files.</p></div></details>
-            <details><summary>Can the lab supply the implant parts?</summary><div className="faq-answer"><p>Yes. Tick “Lab to provide parts” on the RX form and write in the implant system and size.</p></div></details>
           </div></div></section>
         <section className="visit"><div className="wrap visit-grid">
           <div className="visit-lead"><h2>Case-specific questions?</h2><p>Call <a href="tel:+18007005227">1-800-700-LABS</a> or email the team before you send patient records, and we’ll confirm the best way to get the case to us.</p><a className="button button-light" href="/contact">Contact the lab</a></div></div></section>

@@ -81,7 +81,6 @@ export default function ContactPage() {
             <details><summary>How do I book a custom shade appointment?</summary><div className="faq-answer"><p>Call <a href="tel:+14155589717">(415) 558-9717</a>. Visits take approximately 15 to 20 minutes.</p></div></details>
             <details><summary>When is the lab open?</summary><div className="faq-answer"><p>Monday through Friday, 9 AM to 5 PM, at 244 9th Street, San Francisco, CA 94103.</p></div></details>
             <details><summary>Does this website send or save my message?</summary><div className="faq-answer"><p>No. The form prepares a draft in your email application for you to review and send. This website does not store submissions.</p></div></details>
-            <details><summary>Can I attach patient records or clinical files?</summary><div className="faq-answer"><p>Please do not send patient information through this form. Contact the lab first to confirm the current secure submission method.</p></div></details>
           </div></div></section>
       </main>
       <Footer />

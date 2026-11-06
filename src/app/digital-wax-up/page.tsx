@@ -17,8 +17,6 @@ const faqLd = {
     { "@type": "Question", name: "When should I order a dental diagnostic wax-up?", acceptedAnswer: { "@type": "Answer", text: "Order one when you want to plan an esthetic case, agree the result with your patient before any prep, or guide the provisionals." } },
     { "@type": "Question", name: "What records are most useful?", acceptedAnswer: { "@type": "Answer", text: "A full arch scan or models of both arches, the bite, and photos of the smile. For anterior cases, our RX form also asks for a pre-op or study model." } },
     { "@type": "Question", name: "Can I send a digital scan?", acceptedAnswer: { "@type": "Answer", text: "Yes. Tick “Digital imp scan” on the RX form. We accept scans from iTero, Trios and similar systems. Contact the lab to confirm how to send the files." } },
-    { "@type": "Question", name: "Can I get a printed model of the wax-up?", acceptedAnswer: { "@type": "Answer", text: "Ask the lab for one when you send the case. Printed models can show a planned result, as our model printing page explains." } },
-    { "@type": "Question", name: "Can the wax-up guide the temporaries?", acceptedAnswer: { "@type": "Answer", text: "Yes. A wax-up is a common basis for provisionals. See our temporary crowns and abutments page for more." } },
   ],
 };
 
@@ -67,8 +65,6 @@ export default function Page() {
             <details><summary>When should I order a dental diagnostic wax-up?</summary><div className="faq-answer"><p>Order one when you want to plan an esthetic case, agree the result with your patient before any prep, or guide the provisionals.</p></div></details>
             <details><summary>What records are most useful?</summary><div className="faq-answer"><p>A full arch scan or models of both arches, the bite, and photos of the smile. For anterior cases, our RX form also asks for a pre-op or study model.</p></div></details>
             <details><summary>Can I send a digital scan?</summary><div className="faq-answer"><p>Yes. Tick “Digital imp scan” on the RX form. We accept scans from iTero, Trios and similar systems. Contact the lab to confirm how to send the files.</p></div></details>
-            <details><summary>Can I get a printed model of the wax-up?</summary><div className="faq-answer"><p>Ask the lab for one when you send the case. Printed models can show a planned result, as our model printing page explains.</p></div></details>
-            <details><summary>Can the wax-up guide the temporaries?</summary><div className="faq-answer"><p>Yes. A wax-up is a common basis for provisionals. See our temporary crowns and abutments page for more.</p></div></details>
           </div></div></section>
         <section className="visit"><div className="wrap visit-grid">
           <div className="visit-lead"><h2>Case-specific questions?</h2><p>Call <a href="tel:+18007005227">1-800-700-LABS</a> or email the team before you send patient records, and we’ll confirm the best way to get the case to us.</p><a className="button button-light" href="/contact">Contact the lab</a></div></div></section>

@@ -17,7 +17,6 @@ const faqLd = {
     { "@type": "Question", name: "How do I send scan files?", acceptedAnswer: { "@type": "Answer", text: "Contact the lab to confirm the current way to send them, and we’ll walk you through it." } },
     { "@type": "Question", name: "Do printed models come with removable dies?", acceptedAnswer: { "@type": "Answer", text: "Yes, where the case needs them. Note it on the RX form when you order the model." } },
     { "@type": "Question", name: "Can a model be printed from a digital wax-up?", acceptedAnswer: { "@type": "Answer", text: "Ask the lab when you order the digital wax-up. Digital dental model printing is a common way to show a planned result." } },
-    { "@type": "Question", name: "How long does model printing take?", acceptedAnswer: { "@type": "Answer", text: "Turnaround isn’t published for this service. Contact the lab to confirm timing for your case." } },
   ],
 };
 
@@ -66,7 +65,6 @@ export default function Page() {
             <details><summary>How do I send scan files?</summary><div className="faq-answer"><p>Contact the lab to confirm the current way to send them, and we’ll walk you through it.</p></div></details>
             <details><summary>Do printed models come with removable dies?</summary><div className="faq-answer"><p>Yes, where the case needs them. Note it on the RX form when you order the model.</p></div></details>
             <details><summary>Can a model be printed from a digital wax-up?</summary><div className="faq-answer"><p>Ask the lab when you order the digital wax-up. Digital dental model printing is a common way to show a planned result.</p></div></details>
-            <details><summary>How long does model printing take?</summary><div className="faq-answer"><p>Turnaround isn’t published for this service. Contact the lab to confirm timing for your case.</p></div></details>
           </div></div></section>
         <section className="visit"><div className="wrap visit-grid">
           <div className="visit-lead"><h2>Case-specific questions?</h2><p>Call <a href="tel:+18007005227">1-800-700-LABS</a> or email the team before you send patient records, and we’ll confirm the best way to get the case to us.</p><a className="button button-light" href="/contact">Contact the lab</a></div></div></section>

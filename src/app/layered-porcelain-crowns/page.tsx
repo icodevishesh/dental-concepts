@@ -17,8 +17,6 @@ const faqLd = {
     { "@type": "Question", name: "How long do layered porcelain crowns take?", acceptedAnswer: { "@type": "Answer", text: "Our RX form lists layered zirconia at 10 in-lab working days for 1 to 3 units and for 4 or more. An esthetic crown with a custom shade appointment takes 15 days, as does a single central when the patient attends the shade visit promptly." } },
     { "@type": "Question", name: "Can my patient visit the lab for shade matching?", acceptedAnswer: { "@type": "Answer", text: "Yes. Tick “Custom Shade” on the RX form and call (415) 558-9717 to book an appointment at 244 9th Street. Visits take about 15 to 20 minutes." } },
     { "@type": "Question", name: "Is anything extra needed for anterior cases?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our RX form asks for a pre-op or study model with every anterior case, along with the shade and stump shade." } },
-    { "@type": "Question", name: "Can I send a digital scan?", acceptedAnswer: { "@type": "Answer", text: "Yes. Tick “Digital imp scan” on the RX form. We accept scans from iTero, Trios and similar systems. Contact the lab to confirm how to send the files." } },
-    { "@type": "Question", name: "Can I rush a layered porcelain crown?", acceptedAnswer: { "@type": "Answer", text: "Rush service is available on most products for up to 4 units, when you pre-schedule it on (415) 558-9716. Cases needed within 7 business days carry a $100 per unit surcharge." } },
   ],
 };
 
@@ -67,8 +65,6 @@ export default function Page() {
             <details><summary>How long do layered porcelain crowns take?</summary><div className="faq-answer"><p>Our RX form lists layered zirconia at 10 in-lab working days for 1 to 3 units and for 4 or more. An esthetic crown with a custom shade appointment takes 15 days, as does a single central when the patient attends the shade visit promptly.</p></div></details>
             <details><summary>Can my patient visit the lab for shade matching?</summary><div className="faq-answer"><p>Yes. Tick “Custom Shade” on the RX form and call <a href="tel:+14155589717">(415) 558-9717</a> to book an appointment at 244 9th Street. Visits take about 15 to 20 minutes.</p></div></details>
             <details><summary>Is anything extra needed for anterior cases?</summary><div className="faq-answer"><p>Yes. Our RX form asks for a pre-op or study model with every anterior case, along with the shade and stump shade.</p></div></details>
-            <details><summary>Can I send a digital scan?</summary><div className="faq-answer"><p>Yes. Tick “Digital imp scan” on the RX form. We accept scans from iTero, Trios and similar systems. Contact the lab to confirm how to send the files.</p></div></details>
-            <details><summary>Can I rush a layered porcelain crown?</summary><div className="faq-answer"><p>Rush service is available on most products for up to 4 units, when you pre-schedule it on <a href="tel:+14155589716">(415) 558-9716</a>. Cases needed within 7 business days carry a $100 per unit surcharge.</p></div></details>
           </div></div></section>
         <section className="visit"><div className="wrap visit-grid">
           <div className="visit-lead"><h2>Case-specific questions?</h2><p>Call <a href="tel:+18007005227">1-800-700-LABS</a> or email the team before you send patient records, and we’ll confirm the best way to get the case to us.</p><a className="button button-light" href="/contact">Contact the lab</a></div></div></section>

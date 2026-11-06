@@ -17,8 +17,6 @@ const faqLd = {
     { "@type": "Question", name: "What if my patient can’t visit?", acceptedAnswer: { "@type": "Answer", text: "Email shade photographs to photos@dentalconceptssf.com and tick the photos box on the RX form. Include a shade tab in the shot, in natural light." } },
     { "@type": "Question", name: "Where is the lab, and when is it open?", acceptedAnswer: { "@type": "Answer", text: "244 9th Street, San Francisco, CA 94103. We’re open Monday to Friday, 9 AM to 5 PM." } },
     { "@type": "Question", name: "Does a custom shade change the turnaround?", acceptedAnswer: { "@type": "Answer", text: "Our RX form lists an esthetic crown with a custom shade at 15 in-lab working days, for 1 to 3 units and for 4 or more. A single central also takes 15 days when the patient attends the shade visit promptly." } },
-    { "@type": "Question", name: "Which cases benefit most from dental crown shade matching?", acceptedAnswer: { "@type": "Answer", text: "Anterior crowns, veneers and single restorations, where the new tooth sits beside natural teeth and small color differences show." } },
-    { "@type": "Question", name: "Is there a guide to shade appointments?", acceptedAnswer: { "@type": "Answer", text: "Yes. Read “Custom shade appointments: what to expect” on our articles page." } },
   ],
 };
 
@@ -67,8 +65,6 @@ export default function Page() {
             <details><summary>What if my patient can’t visit?</summary><div className="faq-answer"><p>Email shade photographs to <a href="mailto:photos@dentalconceptssf.com">photos@dentalconceptssf.com</a> and tick the photos box on the RX form. Include a shade tab in the shot, in natural light.</p></div></details>
             <details><summary>Where is the lab, and when is it open?</summary><div className="faq-answer"><p>244 9th Street, San Francisco, CA 94103. We’re open Monday to Friday, 9 AM to 5 PM.</p></div></details>
             <details><summary>Does a custom shade change the turnaround?</summary><div className="faq-answer"><p>Our RX form lists an esthetic crown with a custom shade at 15 in-lab working days, for 1 to 3 units and for 4 or more. A single central also takes 15 days when the patient attends the shade visit promptly.</p></div></details>
-            <details><summary>Which cases benefit most from dental crown shade matching?</summary><div className="faq-answer"><p>Anterior crowns, veneers and single restorations, where the new tooth sits beside natural teeth and small color differences show.</p></div></details>
-            <details><summary>Is there a guide to shade appointments?</summary><div className="faq-answer"><p>Yes. Read “Custom shade appointments: what to expect” on our articles page.</p></div></details>
           </div></div></section>
         <section className="visit"><div className="wrap visit-grid">
           <div className="visit-lead"><h2>Case-specific questions?</h2><p>Call <a href="tel:+18007005227">1-800-700-LABS</a> or email the team before you send patient records, and we’ll confirm the best way to get the case to us.</p><a className="button button-light" href="/contact">Contact the lab</a></div></div></section>

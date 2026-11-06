@@ -17,7 +17,6 @@ const faqLd = {
     { "@type": "Question", name: "How long do lab services take?", acceptedAnswer: { "@type": "Answer", text: "Our RX form lists restorations at 10 to 15 in-lab working days and implant cases at 3 to 4 weeks. Full contour zirconia is quickest, at 7 days for one to three units. Weekends, holidays and shipping time aren’t counted. See the turnaround table." } },
     { "@type": "Question", name: "Is rush service available?", acceptedAnswer: { "@type": "Answer", text: "Yes, on most products, for up to 4 units. Pre-schedule it at (415) 558-9716. Surcharges start at $100 per unit for cases needed within 7 business days." } },
     { "@type": "Question", name: "Which digital scans do you accept?", acceptedAnswer: { "@type": "Answer", text: "We accept digital impressions from iTero, Trios and similar scanners. Tick “Digital imp scan” on the RX form, and contact the lab to confirm how to send the files." } },
-    { "@type": "Question", name: "Where can I get the RX form?", acceptedAnswer: { "@type": "Answer", text: "Download the current two-page RX form from the RX form page or the Quick links menu at the top of any page." } },
   ],
 };
 
@@ -79,7 +78,6 @@ export default function ServicesPage() {
             <details><summary>How long do lab services take?</summary><div className="faq-answer"><p>Our RX form lists restorations at 10 to 15 in-lab working days and implant cases at 3 to 4 weeks. Full contour zirconia is quickest, at 7 days for one to three units. Weekends, holidays and shipping time aren’t counted. See the <a href="#turnaround">turnaround table</a>.</p></div></details>
             <details><summary>Is rush service available?</summary><div className="faq-answer"><p>Yes, on most products, for up to 4 units. Pre-schedule it at <a href="tel:+14155589716">(415) 558-9716</a>. Surcharges start at $100 per unit for cases needed within 7 business days.</p></div></details>
             <details><summary>Which digital scans do you accept?</summary><div className="faq-answer"><p>We accept digital impressions from iTero, Trios and similar scanners. Tick “Digital imp scan” on the RX form, and contact the lab to confirm how to send the files.</p></div></details>
-            <details><summary>Where can I get the RX form?</summary><div className="faq-answer"><p>Download the current two-page RX form from the <a href="/rx">RX form page</a> or the Quick links menu at the top of any page.</p></div></details>
           </div></div></section>
         <section className="visit"><div className="wrap visit-grid">
           <div className="visit-lead"><h2>Every case has its own details</h2><p>For materials, prescription questions and anything case-specific, talk to the lab team directly.</p><a className="button button-light" href="/contact">Contact the lab</a></div></div></section>
