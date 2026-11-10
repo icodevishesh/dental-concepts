@@ -377,7 +377,7 @@
         var s = 1 - Math.min(a, 3) * 0.13;
         c.style.transform = 'translate3d(' + (d * gap).toFixed(1) + 'px,' + (Math.min(a, 4) * Math.min(a, 4) * 9).toFixed(1) + 'px,0) rotate(' + (d * 6).toFixed(2) + 'deg) scale(' + s.toFixed(3) + ')';
         c.style.opacity = a > 3.2 ? 0 : (1 - Math.min(a, 3) * 0.2).toFixed(3);
-        c.style.zIndex = 100 - Math.round(a * 10);
+        c.style.zIndex = Math.max(1, 25 - Math.round(a * 10));
         c.classList.toggle('is-far', a > 2.4);
         c.classList.toggle('is-center', a < 0.5);
       });

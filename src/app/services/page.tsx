@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Dental Lab Services in San Francisco, USA | Dental Concepts",
+  title: "Dental Lab Services in California, USA | Dental Concepts",
   description:
     "Explore dental crowns and bridges, implant restorations, full-arch prostheses, digital wax-ups, and custom shades. Find the right dental laboratory service for your case.",
 };
@@ -16,7 +16,7 @@ const faqLd = {
     { "@type": "Question", name: "Do you make crowns and bridges?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our work runs from a single crown to a full arch bridge. Call the lab to talk through material options for multi-unit cases before you send the RX." } },
     { "@type": "Question", name: "How long do lab services take?", acceptedAnswer: { "@type": "Answer", text: "Our RX form lists restorations at 10 to 15 in-lab working days and implant cases at 3 to 4 weeks. Full contour zirconia is quickest, at 7 days for one to three units. Weekends, holidays and shipping time aren’t counted. See the turnaround table." } },
     { "@type": "Question", name: "Is rush service available?", acceptedAnswer: { "@type": "Answer", text: "Yes, on most products, for up to 4 units. Pre-schedule it at (415) 558-9716. Surcharges start at $100 per unit for cases needed within 7 business days." } },
-    { "@type": "Question", name: "Which digital scans do you accept?", acceptedAnswer: { "@type": "Answer", text: "We accept digital impressions from iTero, Trios and similar scanners. Tick “Digital imp scan” on the RX form, and contact the lab to confirm how to send the files." } },
+    { "@type": "Question", name: "Which digital scans do you accept?", acceptedAnswer: { "@type": "Answer", text: "We accept digital impressions from iTero, Trios and similar scanners. Check “Digital imp scan” on the RX form, and contact the lab to confirm how to send the files." } },
   ],
 };
 
@@ -27,11 +27,11 @@ export default function ServicesPage() {
       <Header />
       <main id="main">
         <section className="page-head"><div className="wrap"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Lab services</li></ol></nav>
-          <div className="page-head-grid"><h1>Dental lab services for dentists</h1><div><p className="lead">Crowns, bridges, veneers, implant restorations and digital planning, made at our San Francisco dental laboratory by technicians you can call.</p>
+          <div className="page-head-grid"><h1>Dental lab services for dentists</h1><div><p className="lead">Crowns, bridges, veneers, implant restorations and digital planning, made at our California dental laboratory by technicians you can call.</p>
             <div className="actions"><a className="button" href="/contact">Discuss a case</a><a className="text-link" href="/rx">Get the RX form</a></div></div></div>
           <nav className="jump" aria-label="Service categories"><a href="#crowns">Crowns &amp; veneers</a><a href="#implants">Implants &amp; <span className="nb">All-on-X</span></a><a href="#other">Digital &amp; custom</a></nav>
         </div></section>
-        <section className="section" aria-labelledby="needs-heading" style={{ paddingBottom: 0 }}><div className="wrap"><div className="section-head"><h2 id="needs-heading">Start with what your patient needs</h2><p>Not sure which restoration to prescribe? Pick the situation below, or <a className="text-link" href="/upload-case">upload a case</a> to see turnaround and what to send.</p></div><div className="needs" style={{ marginTop: 28 }}><a className="need" href="#crowns"><small>Single teeth</small><strong>Restore a tooth with a crown, veneer, inlay or onlay</strong><span>Crowns &amp; veneers</span></a><a className="need" href="#implants"><small>Missing teeth</small><strong>Replace one tooth or a full arch on implants</strong><span>Implants &amp; All-on-X</span></a><a className="need" href="/digital-wax-up"><small>Planning</small><strong>Preview an esthetic case before you prep</strong><span>Digital wax-up</span></a><a className="need" href="/custom-shades"><small>Shade</small><strong>Match a shade that a tab number can’t capture</strong><span>Custom shades</span></a></div></div></section>
+        <section className="section" aria-labelledby="needs-heading" style={{ paddingBottom: 0 }}><div className="wrap"><div className="section-head"><h2 id="needs-heading">Start with what your patient needs</h2><p>Not sure which restoration to prescribe? Pick the situation below, or <a className="text-link" href="/upload-case">plan a case</a> to see turnaround and what to send.</p></div><div className="needs" style={{ marginTop: 28 }}><a className="need" href="#crowns"><small>Single teeth</small><strong>Restore a tooth with a crown, veneer, inlay or onlay</strong><span>Crowns &amp; veneers</span></a><a className="need" href="#implants"><small>Missing teeth</small><strong>Replace one tooth or a full arch on implants</strong><span>Implants &amp; All-on-X</span></a><a className="need" href="/digital-wax-up"><small>Planning</small><strong>Preview an esthetic case before you prep</strong><span>Digital wax-up</span></a><a className="need" href="/custom-shades"><small>Shade</small><strong>Match a shade that a tab number can’t capture</strong><span>Custom shades</span></a></div></div></section>
         <div className="wrap svc-cats">
           <section className="svc-cat" id="crowns"><div className="section-head"><span className="eyebrow">Restorations</span><h2>Dental crowns, bridges and veneers</h2><p>Four crown materials on one RX form, for everything from a single veneer to a full arch bridge.</p></div><ul className="svc-grid">
             <li className="svc-card is-big"><a href="/full-contour-zirconia-crowns"><span className="svc-card-photo"><img className="product-img" src="/assets/products/full-contour-zirconia-crowns.webp" width={1254} height={1254} alt="" loading="lazy" decoding="async" /><span className="svc-card-arrow"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></span></span><span className="svc-card-text"><strong>Full contour zirconia crowns</strong><span className="svc-card-desc">Milled from one piece of zirconia. One to three units in 7 in-lab days.</span><span className="svc-card-more">Explore</span></span></a></li>
@@ -62,10 +62,10 @@ export default function ServicesPage() {
           <tr><th scope="row">Esthetic crown with custom shade</th><td data-label="1 to 3 units">15 days</td><td data-label="4+ units">15 days</td><td data-label="8+ units" className="is-call">Call the lab</td></tr>
         </tbody></table></div></div></section>
         <section className="section start tinted"><div className="wrap start-grid">
-          <div className="start-copy"><span className="eyebrow">How it works</span><h2>Three steps to your first case</h2><p>Pick the service, fill in the RX form and confirm how to send it.</p>
+          <div className="start-copy"><span className="eyebrow">How it works</span><h2>Three steps to your first case</h2><p>Pick the service, fill out the RX form and confirm how to send it.</p>
             <ol className="steps">
               <li><h3>Choose the restoration</h3><p>Browse the service pages and pick the restoration or lab service you want to discuss. Not sure? Call us and talk it through with a technician.</p></li>
-              <li><h3>Prepare the RX</h3><p>Download the two-page RX form and fill in the case details, shade and anything you’re enclosing, such as models, the bite or photos.</p></li>
+              <li><h3>Prepare the RX</h3><p>Download the two-page RX form and complete the case details, shade and anything you’re enclosing, such as models, the bite or photos.</p></li>
               <li><h3>Confirm how to send it</h3><p>Contact the lab to confirm the best way to send impressions or scan files before you share patient records.</p></li>
             </ol></div>
           <a className="rx-card" href="/assets/digital-rx.pdf" download><img src="/assets/rx-form-preview.webp" width={900} height={693} alt="First page of the Dental Concepts RX form" loading="lazy" /><span><strong>Download the RX form</strong><small>PDF, two pages</small></span></a>
@@ -77,7 +77,7 @@ export default function ServicesPage() {
             <details><summary>Do you make crowns and bridges?</summary><div className="faq-answer"><p>Yes. Our work runs from a single crown to a full arch bridge. Call the lab to talk through material options for multi-unit cases before you send the RX.</p></div></details>
             <details><summary>How long do lab services take?</summary><div className="faq-answer"><p>Our RX form lists restorations at 10 to 15 in-lab working days and implant cases at 3 to 4 weeks. Full contour zirconia is quickest, at 7 days for one to three units. Weekends, holidays and shipping time aren’t counted. See the <a href="#turnaround">turnaround table</a>.</p></div></details>
             <details><summary>Is rush service available?</summary><div className="faq-answer"><p>Yes, on most products, for up to 4 units. Pre-schedule it at <a href="tel:+14155589716">(415) 558-9716</a>. Surcharges start at $100 per unit for cases needed within 7 business days.</p></div></details>
-            <details><summary>Which digital scans do you accept?</summary><div className="faq-answer"><p>We accept digital impressions from iTero, Trios and similar scanners. Tick “Digital imp scan” on the RX form, and contact the lab to confirm how to send the files.</p></div></details>
+            <details><summary>Which digital scans do you accept?</summary><div className="faq-answer"><p>We accept digital impressions from iTero, Trios and similar scanners. Check “Digital imp scan” on the RX form, and contact the lab to confirm how to send the files.</p></div></details>
           </div></div></section>
         <section className="visit"><div className="wrap visit-grid">
           <div className="visit-lead"><h2>Every case has its own details</h2><p>For materials, prescription questions and anything case-specific, talk to the lab team directly.</p><a className="button button-light" href="/contact">Contact the lab</a></div></div></section>

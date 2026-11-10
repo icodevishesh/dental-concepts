@@ -3,9 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Our Dental Lab Story & History | Dental Concepts",
+  title: "Our Dental Lab Story & History | Dental Concepts SF",
   description:
-    "Meet Dental Concepts and discover our history, from zirconia milling roots to restorative craftsmanship and digital workflows in San Francisco since 2006.",
+    "Meet Dental Concepts SF and discover our history, from zirconia milling roots to restorative craftsmanship and digital workflows in California since 2006.",
 };
 
 const faqLd = {
@@ -16,7 +16,8 @@ const faqLd = {
     { "@type": "Question", name: "Who runs Dental Concepts?", acceptedAnswer: { "@type": "Answer", text: "German-certified dental technician Silke Finis leads the lab’s technical work, and entrepreneur Barry Johal leads the business. A team of experienced, certified dental technicians works alongside them." } },
     { "@type": "Question", name: "Are your restorations made in the USA?", acceptedAnswer: { "@type": "Answer", text: "Yes. We design, make and finish restorations at our dental laboratory on 9th Street in San Francisco. Cases aren’t sent overseas." } },
     { "@type": "Question", name: "What technology does the lab use?", acceptedAnswer: { "@type": "Answer", text: "We design on 3Shape, mill on Roland equipment and accept digital impressions from iTero, Trios and similar scanners. A technician finishes every case by hand." } },
-    { "@type": "Question", name: "Where is the lab, and when is it open?", acceptedAnswer: { "@type": "Answer", text: "244 9th Street, San Francisco, CA 94103. We’re open Monday to Friday, 9 AM to 5 PM." } },
+    { "@type": "Question", name: "Where is the lab, and when is it open?", acceptedAnswer: { "@type": "Answer", text: "244 9th Street, San Francisco, CA 94103. We’re open Monday through Friday, 9 AM to 5 PM." } },
+    { "@type": "Question", name: "Can I schedule a custom shade visit?", acceptedAnswer: { "@type": "Answer", text: "Yes. Call (415) 558-9717 to book. Visits take about 15 to 20 minutes." } },
   ],
 };
 
@@ -37,7 +38,7 @@ export default function AboutPage() {
             <blockquote className="about-pull"><p>Every crown we make carries a quiet goal: to give someone back the confidence to smile without thinking twice.</p></blockquote></div>
           <div className="about-us-copy">
             <p>Dental Concepts began with zirconia. In 2006, partners Barry Johal and Silke Finis founded Prestige Milling Inc., one of the first Lava Milling Centers on the West Coast, making zirconia crowns for other dental labs.</p>
-            <p>As digital technology moved fast and dentists asked for more esthetic restorations, that milling work grew into Dental Concepts, a full restorative dental laboratory in San Francisco.</p>
+            <p>As digital technology moved fast and dentists asked for more esthetic restorations, that milling work grew into Dental Concepts, a full restorative dental laboratory in California.</p>
             <p>Today, German-certified dental technician Silke Finis leads our technical work, and entrepreneur Barry Johal leads the business. Together they’ve built a place where technicians enjoy the work, and you can see it in what leaves the bench.</p>
             <p>The tools keep getting better, and we keep up with them. The goal has stayed the same since day one: give every patient the best restoration we can make.</p>
           </div></div></section>
@@ -47,7 +48,7 @@ export default function AboutPage() {
         <section className="section vm" aria-labelledby="vm-heading"><div className="wrap">
           <div className="center-head"><span className="eyebrow">What drives us</span><h2 id="vm-heading">Our vision and mission</h2></div>
           <div className="vm-grid">
-            <article className="vm-card is-vision"><h3>Our vision</h3><p>To be the first lab San Francisco dentists call when a case needs digital precision and a careful human eye.</p></article>
+            <article className="vm-card is-vision"><h3>Our vision</h3><p>To be the first lab California dentists call when a case needs digital precision and a careful human eye.</p></article>
             <article className="vm-card"><h3>Our mission</h3><p>To make every restoration with intention: digital tools where they help, hand finishing where it shows, and a direct line to every practice we serve.</p></article>
           </div></div></section>
         <section className="section kf" aria-labelledby="kf-heading"><div className="wrap">
@@ -65,7 +66,7 @@ export default function AboutPage() {
           <ol className="timeline">
             <li><span className="when">2006</span><div><h3>Among the West Coast’s first Lava Milling Centers</h3><p>Barry Johal and Silke Finis found Prestige Milling Inc. and mill zirconia crowns for dental laboratories, just as digital milling starts to reshape restorative dentistry.</p></div></li>
             <li><span className="when">Next</span><div><h3>Dental Concepts is born</h3><p>As demand for esthetic restorations grows, the partners turn their milling work into a full restorative lab.</p></div></li>
-            <li><span className="when">Today</span><div><h3>A restorative lab in San Francisco</h3><p>Dental Concepts makes esthetic and functional restorations, implant prostheses, digital wax-ups and printed models, with custom shade appointments at 244 9th Street.</p></div></li>
+            <li><span className="when">Today</span><div><h3>A full restorative dental lab in California</h3><p>Dental Concepts makes esthetic and functional restorations, implant prostheses, digital wax-ups and printed models, with custom shade appointments at 244 9th Street.</p></div></li>
           </ol></div></section>
 
         <section className="section tinted"><div className="wrap team">
@@ -84,10 +85,11 @@ export default function AboutPage() {
             <details><summary>Who runs Dental Concepts?</summary><div className="faq-answer"><p>German-certified dental technician Silke Finis leads the lab’s technical work, and entrepreneur Barry Johal leads the business. A team of experienced, certified dental technicians works alongside them.</p></div></details>
             <details><summary>Are your restorations made in the USA?</summary><div className="faq-answer"><p>Yes. We design, make and finish restorations at our dental laboratory on 9th Street in San Francisco. Cases aren’t sent overseas.</p></div></details>
             <details><summary>What technology does the lab use?</summary><div className="faq-answer"><p>We design on 3Shape, mill on Roland equipment and accept digital impressions from iTero, Trios and similar scanners. A technician finishes every case by hand.</p></div></details>
-            <details><summary>Where is the lab, and when is it open?</summary><div className="faq-answer"><p>244 9th Street, San Francisco, CA 94103. We’re open Monday to Friday, 9 AM to 5 PM.</p></div></details>
+            <details><summary>Where is the lab, and when is it open?</summary><div className="faq-answer"><p>244 9th Street, San Francisco, CA 94103. We’re open Monday through Friday, 9 AM to 5 PM.</p></div></details>
+            <details><summary>Can I schedule a custom shade visit?</summary><div className="faq-answer"><p>Yes. Call <a href="tel:+14155589717">(415) 558-9717</a> to book. Visits take about 15 to 20 minutes.</p></div></details>
           </div></div></section>
         <section className="visit"><div className="wrap visit-grid">
-          <div className="visit-lead"><h2>Come meet the people behind your restorations</h2><p>Visit us at 244 9th Street in San Francisco, or contact the team about lab services and shade appointments.</p><a className="button button-light" href="/contact">Contact the lab</a></div></div></section>
+          <div className="visit-lead"><h2>Come meet the people behind your restorations</h2><p>Visit us at 244 9th Street in San Francisco, California, or contact the team about lab services and shade appointments.</p><a className="button button-light" href="/contact">Contact the lab</a></div></div></section>
       </main>
       <Footer />
     </>

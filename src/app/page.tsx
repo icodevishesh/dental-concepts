@@ -5,24 +5,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllTestimonials } from "@/lib/testimonials";
 import { getLatestGalleryImages } from "@/lib/gallery";
+import { getAllBlogs } from "@/lib/blog";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Dental Laboratory in San Francisco, USA | Dental Concepts",
+  title: "Dental Laboratory in California, USA | Dental Concepts SF",
   description:
-    "Partner with a San Francisco dental lab for ceramic crowns, implant restorations, digital planning, and custom shade matching. Connect with our dental laboratory team.",
+    "Partner with a California dental lab for ceramic crowns, implant restorations, digital planning, and custom shade matching. Connect with our digital dental laboratory team.",
 };
 
 const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
-    { "@type": "Question", name: "What does Dental Concepts make?", acceptedAnswer: { "@type": "Answer", text: "Dental Concepts is a dental lab in San Francisco that makes full contour zirconia crowns, layered porcelain crowns, lithium disilicate (E.max) veneers, inlays, onlays and crowns, and gold crowns. We also make full arch and All-on-X prostheses, implant crowns, custom abutments, temporaries, digital wax-ups, printed models and custom shades. Browse lab services." } },
-    { "@type": "Question", name: "Where is your dental laboratory?", acceptedAnswer: { "@type": "Answer", text: "Our dental laboratory is at 244 9th Street, San Francisco, CA 94103, USA. We’re open Monday to Friday, 9 AM to 5 PM. Call 1-800-700-LABS (5227) to reach the team." } },
+    { "@type": "Question", name: "What does Dental Concepts SF make?", acceptedAnswer: { "@type": "Answer", text: "Dental Concepts SF is a dental lab in California, based in San Francisco, that makes full contour zirconia crowns, layered porcelain crowns, lithium disilicate (E.max) veneers, inlays, onlays and crowns, and gold crowns. We also make full arch and All-on-X prostheses, implant crowns, custom abutments, temporaries, digital wax-ups, printed models and custom shades." } },
+    { "@type": "Question", name: "Where is your dental laboratory?", acceptedAnswer: { "@type": "Answer", text: "Our dental laboratory is at 244 9th Street, San Francisco, CA 94103, USA. We’re open Monday through Friday, 9 AM to 5 PM. Call 1-800-700-LABS (5227) to reach the team." } },
     { "@type": "Question", name: "How long does a case take?", acceptedAnswer: { "@type": "Answer", text: "Our RX form lists restorations at 10 to 15 days and implant cases at 3 to 4 weeks. Full contour zirconia is quicker, at 7 in-lab days for one to three units. Working days don’t include weekends, holidays or shipping, so confirm timing with the lab before you schedule the patient." } },
     { "@type": "Question", name: "Do you offer rush service?", acceptedAnswer: { "@type": "Answer", text: "Yes, on most products, for up to 4 units. Pre-schedule it with the Lab Manager or Implant Coordinator at (415) 558-9716. Cases needed within 7 business days carry a $100 per unit surcharge, with an additional $100 per unit within 5 days. Anything under 3 days needs management approval and a quote." } },
-    { "@type": "Question", name: "Can I send a digital scan?", acceptedAnswer: { "@type": "Answer", text: "Yes. Tick “Digital imp scan” on the RX form. We work with scans from iTero, Trios and similar systems. Digital implant cases need a full arch gingival scan without the healing abutment. Contact the lab to confirm how to send your files." } },
+    { "@type": "Question", name: "Can I send a digital scan?", acceptedAnswer: { "@type": "Answer", text: "Yes. Check “Digital imp scan” on the RX form. We work with scans from iTero, Trios and similar systems. Digital implant cases need a full arch gingival scan without the healing abutment. Contact the lab to confirm how to send your files." } },
   ],
 };
 
@@ -39,6 +40,7 @@ const mosaicSlots = [
 export default async function Home() {
   const testimonials = await getAllTestimonials().catch(() => []);
   const galleryImages = await getLatestGalleryImages(8).catch(() => []);
+  const latestArticles = (await getAllBlogs().catch(() => [])).slice(0, 3);
 
   return (
     <>
@@ -58,10 +60,10 @@ export default async function Home() {
             </div>
             <p className="proof-status visually-hidden" aria-live="polite"></p>
           </div>
-          <h1>Your dental lab in San Francisco. <span className="hero-h1-sub">100K+ Cases Successfully Delivered.</span></h1>
-          <p className="hero-lead">Dental Concepts is a dental laboratory in the USA, at 244 9th Street, San Francisco. We make crowns, veneers, implant restorations and All-on-X prostheses for dental practices, with digital design and hand finishing under one roof.</p>
-          <div className="actions"><Link className="button" href="/send-case">Send a case</Link><Link className="button button-outline" href="/upload-case">Upload a case</Link></div>
-          <p className="hero-meta"><span>Since 2006</span><span>3Shape design and Roland milling</span><span>244 9th Street, San Francisco</span></p>
+          <h1>Your dental lab in California with 100K+ cases delivered</h1>
+          <p className="hero-lead">With 20+ years of combined experience, a 99%+ quality rate and 85%+ of dentists sending repeat cases, Dental Concepts SF makes crowns, veneers and implant restorations you can rely on, case after case.</p>
+          <div className="actions"><Link className="button" href="/send-case">Send a case</Link><Link className="button button-outline" href="/upload-case">Plan a case</Link></div>
+          <p className="hero-meta"><span>Since 2006</span><span>3Shape design and Roland milling</span><span>244 9th Street, San Francisco, CA</span></p>
         </div>
           <figure className="hero-photo">
             <Image
@@ -87,8 +89,8 @@ export default async function Home() {
             <span className="vt vt5"><Image src="/assets/products/layered-porcelain-crowns.webp" width={1254} height={1254} alt="" loading="lazy" /></span>
             <span className="vt vt6"><Image src="/assets/products/digital-wax-up.webp" width={1254} height={1254} alt="" loading="lazy" /></span>
           </div>
-          <div className="value-copy"><span className="eyebrow">What we make</span><h2 id="value-heading">One dental laboratory for the whole case</h2><p>Crowns and veneers, implant prostheses and digital planning, all made at our San Francisco dental laboratory. The technician designing your case is one phone call away.</p>
-            <div className="actions"><Link className="button" href="/services">Browse lab services</Link><Link className="button button-outline" href="/upload-case">Upload a case</Link></div></div>
+          <div className="value-copy"><span className="eyebrow">What we make</span><h2 id="value-heading">One dental laboratory for the whole case</h2><p>Crowns and veneers, implant prostheses and digital planning, all made at our California dental laboratory. The technician designing your case is one phone call away.</p>
+            <div className="actions"><Link className="button" href="/services">Browse lab services</Link><Link className="button button-outline" href="/upload-case">Plan a case</Link></div></div>
         </div></section>
 
         <section className="showreel" aria-labelledby="reel-heading"><div className="wrap">
@@ -106,17 +108,42 @@ export default async function Home() {
           </div>
         </div>
 
+        <section className="section arc-section" aria-labelledby="arc-heading"><div className="wrap">
+          <div className="arc-head"><div><span className="eyebrow">The restorations</span><h2 id="arc-heading">Eleven lab services, one bench</h2><p>Drag, swipe or use the arrows. Each card opens its service page.</p></div></div>
+          <div className="arc" data-arc tabIndex={0} role="region" aria-roledescription="carousel" aria-label="Lab services">
+            <div className="arc-stage">
+              <div className="arc-card"><a href="/full-contour-zirconia-crowns"><span className="arc-img"><img src="/assets/products/full-contour-zirconia-crowns.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Crowns &amp; veneers</small><strong>Full contour zirconia crowns</strong></span></a></div>
+              <div className="arc-card"><a href="/layered-porcelain-crowns"><span className="arc-img"><img src="/assets/products/layered-porcelain-crowns.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Crowns &amp; veneers</small><strong>Layered porcelain crowns</strong></span></a></div>
+              <div className="arc-card"><a href="/lithium-disilicate"><span className="arc-img"><img src="/assets/products/lithium-disilicate.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Crowns &amp; veneers</small><strong>Lithium disilicate (E.max)</strong></span></a></div>
+              <div className="arc-card"><a href="/gold-crowns"><span className="arc-img is-gold"><img src="/assets/gold-crown.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Crowns &amp; veneers</small><strong>Gold crowns</strong></span></a></div>
+              <div className="arc-card"><a href="/full-arch-restorations"><span className="arc-img"><img src="/assets/products/full-arch-restorations.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Implants &amp; All-on-X</small><strong>Full arch restorations</strong></span></a></div>
+              <div className="arc-card"><a href="/implant-crowns"><span className="arc-img"><img src="/assets/products/implant-crowns.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Implants &amp; All-on-X</small><strong>Implant crowns</strong></span></a></div>
+              <div className="arc-card"><a href="/custom-abutments"><span className="arc-img"><img src="/assets/products/custom-abutments.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Implants &amp; All-on-X</small><strong>Custom abutments</strong></span></a></div>
+              <div className="arc-card"><a href="/temporary-crowns-abutments"><span className="arc-img"><img src="/assets/products/temporary-crowns-abutments.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Implants &amp; All-on-X</small><strong>Temporary crowns &amp; abutments</strong></span></a></div>
+              <div className="arc-card"><a href="/digital-wax-up"><span className="arc-img"><img src="/assets/products/digital-wax-up.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Digital &amp; custom</small><strong>Digital wax-up</strong></span></a></div>
+              <div className="arc-card"><a href="/model-printing"><span className="arc-img"><img src="/assets/products/model-printing.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Digital &amp; custom</small><strong>Model printing</strong></span></a></div>
+              <div className="arc-card"><a href="/custom-shades"><span className="arc-img"><img src="https://images.pexels.com/photos/6627599/pexels-photo-6627599.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=720&h=900" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Digital &amp; custom</small><strong>Custom shades</strong></span></a></div>
+            </div>
+            <p className="arc-status visually-hidden" aria-live="polite"></p>
+            <span className="arc-cursor" aria-hidden="true"></span>
+            <div className="arc-ctrl">
+              <button className="arc-prev" type="button" aria-label="Previous service"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></button>
+              <button className="arc-next" type="button" aria-label="Next service"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></button>
+            </div>
+          </div>
+        </div></section>
+
         <section className="manifesto" aria-label="How we work"><div className="manifesto-sticky"><div className="wrap">
-          <p className="manifesto-text">We’re a San Francisco dental lab where the technician designing your crown is one phone call away. We go digital where it helps, finish by hand where it shows, and match the shade in person when a tab can’t tell the whole story.</p>
+          <p className="manifesto-text">We’re a California dental lab where the technician designing your crown is one phone call away. We go digital where it helps, finish by hand where it shows, and match the shade in person when a tab can’t tell the whole story.</p>
           <div className="manifesto-tags"><span className="tag t1">Since 2006</span><span className="tag t2">Shade matched</span><span className="tag t3">Hand finished</span></div>
         </div></div></section>
 
         <section className="benefits" data-scene="benefits" aria-labelledby="benefits-heading"><div className="benefits-sticky">
-          <div className="wrap benefits-head"><div><span className="eyebrow">Why Dental Concepts</span><h2 id="benefits-heading">Why dentists choose Dental Concepts</h2></div><span className="benefit-meter" aria-hidden="true"><span></span></span></div>
+          <div className="wrap benefits-head"><div><span className="eyebrow">Why Dental Concepts</span><h2 id="benefits-heading">Why dentists choose Dental Concepts SF</h2></div><span className="benefit-meter" aria-hidden="true"><span></span></span></div>
           <div className="benefit-view"><ol className="benefit-strip">
             <li className="benefit"><div className="benefit-img"><Image src="https://images.unsplash.com/photo-1600170311833-c2cf5280ce49?auto=format&fit=crop&q=72&w=960&h=720" width={960} height={720} alt="Gloved hand reviewing a 3D dental scan on a tablet" loading="lazy" decoding="async" /></div><div className="benefit-copy"><span className="benefit-no">01</span><h3>Digital from scan to mill</h3><p>Send intraoral scans from iTero, Trios and similar systems. We design on 3Shape, mill on Roland equipment and print models when the case needs them.</p></div></li>
             <li className="benefit is-light"><div className="benefit-img"><Image src="https://images.unsplash.com/photo-1771442873035-474765b40ac6?auto=format&fit=crop&q=72&w=960&h=720" width={960} height={720} alt="Gloved hand holding a ceramic crown on an implant abutment" loading="lazy" decoding="async" /></div><div className="benefit-copy"><span className="benefit-no">02</span><h3>Materials matched to the tooth</h3><p>Zirconia, lithium disilicate, layered porcelain, gold alloys and titanium, each chosen for strength, esthetics and how it will hold up in your patient’s mouth.</p></div></li>
-            <li className="benefit"><div className="benefit-img"><Image src="https://images.unsplash.com/photo-1619691249147-c5689d88016b?auto=format&fit=crop&q=72&w=960&h=720" width={960} height={720} alt="Two people reviewing a dental scan together on a tablet" loading="lazy" decoding="async" /></div><div className="benefit-copy"><span className="benefit-no">03</span><h3>Case updates without the chasing</h3><p>Clear communication at every stage, case status updates and a direct line to the people building your case.</p></div></li>
+            <li className="benefit"><div className="benefit-img"><Image src="https://images.unsplash.com/photo-1619691249147-c5689d88016b?auto=format&fit=crop&q=72&w=960&h=720" width={960} height={720} alt="Two people reviewing a dental scan together on a tablet" loading="lazy" decoding="async" /></div><div className="benefit-copy"><span className="benefit-no">03</span><h3>Case updates without the follow-up calls</h3><p>Clear communication at every stage, case status updates and a direct line to the people building your case.</p></div></li>
             <li className="benefit is-light"><div className="benefit-img"><Image src="https://images.pexels.com/photos/6627599/pexels-photo-6627599.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=960&h=720" width={960} height={720} alt="Ceramist layering porcelain beside a shade guide" loading="lazy" decoding="async" /></div><div className="benefit-copy"><span className="benefit-no">04</span><h3>Shade matched in person</h3><p>Bring your patient to 244 9th Street for a 15 to 20 minute shade visit, or email shade photos before we start the case.</p></div></li>
           </ol></div>
         </div></section>
@@ -130,10 +157,10 @@ export default async function Home() {
             <button className="process-tab" type="button" role="tab" id="pt-3" aria-controls="pp-3" aria-selected="false">Finish &amp; return</button>
           </div>
           <div className="process-panels">
-            <article className="process-panel is-on" id="pp-0" role="tabpanel" aria-labelledby="pt-0"><div className="pp-copy"><span className="pp-no">Stage 1 of 4</span><h3>Plan the case and fill in the RX</h3><p>Choose the restoration with your team, then complete our two-page RX form: doctor details, restoration and implant choices, shade, stump shade and everything you’re sending with the case. All anterior cases need a pre-op or study model.</p><a className="button" href="/assets/digital-rx.pdf" download>Download the RX form</a>{/* kept as <a>: file download, not a route */}</div><div className="pp-img is-doc"><Image src="/assets/rx-form-preview.webp" width={900} height={693} alt="First page of the Dental Concepts RX form" loading="lazy" /></div></article>
+            <article className="process-panel is-on" id="pp-0" role="tabpanel" aria-labelledby="pt-0"><div className="pp-copy"><span className="pp-no">Stage 1 of 4</span><h3>Plan the case and fill out the RX</h3><p>Choose the restoration with your team, then complete our two-page RX form: doctor details, restoration and implant choices, shade, stump shade and everything you’re sending with the case. All anterior cases need a pre-op or study model.</p><a className="button" href="/assets/digital-rx.pdf" download>Download the RX form</a>{/* kept as <a>: file download, not a route */}</div><div className="pp-img is-doc"><Image src="/assets/rx-form-preview.webp" width={900} height={693} alt="First page of the Dental Concepts RX form" loading="lazy" /></div></article>
             <article className="process-panel" id="pp-1" role="tabpanel" aria-labelledby="pt-1"><div className="pp-copy"><span className="pp-no">Stage 2 of 4</span><h3>Confirm how to send it</h3><p>Call the lab to confirm shipping or digital submission before you send any records. Need a label? Request one, and we’ll reply with the label and carrier details.</p><Link className="button" href="/shipping-label">Shipping label</Link></div><div className="pp-img"><Image src="/assets/products/model-printing.webp" width={1254} height={1254} alt="Printed dental models" loading="lazy" /></div></article>
             <article className="process-panel" id="pp-2" role="tabpanel" aria-labelledby="pt-2"><div className="pp-copy"><span className="pp-no">Stage 3 of 4</span><h3>Designed digitally, finished by hand</h3><p>We design on 3Shape, mill on Roland equipment, and a technician finishes every case, layering ceramic by hand where the restoration calls for it. Every case goes through a final quality check before it ships.</p><Link className="button" href="/about">Meet the lab</Link></div><div className="pp-img"><Image src="/assets/lab-technicians.webp" width={1672} height={941} alt="Technicians finishing restorations and reviewing a digital design" loading="lazy" /></div></article>
-            <article className="process-panel" id="pp-3" role="tabpanel" aria-labelledby="pt-3"><div className="pp-copy"><span className="pp-no">Stage 4 of 4</span><h3>Back to your practice</h3><p>Our RX form lists restorations at 10 to 15 days and implant cases at 3 to 4 weeks. These are in-lab working days, so weekends, holidays and shipping time come on top. Need it sooner? Rush service is available on most products when you pre-schedule it.</p><Link className="button" href="/upload-case">Upload a case</Link></div><div className="pp-img"><Image src="/assets/products/full-arch-restorations.webp" width={1254} height={1254} alt="Finished full arch restoration" loading="lazy" /></div></article>
+            <article className="process-panel" id="pp-3" role="tabpanel" aria-labelledby="pt-3"><div className="pp-copy"><span className="pp-no">Stage 4 of 4</span><h3>Back to your practice</h3><p>Our RX form lists restorations at 10 to 15 days and implant cases at 3 to 4 weeks. These are in-lab working days, so weekends, holidays and shipping time aren’t included. Need it sooner? Rush service is available on most products when you pre-schedule it.</p><Link className="button" href="/upload-case">Plan a case</Link></div><div className="pp-img"><Image src="/assets/products/full-arch-restorations.webp" width={1254} height={1254} alt="Finished full arch restoration" loading="lazy" /></div></article>
           </div>
         </div></div></section>
 
@@ -186,20 +213,29 @@ export default async function Home() {
 
         <section className="section tinted articles-preview" aria-labelledby="articles-heading"><div className="wrap">
           <div className="arc-head"><div><span className="eyebrow">From the lab</span><h2 id="articles-heading">Practical notes for your team</h2></div><Link className="text-link" href="/blog">All articles</Link></div>
-          <div className="ap-grid">
-            <Link className="ap-card" href="/blog/how-to-complete-the-rx-form"><span className="ap-img is-doc"><Image src="/assets/rx-form-preview.webp" width={900} height={693} alt="" loading="lazy" /></span><small>Working with the lab</small><strong>How to complete the Dental Concepts RX form</strong></Link>
-            <Link className="ap-card" href="/blog/custom-shade-appointments"><span className="ap-img"><Image src="/assets/products/crowns-veneers.webp" width={1122} height={1402} alt="" loading="lazy" /></span><small>Custom shades</small><strong>Custom shade appointments: what to expect</strong></Link>
-            <Link className="ap-card" href="/blog/crown-materials-overview"><span className="ap-img"><Image src="/assets/products/lithium-disilicate.webp" width={1254} height={1254} alt="" loading="lazy" /></span><small>Crowns &amp; veneers</small><strong>Zirconia, layered porcelain, E.max, or gold</strong></Link>
-          </div></div></section>
+          {latestArticles.length > 0 ? (
+            <div className="ap-grid">
+              {latestArticles.map((post) => (
+                <Link key={post.slug} className="ap-card" href={`/blog/${post.slug}`}>
+                  <span className="ap-img"><img src={post.coverImage} width={900} height={693} alt="" loading="lazy" /></span>
+                  <small>{post.category}</small>
+                  <strong>{post.title}</strong>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <p className="note">Articles coming soon...</p>
+          )}
+        </div></section>
 
         <section className="section faq" aria-labelledby="faq-heading"><div className="wrap faq-grid">
           <div className="faq-head"><span className="eyebrow">FAQ</span><h2 id="faq-heading">Before you send a case</h2><p>Need a specific answer? Call or email the lab team directly.</p><Link className="text-link" href="/contact">Talk with the lab</Link></div>
           <div className="faq-list">
-            <details><summary>What does Dental Concepts make?</summary><div className="faq-answer"><p>Dental Concepts is a dental lab in San Francisco that makes full contour zirconia crowns, layered porcelain crowns, lithium disilicate (E.max) veneers, inlays, onlays and crowns, and gold crowns. We also make full arch and All-on-X prostheses, implant crowns, custom abutments, temporaries, digital wax-ups, printed models and custom shades. <Link href="/services">Browse lab services.</Link></p></div></details>
-            <details><summary>Where is your dental laboratory?</summary><div className="faq-answer"><p>Our dental laboratory is at 244 9th Street, San Francisco, CA 94103, USA. We’re open Monday to Friday, 9 AM to 5 PM. Call <a href="tel:+18007005227">1-800-700-LABS</a> (5227) to reach the team.</p></div></details>
+            <details><summary>What does Dental Concepts SF make?</summary><div className="faq-answer"><p>Dental Concepts SF is a dental lab in California, based in San Francisco, that makes full contour zirconia crowns, layered porcelain crowns, lithium disilicate (E.max) veneers, inlays, onlays and crowns, and gold crowns. We also make full arch and All-on-X prostheses, implant crowns, custom abutments, temporaries, digital wax-ups, printed models and custom shades. <Link href="/services">Browse lab services.</Link></p></div></details>
+            <details><summary>Where is your dental laboratory?</summary><div className="faq-answer"><p>Our dental laboratory is at 244 9th Street, San Francisco, CA 94103, USA. We’re open Monday through Friday, 9 AM to 5 PM. Call <a href="tel:+18007005227">1-800-700-LABS</a> (5227) to reach the team.</p></div></details>
             <details><summary>How long does a case take?</summary><div className="faq-answer"><p>Our RX form lists restorations at 10 to 15 days and implant cases at 3 to 4 weeks. Full contour zirconia is quicker, at 7 in-lab days for one to three units. Working days don’t include weekends, holidays or shipping, so confirm timing with the lab before you schedule the patient.</p></div></details>
             <details><summary>Do you offer rush service?</summary><div className="faq-answer"><p>Yes, on most products, for up to 4 units. Pre-schedule it with the Lab Manager or Implant Coordinator at <a href="tel:+14155589716">(415) 558-9716</a>. Cases needed within 7 business days carry a $100 per unit surcharge, with an additional $100 per unit within 5 days. Anything under 3 days needs management approval and a quote.</p></div></details>
-            <details><summary>Can I send a digital scan?</summary><div className="faq-answer"><p>Yes. Tick “Digital imp scan” on the RX form. We work with scans from iTero, Trios and similar systems. Digital implant cases need a full arch gingival scan without the healing abutment. Contact the lab to confirm how to send your files.</p></div></details>
+            <details><summary>Can I send a digital scan?</summary><div className="faq-answer"><p>Yes. Check “Digital imp scan” on the RX form. We work with scans from iTero, Trios and similar systems. Digital implant cases need a full arch gingival scan without the healing abutment. Contact the lab to confirm how to send your files.</p></div></details>
           </div></div></section>
       </main>
       <Footer />
