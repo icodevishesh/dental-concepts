@@ -75,7 +75,7 @@ export default async function Home() {
               priority
             />
             <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="https://images.unsplash.com/photo-1590424693420-634a0b0b782c?auto=format&fit=crop&q=72&w=1400&h=1050" aria-hidden="true">
-              <source src="https://videos.pexels.com/video-files/8704970/8704970-hd_1280_720_30fps.mp4" type="video/mp4" />
+              <source src="/assets/DC_Banner.mp4" type="video/mp4" />
             </video>
           </figure>
         </section>
@@ -108,33 +108,10 @@ export default async function Home() {
           </div>
         </div>
 
-        <section className="section arc-section" aria-labelledby="arc-heading"><div className="wrap">
-          <div className="arc-head"><div><span className="eyebrow">The restorations</span><h2 id="arc-heading">Eleven lab services, one bench</h2><p>Drag, swipe or use the arrows. Each card opens its service page.</p></div></div>
-          <div className="arc" data-arc tabIndex={0} role="region" aria-roledescription="carousel" aria-label="Lab services">
-            <div className="arc-stage">
-              <div className="arc-card"><a href="/full-contour-zirconia-crowns"><span className="arc-img"><img src="/assets/products/full-contour-zirconia-crowns.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Crowns &amp; veneers</small><strong>Full contour zirconia crowns</strong></span></a></div>
-              <div className="arc-card"><a href="/layered-porcelain-crowns"><span className="arc-img"><img src="/assets/products/layered-porcelain-crowns.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Crowns &amp; veneers</small><strong>Layered porcelain crowns</strong></span></a></div>
-              <div className="arc-card"><a href="/lithium-disilicate"><span className="arc-img"><img src="/assets/products/lithium-disilicate.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Crowns &amp; veneers</small><strong>Lithium disilicate (E.max)</strong></span></a></div>
-              <div className="arc-card"><a href="/gold-crowns"><span className="arc-img is-gold"><img src="/assets/gold-crown.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Crowns &amp; veneers</small><strong>Gold crowns</strong></span></a></div>
-              <div className="arc-card"><a href="/full-arch-restorations"><span className="arc-img"><img src="/assets/products/full-arch-restorations.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Implants &amp; All-on-X</small><strong>Full arch restorations</strong></span></a></div>
-              <div className="arc-card"><a href="/implant-crowns"><span className="arc-img"><img src="/assets/products/implant-crowns.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Implants &amp; All-on-X</small><strong>Implant crowns</strong></span></a></div>
-              <div className="arc-card"><a href="/custom-abutments"><span className="arc-img"><img src="/assets/products/custom-abutments.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Implants &amp; All-on-X</small><strong>Custom abutments</strong></span></a></div>
-              <div className="arc-card"><a href="/temporary-crowns-abutments"><span className="arc-img"><img src="/assets/products/temporary-crowns-abutments.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Implants &amp; All-on-X</small><strong>Temporary crowns &amp; abutments</strong></span></a></div>
-              <div className="arc-card"><a href="/digital-wax-up"><span className="arc-img"><img src="/assets/products/digital-wax-up.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Digital &amp; custom</small><strong>Digital wax-up</strong></span></a></div>
-              <div className="arc-card"><a href="/model-printing"><span className="arc-img"><img src="/assets/products/model-printing.webp" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Digital &amp; custom</small><strong>Model printing</strong></span></a></div>
-              <div className="arc-card"><a href="/custom-shades"><span className="arc-img"><img src="https://images.pexels.com/photos/6627599/pexels-photo-6627599.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=720&h=900" alt="" loading="lazy" decoding="async" /></span><span className="arc-text"><small>Digital &amp; custom</small><strong>Custom shades</strong></span></a></div>
-            </div>
-            <p className="arc-status visually-hidden" aria-live="polite"></p>
-            <span className="arc-cursor" aria-hidden="true"></span>
-            <div className="arc-ctrl">
-              <button className="arc-prev" type="button" aria-label="Previous service"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></button>
-              <button className="arc-next" type="button" aria-label="Next service"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></button>
-            </div>
-          </div>
-        </div></section>
+
 
         <section className="manifesto" aria-label="How we work"><div className="manifesto-sticky"><div className="wrap">
-          <p className="manifesto-text">We’re a California dental lab where the technician designing your crown is one phone call away. We go digital where it helps, finish by hand where it shows, and match the shade in person when a tab can’t tell the whole story.</p>
+          <p className="manifesto-text">We’re a <b className="text-black">California dental lab</b> where the technician <b className="text-black">designing your crown</b> is one phone call away. We <b className="text-black">go digital</b>, where it helps finish by hand where it shows, and match the <b className="text-blue-700">shade in person</b> when a tab can’t tell the whole story.</p>
           <div className="manifesto-tags"><span className="tag t1">Since 2006</span><span className="tag t2">Shade matched</span><span className="tag t3">Hand finished</span></div>
         </div></div></section>
 

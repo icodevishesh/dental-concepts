@@ -13,7 +13,7 @@ export default function Footer({ photoCredits = false }: { photoCredits?: boolea
             </a>
             <p>A San Francisco dental laboratory for restorative work, digital services, and personal collaboration with dental practices.</p>
           </div>
-          <div className="footer-column">
+          <div className="footer-column !mb-6">
             <h2>Lab services</h2>
             <a href="/services">All lab services</a>
             <a href="/services#crowns">Crowns &amp; veneers</a>

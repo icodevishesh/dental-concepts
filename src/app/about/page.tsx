@@ -43,7 +43,7 @@ export default function AboutPage() {
             <p>The tools keep getting better, and we keep up with them. The goal has stayed the same since day one: give every patient the best restoration we can make.</p>
           </div></div></section>
         <section className="numbers-strip" aria-label="The lab in numbers"><div className="wrap">
-          <dl><div><dt>45+ years</dt><dd>Combined experience</dd></div><div><dt>100K+ cases</dt><dd>Delivered to practices</dd></div><div><dt>99%+</dt><dd>Quality rate</dd></div><div><dt>85%+</dt><dd>Repeat dentists</dd></div></dl>
+          <dl><div><dt className="!text-blue-600">45+ years</dt><dd>Combined experience</dd></div><div><dt className="!text-blue-600">100K+ cases</dt><dd>Delivered to practices</dd></div><div><dt className="!text-blue-600">99%+</dt><dd>Quality rate</dd></div><div><dt className="!text-blue-600">85%+</dt><dd>Repeat dentists</dd></div></dl>
         </div></section>
         <section className="section vm" aria-labelledby="vm-heading"><div className="wrap">
           <div className="center-head"><span className="eyebrow">What drives us</span><h2 id="vm-heading">Our vision and mission</h2></div>
