@@ -83,9 +83,9 @@ export default function AdminGalleryPage() {
           <p className="font-semibold">No images yet. Click &quot;Upload Images&quot; to add some.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {images.map((img) => (
-            <div key={img._id} className="group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-50" style={{ aspectRatio: "4 / 6" }}>
+            <div key={img._id} className="group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-50" style={{ aspectRatio: "3 / 2" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img.url} alt={img.alt} className="w-full h-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end justify-end p-2">

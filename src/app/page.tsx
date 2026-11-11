@@ -28,13 +28,13 @@ const faqLd = {
 };
 
 const mosaicSlots = [
-  { className: "is-tall", href: "/full-contour-zirconia-crowns", src: "/assets/products/full-contour-zirconia-crowns.webp", width: 1254, height: 1254, alt: "Full contour zirconia crowns" },
-  { className: "", href: "/implant-crowns", src: "/assets/products/implant-crowns.webp", width: 1254, height: 1254, alt: "Implant crowns" },
-  { className: "", href: "/custom-abutments", src: "/assets/products/custom-abutments.webp", width: 1254, height: 1254, alt: "Custom abutments" },
-  { className: "is-wide", href: "/about", src: "/assets/lab-technicians.webp", width: 1672, height: 941, alt: "Technicians at work in the lab" },
-  { className: "", href: "/temporary-crowns-abutments", src: "/assets/products/temporary-crowns-abutments.webp", width: 1254, height: 1254, alt: "Temporary crowns and abutments" },
-  { className: "", href: "/model-printing", src: "/assets/products/model-printing.webp", width: 1254, height: 1254, alt: "Printed models" },
-  { className: "is-tall", href: "/lithium-disilicate", src: "/assets/products/lithium-disilicate.webp", width: 1254, height: 1254, alt: "Lithium disilicate restorations" },
+  { className: "", href: "/full-contour-zirconia-crowns", src: "/assets/products/full-contour-zirconia-crowns.webp", width: 600, height: 400, alt: "Full contour zirconia crowns" },
+  { className: "", href: "/implant-crowns", src: "/assets/products/implant-crowns.webp", width: 600, height: 400, alt: "Implant crowns" },
+  { className: "", href: "/custom-abutments", src: "/assets/products/custom-abutments.webp", width: 600, height: 400, alt: "Custom abutments" },
+  { className: "", href: "/about", src: "/assets/lab-technicians.webp", width: 600, height: 400, alt: "Technicians at work in the lab" },
+  { className: "", href: "/temporary-crowns-abutments", src: "/assets/products/temporary-crowns-abutments.webp", width: 600, height: 400, alt: "Temporary crowns and abutments" },
+  { className: "", href: "/model-printing", src: "/assets/products/model-printing.webp", width: 600, height: 400, alt: "Printed models" },
+  { className: "", href: "/lithium-disilicate", src: "/assets/products/lithium-disilicate.webp", width: 600, height: 400, alt: "Lithium disilicate restorations" },
 ];
 
 export default async function Home() {
@@ -60,7 +60,7 @@ export default async function Home() {
             </div>
             <p className="proof-status visually-hidden" aria-live="polite"></p>
           </div>
-          <h1>Your dental lab in California with 100K+ cases delivered</h1>
+          <h1 className="!text-6xl">Your dental lab in California with 100K+ cases delivered</h1>
           <p className="hero-lead">With 20+ years of combined experience, a 99%+ quality rate and 85%+ of dentists sending repeat cases, Dental Concepts SF makes crowns, veneers and implant restorations you can rely on, case after case.</p>
           <div className="actions"><Link className="button" href="/send-case">Send a case</Link><Link className="button button-outline" href="/upload-case">Plan a case</Link></div>
           <p className="hero-meta"><span>Since 2006</span><span>3Shape design and Roland milling</span><span>244 9th Street, San Francisco, CA</span></p>
@@ -89,7 +89,7 @@ export default async function Home() {
             <span className="vt vt5"><Image src="/assets/products/layered-porcelain-crowns.webp" width={1254} height={1254} alt="" loading="lazy" /></span>
             <span className="vt vt6"><Image src="/assets/products/digital-wax-up.webp" width={1254} height={1254} alt="" loading="lazy" /></span>
           </div>
-          <div className="value-copy"><span className="eyebrow">What we make</span><h2 id="value-heading">One dental laboratory for the whole case</h2><p>Crowns and veneers, implant prostheses and digital planning, all made at our California dental laboratory. The technician designing your case is one phone call away.</p>
+          <div className="value-copy"><span className="eyebrow">What we make</span><h2 id="value-heading" className="!text-6xl">One dental laboratory for the whole case</h2><p>Crowns and veneers, implant prostheses and digital planning, all made at our California dental laboratory. The technician designing your case is one phone call away.</p>
             <div className="actions"><Link className="button" href="/services">Browse lab services</Link><Link className="button button-outline" href="/upload-case">Plan a case</Link></div></div>
         </div></section>
 
@@ -111,7 +111,7 @@ export default async function Home() {
 
 
         <section className="manifesto" aria-label="How we work"><div className="manifesto-sticky"><div className="wrap">
-          <p className="manifesto-text">We’re a <b className="text-black">California dental lab</b> where the technician <b className="text-black">designing your crown</b> is one phone call away. We <b className="text-black">go digital</b>, where it helps finish by hand where it shows, and match the <b className="text-blue-700">shade in person</b> when a tab can’t tell the whole story.</p>
+          <p className="manifesto-text !text-5xl">We’re a <b className="text-black">California dental lab</b> where the technician <b className="text-black">designing your crown</b> is one phone call away. We <b className="text-black">go digital</b>, where it helps finish by hand where it shows, and match the <b className="text-blue-700">shade in person</b> when a tab can’t tell the whole story.</p>
           <div className="manifesto-tags"><span className="tag t1">Since 2006</span><span className="tag t2">Shade matched</span><span className="tag t3">Hand finished</span></div>
         </div></div></section>
 
@@ -152,7 +152,7 @@ export default async function Home() {
           </div></section>
 
         <section className="section quotes" aria-labelledby="quotes-heading"><div className="wrap">
-          <div className="section-head"><span className="eyebrow">Testimonials</span><h2 id="quotes-heading">What dentists say about the lab</h2><p>In their own words, from practices that send us their cases.</p><Link className="text-link" href="/services#testimonials">Read all reviews</Link></div>
+          <div className="section-head"><span className="eyebrow">Testimonials</span><h2 id="quotes-heading" className="!text-4xl">What dentists say about the lab</h2><p>In their own words, from practices that send us their cases.</p><Link className="text-link" href="/services#testimonials">Read all reviews</Link></div>
           <div className="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Testimonials">
             <div className="carousel-view"><div className="carousel-track">
               {testimonials.length > 0 ? (
@@ -193,7 +193,7 @@ export default async function Home() {
           {latestArticles.length > 0 ? (
             <div className="ap-grid">
               {latestArticles.map((post) => (
-                <Link key={post.slug} className="ap-card" href={`/blog/${post.slug}`}>
+                <Link key={post.slug} className="ap-card" href={`/blog/${post.slug}`} scroll={true}>
                   <span className="ap-img"><img src={post.coverImage} width={900} height={693} alt="" loading="lazy" /></span>
                   <small>{post.category}</small>
                   <strong>{post.title}</strong>

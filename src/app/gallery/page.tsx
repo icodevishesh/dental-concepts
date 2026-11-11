@@ -42,7 +42,7 @@ export default async function GalleryPage({
                 <ul className="gallery-grid">
                   {images.map((img) => (
                     <li key={img._id?.toString()} className="gallery-tile">
-                      <Image src={img.url} alt={img.alt} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw" />
+                      <Image src={img.url} alt={img.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
                     </li>
                   ))}
                 </ul>

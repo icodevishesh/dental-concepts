@@ -25,7 +25,7 @@
 }
 
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 24px);-webkit-text-size-adjust:100%}
+html{scroll-padding-top:calc(var(--header-h) + 24px);-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--body);font:400 17px/1.6 var(--font);-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
@@ -268,7 +268,7 @@ figcaption a{text-underline-offset:2px}
 .people .role{color:var(--blue);font-weight:600;margin:2px 0 12px}
 
 /* ------------------------------------------------ gallery */
-.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .gallery figure{position:relative;border-radius:16px;overflow:hidden;background:var(--navy);aspect-ratio:8/9}
 .gallery figure.wide{grid-column:span 2;aspect-ratio:auto}
 .gallery a{display:block;height:100%}
@@ -279,8 +279,8 @@ figcaption a{text-underline-offset:2px}
 .credits li{padding:6px 0;break-inside:avoid}
 
 /* ------------------------------------------------ case gallery */
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:clamp(10px,1.5vw,20px);list-style:none;padding:0;margin:0}
-.gallery-tile{position:relative;aspect-ratio:4/6;border-radius:16px;overflow:hidden;background:var(--mist);box-shadow:0 10px 30px -18px rgba(6,37,92,.3)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:clamp(12px,1.8vw,24px);list-style:none;padding:0;margin:0}
+.gallery-tile{position:relative;aspect-ratio:3/2;border-radius:16px;overflow:hidden;background:var(--mist);box-shadow:0 10px 30px -18px rgba(6,37,92,.3)}
 .gallery-tile img{object-fit:cover;transition:transform .5s}
 .gallery-tile:hover img{transform:scale(1.045)}
 .gallery-empty{padding:clamp(48px,8vw,96px) 0;text-align:center;color:var(--body);font-size:1.05rem}
@@ -799,6 +799,7 @@ a.lab-tile strong::after{content:"";display:inline-block;width:20px;height:1.5px
 
 /* Home: testimonials */
 .quotes{background:#fff}
+.quotes .section-head h2,.pdp-quote .center-head h2{font-size:2.25rem !important;line-height:1.15 !important}
 .quote-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .quote-card{display:flex;flex-direction:column;margin:0;padding:clamp(24px,2.6vw,36px);background:var(--paper);border:1px solid var(--line);border-radius:10px}
 .quote-card blockquote{margin:0;flex:1}
