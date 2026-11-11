@@ -60,7 +60,7 @@ export default async function Home() {
             </div>
             <p className="proof-status visually-hidden" aria-live="polite"></p>
           </div>
-          <h1 className="!text-6xl">Your dental lab in California with 100K+ cases delivered</h1>
+          <h1 className="!text-6xl">Your dental lab in California <br/> with 100K+ cases delivered</h1>
           <p className="hero-lead">With 20+ years of combined experience, a 99%+ quality rate and 85%+ of dentists sending repeat cases, Dental Concepts SF makes crowns, veneers and implant restorations you can rely on, case after case.</p>
           <div className="actions"><Link className="button" href="/send-case">Send a case</Link><Link className="button button-outline" href="/upload-case">Plan a case</Link></div>
           <p className="hero-meta"><span>Since 2006</span><span>3Shape design and Roland milling</span><span>244 9th Street, San Francisco, CA</span></p>
@@ -171,7 +171,7 @@ export default async function Home() {
         </div></section>
 
         <section className="section mosaic-section" aria-labelledby="mosaic-heading"><div className="wrap">
-          <div className="center-head"><span className="eyebrow">From the bench</span><h2 id="mosaic-heading">Restorations we make every week</h2><p>{galleryImages.length > 0 ? "A look at recent work from our bench." : "Representative photos for now. Our own case gallery is on the way."}</p></div>
+          <div className="center-head"><span className="eyebrow">From the bench</span><h2 id="mosaic-heading">Restorations we make every week</h2><p className="!text-gray-700">{galleryImages.length > 0 ? "A look at recent work from our bench." : "Representative photos for now. Our own case gallery is on the way."}</p></div>
           <ul className="mosaic">
             {mosaicSlots.map((slot, i) => {
               const real = galleryImages[i];
