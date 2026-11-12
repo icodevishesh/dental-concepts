@@ -3,10 +3,11 @@
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
-import { Newspaper, BookOpen, CalendarDays, Inbox, FolderOpen, Quote, Images, Settings, LogOut } from "lucide-react";
+import { Newspaper, BookOpen, CalendarDays, Inbox, FolderOpen, ClipboardList, Quote, Images, Settings, LogOut } from "lucide-react";
 
 const NAV_ITEMS = [
   { href: "/admin/cases", label: "Cases", icon: FolderOpen },
+  { href: "/admin/rx-submissions", label: "RX Forms", icon: ClipboardList },
   { href: "/admin/leads", label: "Leads", icon: Inbox },
   { href: "/admin/articles", label: "Articles", icon: Newspaper },
   { href: "/admin/guides", label: "Guides", icon: BookOpen },

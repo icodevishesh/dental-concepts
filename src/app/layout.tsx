@@ -8,10 +8,6 @@ export const metadata: Metadata = {
   title: "Dental Laboratory in San Francisco, USA | Dental Concepts",
   description:
     "Partner with a San Francisco dental lab for ceramic crowns, implant restorations, digital planning, and custom shade matching. Connect with our dental laboratory team.",
-  icons: {
-    icon: "/assets/favicon.png",
-    apple: "/assets/apple-touch-icon.png",
-  },
   openGraph: {
     type: "website",
     siteName: "Dental Concepts",
