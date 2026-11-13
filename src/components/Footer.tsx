@@ -1,3 +1,7 @@
+import { ArrowBigUpDash } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
 const aiQuery =
   'Tell me about Dental Concepts, the dental laboratory at 244 9th Street, San Francisco (dentalconceptssf.com): what restorations it makes, how to send a case, and typical turnaround.';
 const aiQ = encodeURIComponent(aiQuery);
@@ -8,10 +12,10 @@ export default function Footer({ photoCredits = false }: { photoCredits?: boolea
       <div className="wrap">
         <div className="footer-main">
           <div className="footer-about">
-            <a className="footer-logo" href="/">
-              <img src="/assets/dental-concepts-logo-dc.png" width={463} height={194} alt="Dental Concepts home" loading="lazy" />
-            </a>
-            <p>A San Francisco dental laboratory for restorative work, digital services, and personal collaboration with dental practices.</p>
+            <Link className="footer-logo" href="/">
+              <Image src="/assets/dental-concepts-logo-dc.png" width={463} height={194} alt="Dental Concepts home" loading="lazy" />
+            </Link>
+            <p className="!text-md">A San Francisco dental laboratory for restorative work, digital services, and personal collaboration with dental practices.</p>
           </div>
           <div className="footer-column !mb-6">
             <h2>Lab services</h2>
@@ -26,7 +30,7 @@ export default function Footer({ photoCredits = false }: { photoCredits?: boolea
             <a href="/about">About</a>
             <a href="/gallery">Gallery</a>
             <a href="/blog">Articles</a>
-            <a href="/guides">Guides</a>
+            <a href="/rx-form">Rx Form</a>
             <a href="/contact">Contact</a>
           </div>
           <div className="footer-column">
@@ -40,10 +44,10 @@ export default function Footer({ photoCredits = false }: { photoCredits?: boolea
         </div>
         <div className="footer-ai">
           <span>Ask AI about the lab</span>
-          <a href={`https://chatgpt.com/?q=${aiQ}`} target="_blank" rel="noopener noreferrer">ChatGPT<span className="visually-hidden"> (opens in a new tab)</span></a>
-          <a href={`https://www.perplexity.ai/search?q=${aiQ}`} target="_blank" rel="noopener noreferrer">Perplexity<span className="visually-hidden"> (opens in a new tab)</span></a>
-          <a href={`https://claude.ai/new?q=${aiQ}`} target="_blank" rel="noopener noreferrer">Claude<span className="visually-hidden"> (opens in a new tab)</span></a>
-          <a href={`https://grok.com/?q=${aiQ}`} target="_blank" rel="noopener noreferrer">Grok<span className="visually-hidden"> (opens in a new tab)</span></a>
+          <a href={`https://chatgpt.com/?q=${aiQ}`} target="_blank" rel="noopener noreferrer" className="hover:bg-[#36ab8e]">ChatGPT</a>
+          <a href={`https://www.perplexity.ai/search?q=${aiQ}`} target="_blank" rel="noopener noreferrer" className="hover:bg-[#12414D]">Perplexity</a>
+          <a href={`https://claude.ai/new?q=${aiQ}`} target="_blank" rel="noopener noreferrer" className="hover:bg-[#D97757]">Claude</a>
+          <a href={`https://grok.com/?q=${aiQ}`} target="_blank" rel="noopener noreferrer" className="hover:bg-black">Grok</a>
         </div>
         <div className="footer-bottom">
           <span>© 2026 Dental Concepts, San Francisco, California</span>
@@ -52,7 +56,10 @@ export default function Footer({ photoCredits = false }: { photoCredits?: boolea
           ) : (
             <span className="footer-partner">Digital Partner <a href="https://www.vuilive.com" target="_blank" rel="noopener">VUILIVE</a></span>
           )}
-          <a href="#main">Back to top</a>
+          <div className="flex items-center gap-1">
+            <a href="#main" className="underline-offset-4 hover:underline">Back to top</a>
+            <ArrowBigUpDash className="w-4 h-4"/>
+          </div>
         </div>
       </div>
     </footer>

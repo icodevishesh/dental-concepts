@@ -27,19 +27,9 @@ const faqLd = {
   ],
 };
 
-const mosaicSlots = [
-  { className: "", href: "/full-contour-zirconia-crowns", src: "/assets/products/full-contour-zirconia-crowns.webp", width: 600, height: 400, alt: "Full contour zirconia crowns" },
-  { className: "", href: "/implant-crowns", src: "/assets/products/implant-crowns.webp", width: 600, height: 400, alt: "Implant crowns" },
-  { className: "", href: "/custom-abutments", src: "/assets/products/custom-abutments.webp", width: 600, height: 400, alt: "Custom abutments" },
-  { className: "", href: "/about", src: "/assets/lab-technicians.webp", width: 600, height: 400, alt: "Technicians at work in the lab" },
-  { className: "", href: "/temporary-crowns-abutments", src: "/assets/products/temporary-crowns-abutments.webp", width: 600, height: 400, alt: "Temporary crowns and abutments" },
-  { className: "", href: "/model-printing", src: "/assets/products/model-printing.webp", width: 600, height: 400, alt: "Printed models" },
-  { className: "", href: "/lithium-disilicate", src: "/assets/products/lithium-disilicate.webp", width: 600, height: 400, alt: "Lithium disilicate restorations" },
-];
-
 export default async function Home() {
   const testimonials = await getAllTestimonials().catch(() => []);
-  const galleryImages = await getLatestGalleryImages(8).catch(() => []);
+  const galleryImages = (await getLatestGalleryImages(6).catch(() => [])).slice(0,6);
   const latestArticles = (await getAllBlogs().catch(() => [])).slice(0, 3);
 
   return (
@@ -173,19 +163,13 @@ export default async function Home() {
         <section className="section mosaic-section" aria-labelledby="mosaic-heading"><div className="wrap">
           <div className="center-head"><span className="eyebrow">From the bench</span><h2 id="mosaic-heading">Restorations we make every week</h2><p className="!text-gray-700">{galleryImages.length > 0 ? "A look at recent work from our bench." : "Representative photos for now. Our own case gallery is on the way."}</p></div>
           <ul className="mosaic">
-            {mosaicSlots.map((slot, i) => {
-              const real = galleryImages[i];
+            {galleryImages.map((real) => {
               return (
-                <li key={slot.href} className={`mosaic-item${slot.className ? ` ${slot.className}` : ""}`}>
-                  {real ? (
-                    <Link href="/gallery"><Image src={real.url} width={slot.width} height={slot.height} alt={real.alt} loading="lazy" /></Link>
-                  ) : (
-                    <Link href={slot.href}><Image src={slot.src} width={slot.width} height={slot.height} alt={slot.alt} loading="lazy" /></Link>
-                  )}
+                <li key={real.url} className={`mosaic-item`}>
+                  <Link href="/gallery"><Image src={real.url} width={300} height={200} alt={real.alt} loading="lazy" /></Link>
                 </li>
               );
             })}
-            <li className="mosaic-item"><Link href="/gold-crowns" className="is-gold"><Image src="/assets/gold-crown.webp" width={478} height={454} alt="Gold crown" loading="lazy" /></Link></li>
           </ul></div></section>
 
         <section className="section tinted articles-preview" aria-labelledby="articles-heading"><div className="wrap">

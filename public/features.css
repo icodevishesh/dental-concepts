@@ -70,7 +70,7 @@
 .footer-ai{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;padding:22px 0;border-top:1px solid rgba(255,255,255,.2)}
 .footer-ai>span{font-weight:600;color:#fff;margin-right:6px}
 .footer-ai a{display:inline-flex;align-items:center;min-height:40px;padding:6px 16px;border:1px solid rgba(255,255,255,.45);border-radius:999px;color:#fff !important;text-decoration:none;font-size:.9rem;font-weight:600;transition:background-color .2s,color .2s}
-.footer-ai a:hover{background:#fff;color:#005cdf !important}
+/* .footer-ai a:hover{background:#fff;color:#005cdf !important} */
 
 /* ======================================================= hero proof badge */
 .proof{display:inline-flex;align-items:center;gap:10px;margin-bottom:26px;padding:6px 6px 6px 18px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(8px);color:#fff;max-width:100%}
