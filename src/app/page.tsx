@@ -3,13 +3,16 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
-import { getAllTestimonials } from "@/lib/testimonials";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import { getLatestGalleryImages } from "@/lib/gallery";
 import { getAllBlogs } from "@/lib/blog";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
   title: "Dental Laboratory in California, USA | Dental Concepts SF",
   description:
     "Partner with a California dental lab for ceramic crowns, implant restorations, digital planning, and custom shade matching. Connect with our digital dental laboratory team.",
@@ -28,7 +31,6 @@ const faqLd = {
 };
 
 export default async function Home() {
-  const testimonials = await getAllTestimonials().catch(() => []);
   const galleryImages = (await getLatestGalleryImages(6).catch(() => [])).slice(0,6);
   const latestArticles = (await getAllBlogs().catch(() => [])).slice(0, 3);
 
@@ -101,7 +103,7 @@ export default async function Home() {
 
 
         <section className="manifesto" aria-label="How we work"><div className="manifesto-sticky"><div className="wrap">
-          <p className="manifesto-text !text-5xl">We’re a <b className="text-black">California dental lab</b> where the technician <b className="text-black">designing your crown</b> is one phone call away. We <b className="text-black">go digital</b>, where it helps finish by hand where it shows, and match the <b className="text-blue-700">shade in person</b> when a tab can’t tell the whole story.</p>
+          <p className="manifesto-text !text-5xl">We’re a <b className="text-blue-700">California dental lab</b> where the technician <b className="text-blue-700">designing your crown</b> is one phone call away. We <b className="text-blue-700">go digital</b>, where it helps finish by hand where it shows, and match the <b className="text-blue-700">shade in person</b> when a tab can’t tell the whole story.</p>
           <div className="manifesto-tags"><span className="tag t1">Since 2006</span><span className="tag t2">Shade matched</span><span className="tag t3">Hand finished</span></div>
         </div></div></section>
 
@@ -143,21 +145,7 @@ export default async function Home() {
 
         <section className="section quotes" aria-labelledby="quotes-heading"><div className="wrap">
           <div className="section-head"><span className="eyebrow">Testimonials</span><h2 id="quotes-heading" className="!text-4xl">What dentists say about the lab</h2><p>In their own words, from practices that send us their cases.</p><Link className="text-link" href="/services#testimonials">Read all reviews</Link></div>
-          <div className="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Testimonials">
-            <div className="carousel-view"><div className="carousel-track">
-              {testimonials.length > 0 ? (
-                testimonials.map((t, i) => (
-                  <figure key={t._id?.toString()} className="carousel-slide quote-card" role="group" aria-roledescription="slide" aria-label={`${i + 1} of ${testimonials.length}`}>
-                    <blockquote><p>{t.quote}</p></blockquote>
-                    <figcaption><strong>{t.name}</strong><span>{t.practice}</span></figcaption>
-                  </figure>
-                ))
-              ) : (
-                <figure className="carousel-slide quote-card is-placeholder" role="group" aria-roledescription="slide" aria-label="1 of 1"><blockquote><p>Paste a real quote from a dentist here, in their own words.</p></blockquote><figcaption><strong>Dentist’s name</strong><span>Practice name, city</span></figcaption></figure>
-              )}
-            </div></div>
-            <div className="carousel-ctrl"><button className="carousel-prev" type="button" aria-label="Previous testimonial"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></button><p className="carousel-status" aria-live="polite">{`Slide 1 of ${Math.max(testimonials.length, 1)}`}</p><button className="carousel-next" type="button" aria-label="Next testimonial"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></button></div>
-          </div>
+          <TestimonialsCarousel />
         </div></section>
 
         <section className="section mosaic-section" aria-labelledby="mosaic-heading"><div className="wrap">

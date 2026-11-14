@@ -3,6 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/send-case",
+  },
   title: "Send a Case | Dental Concepts San Francisco",
   description:
     "Prepare a dental laboratory case with the Dental Concepts prescription form and contact the lab for its current secure submission instructions.",

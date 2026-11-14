@@ -22,6 +22,9 @@ export async function generateMetadata({
   return {
     title: `${post.title} | Dental Concepts`,
     description: post.description,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
   };
 }
 

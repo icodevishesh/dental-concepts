@@ -3,6 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/gallery/credits",
+  },
   title: "Photo Credits | Dental Concepts San Francisco",
   description:
     "Credits for the representative stock photographs used elsewhere on the Dental Concepts website.",

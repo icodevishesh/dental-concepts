@@ -4,6 +4,7 @@ import path from "path";
 import { randomUUID } from "crypto";
 import { getDb } from "@/lib/mongodb";
 import { UPLOAD_ROOT } from "@/lib/cases";
+import { sendUploadCaseEmails } from "@/lib/notify";
 
 function safeName(name: string) {
   const base = path.basename(name).replace(/[^a-zA-Z0-9._-]/g, "_");
@@ -75,6 +76,12 @@ export async function POST(req: NextRequest) {
   } catch {
     // Files are already safely on disk even if Mongo isn't configured yet;
     // don't fail the upload just because metadata couldn't be recorded.
+  }
+
+  try {
+    await sendUploadCaseEmails(record);
+  } catch (err) {
+    console.error("[upload-case] failed to send case emails", err);
   }
 
   return NextResponse.json({ ok: true, caseId });

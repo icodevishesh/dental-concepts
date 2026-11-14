@@ -3,11 +3,16 @@ import Script from "next/script";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
 
+const SITE_URL = process.env.SITE_URL || "https://dentalconceptssf.com";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(SITE_URL),
   title: "Dental Laboratory in San Francisco, USA | Dental Concepts",
   description:
     "Partner with a San Francisco dental lab for ceramic crowns, implant restorations, digital planning, and custom shade matching. Connect with our dental laboratory team.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     siteName: "Dental Concepts",

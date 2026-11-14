@@ -6,6 +6,9 @@ import Footer from "@/components/Footer";
 import { getActiveRxFormUrl } from "@/lib/site-settings";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/rx-form",
+  },
   title: "Online RX Form | Dental Concepts San Francisco",
   description:
     "Fill in the Dental Concepts SF laboratory prescription (RX) form online, or download the two-page PDF to print and send with your case.",

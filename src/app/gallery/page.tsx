@@ -6,6 +6,9 @@ import Footer from "@/components/Footer";
 import { getGalleryImagesPaged } from "@/lib/gallery";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/gallery",
+  },
   title: "Case Gallery | Dental Concepts San Francisco",
   description:
     "Browse photos of crowns, implant restorations, full arch prostheses, and digital dental laboratory work from Dental Concepts.",

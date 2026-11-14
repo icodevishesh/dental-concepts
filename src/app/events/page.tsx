@@ -5,6 +5,9 @@ import { getAllEvents } from "@/lib/events";
 import { formatDate } from "@/lib/blog";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/events",
+  },
   title: "Events | Dental Concepts",
   description: "Events from the Dental Concepts dental laboratory in San Francisco.",
   robots: "noindex,follow,max-image-preview:large",

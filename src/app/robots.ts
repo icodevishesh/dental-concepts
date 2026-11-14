@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = process.env.SITE_URL || "http://localhost:3000";
+const SITE_URL = process.env.SITE_URL || "https://dentalconceptssf.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {

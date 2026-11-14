@@ -10,7 +10,7 @@
 .dock{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));z-index:60;transform:translateX(-50%);display:flex;align-items:center;gap:14px;height:var(--dock-h);padding:0 6px 0 8px;border-radius:999px;background:#fff;color:#06255c;box-shadow:0 18px 40px -16px rgba(6,37,92,.45),0 0 0 1px rgba(6,37,92,.08);transition:background-color .35s,color .35s,box-shadow .35s}
 .dock.on-dark{background:#06255c;color:#fff;box-shadow:0 18px 40px -16px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.14)}
 .dock.is-open{background:#fff;color:#06255c}
-.dock-logo{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#e8f1ff;flex:none}
+.dock-logo{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#005cdf;flex:none}
 .dock-logo img{width:26px;height:26px;object-fit:contain}
 .dock-progress{min-width:3.6ch;font-weight:700;font-size:.95rem;font-variant-numeric:tabular-nums;letter-spacing:-.01em;text-align:right}
 .dock-bar{width:56px;height:3px;border-radius:3px;position:relative;overflow:hidden}
@@ -314,12 +314,19 @@ html:not(.js) .process-tabs{display:none}
 /* ---------- testimonial carousel */
 .carousel-view{overflow:hidden;border-radius:12px}
 .carousel-track{display:flex;transition:transform .5s var(--ease-out)}
-.carousel-slide{flex:0 0 100%;min-height:260px;justify-content:space-between}
-.carousel-slide blockquote p{font-size:clamp(1.3rem,2.4vw,2rem) !important;line-height:1.3 !important}
+.carousel-slide{flex:0 0 100%;min-height:220px;justify-content:space-between}
+.carousel-pair{display:flex;align-items:stretch;gap:24px}
+.carousel-pair .quote-card{flex:1;min-width:0;padding:clamp(20px,2.2vw,28px)}
+.carousel-pair .quote-card blockquote::before{font-size:3rem}
+.carousel-slide blockquote p{font-size:clamp(1.05rem,1.6vw,1.3rem) !important;line-height:1.35 !important}
 .carousel-ctrl{display:flex;align-items:center;gap:16px;margin-top:20px}
 .carousel-status{font-weight:600;color:#06255c;font-size:.95rem !important;min-width:8ch;text-align:center}
 html:not(.js) .carousel-ctrl{display:none}
 html:not(.js) .carousel-track{flex-direction:column;gap:16px}
+html:not(.js) .carousel-pair{flex-direction:column}
+@media (max-width:700px){
+  .carousel-pair{flex-direction:column;gap:16px}
+}
 
 /* ---------- mosaic */
 .mosaic{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:clamp(12px,1.8vw,24px);list-style:none;padding:0;margin-top:clamp(28px,4vw,48px)}
@@ -451,7 +458,7 @@ main .benefits .benefit:not(.is-light) p{color:#cfdcf2}
 /* the base sheet forces 18px on main p/li with a long :not() chain; an id outranks it */
 #main .manifesto-text{font-size:clamp(2rem,4.6vw,4.2rem) !important;line-height:1.08 !important;max-width:22ch}
 #main .proof-slide{font-size:.95rem !important}
-#main .carousel-slide blockquote p{font-size:clamp(1.3rem,2.4vw,2rem) !important;line-height:1.3 !important}
+#main .carousel-slide blockquote p{font-size:clamp(1.05rem,1.6vw,1.3rem) !important;line-height:1.35 !important}
 #main .pr-list li{font-size:16px !important}
 #main .pr-note{font-size:.88rem !important}
 #main .toc p{font-size:.8rem !important}

@@ -3,6 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/services",
+  },
   title: "Dental Lab Services in California, USA | Dental Concepts",
   description:
     "Explore dental crowns and bridges, implant restorations, full-arch prostheses, digital wax-ups, and custom shades. Find the right dental laboratory service for your case.",

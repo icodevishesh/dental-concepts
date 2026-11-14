@@ -3,6 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/about",
+  },
   title: "Our Dental Lab Story & History | Dental Concepts SF",
   description:
     "Meet Dental Concepts SF and discover our history, from zirconia milling roots to restorative craftsmanship and digital workflows in California since 2006.",
@@ -72,10 +75,24 @@ export default function AboutPage() {
         <section className="section tinted"><div className="wrap team">
           <div><span className="eyebrow">The people</span><h2>Meet our dental lab team</h2><p>Dental Concepts is led by German-certified dental technician Silke Finis and entrepreneur Barry Johal. Between them, they keep every restorative decision tied to the practice and the case in front of us.</p><a className="text-link" href="/contact">Talk with the team</a></div>
           <div className="people">
-            <article><span className="avatar" aria-hidden="true">SF</span><h3>Silke Finis</h3><p className="role">Technical leadership</p><p>German-certified dental technician who guides the lab’s restorative work.</p></article>
-            <article><span className="avatar" aria-hidden="true">BJ</span><h3>Barry Johal</h3><p className="role">Business leadership</p><p>Entrepreneur and founding partner of Dental Concepts.</p></article>
-            <article className="is-placeholder"><span className="avatar" aria-hidden="true">+</span><h3>Team member name</h3><p className="role">Role</p><p>Placeholder 1: add a short line about this person.</p></article>
-            <article className="is-placeholder"><span className="avatar" aria-hidden="true">+</span><h3>Team member name</h3><p className="role">Role</p><p>Placeholder 2: add a short line about this person.</p></article>
+            <article><span className="avatar" aria-hidden="true">SF</span><h3>Silke Finis</h3><p className="role">Technical leadership</p>
+              <p>I am a German-trained dental technician with extensive experience specializing in cosmetic dental restorations and gnathology. Throughout my career, I have developed a passion for combining technical precision, artistry, and advanced dental technology to create exceptional restorative outcomes.</p>
+              <details className="bio-more">
+                <summary><span className="more-label">Read more</span><span className="less-label">Read less</span></summary>
+                <p>In 2006, I co-founded Dental Concepts with my business partner in the heart of downtown San Francisco. Since then, our state-of-the-art laboratory has proudly served dental professionals throughout the Bay Area and beyond.</p>
+                <p>I am committed to continually advancing our laboratory by evaluating and adopting the latest technologies, materials, and techniques to deliver the highest level of quality and care. I work closely with general dentists, prosthodontists, oral surgeons, and their patients to develop thoughtful, customized solutions that address each patient’s unique needs and treatment goals.</p>
+                <p>My passion lies in working alongside our talented team and the professionals we serve to bring their vision to life. Ultimately, our mission is to help patients restore function, rebuild confidence, and achieve the healthy, beautiful smiles they deserve.</p>
+              </details>
+            </article>
+            <article><span className="avatar" aria-hidden="true">BJ</span><h3>Barry Johal</h3><p className="role">Business leadership</p>
+              <p>Born and raised in England, I received my education in London, where I developed a strong foundation in mechanical engineering and hands-on craftsmanship. After moving to the United States, I brought that technical background, entrepreneurial mindset, and passion for precision into the dental industry.</p>
+              <details className="bio-more">
+                <summary><span className="more-label">Read more</span><span className="less-label">Read less</span></summary>
+                <p>In 2001, I opened my first dental laboratory, where I quickly established myself as a skilled technician with a strong appreciation for quality, detail, and craftsmanship.</p>
+                <p>In 2006, I partnered with a colleague to establish Dental Concepts. What began as a shared vision has grown into a successful dental laboratory built on experience, innovation, and lasting relationships. Today, we are proud to celebrate 20 years in business, and I am excited about the opportunities ahead as we continue to embrace the ever-evolving world of digital dentistry.</p>
+                <p>Outside the lab, I enjoy cycling and working out, always striving to stay active and maintain a healthy balance between work and life.</p>
+              </details>
+            </article>
           </div></div></section>
 
         <section className="section faq" aria-labelledby="faq-heading"><div className="wrap faq-grid">

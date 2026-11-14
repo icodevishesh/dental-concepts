@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createRxSubmission, validateRxSubmissionInput } from "@/lib/rx-submissions";
+import { sendRxFormEmails } from "@/lib/notify";
 
 export async function POST(req: NextRequest) {
   let body: Record<string, unknown>;
@@ -14,10 +15,18 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error }, { status: 400 });
   }
 
+  let id: string;
   try {
-    const { id } = await createRxSubmission(input);
-    return NextResponse.json({ ok: true, id });
+    ({ id } = await createRxSubmission(input));
   } catch {
     return NextResponse.json({ error: "Could not save the RX form" }, { status: 500 });
   }
+
+  try {
+    await sendRxFormEmails(input);
+  } catch (err) {
+    console.error("[rx-form] failed to send RX form emails", err);
+  }
+
+  return NextResponse.json({ ok: true, id });
 }

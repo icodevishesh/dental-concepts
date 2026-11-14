@@ -16,6 +16,7 @@ export default function Footer({ photoCredits = false }: { photoCredits?: boolea
               <Image src="/assets/dental-concepts-logo-dc.png" width={463} height={194} alt="Dental Concepts home" loading="lazy" />
             </Link>
             <p className="!text-md">A San Francisco dental laboratory for restorative work, digital services, and personal collaboration with dental practices.</p>
+            <p className="footer-legal"><Link href="/privacy-policy">Privacy policy</Link><Link href="/terms">Terms of service</Link></p>
           </div>
           <div className="footer-column !mb-6">
             <h2>Lab services</h2>

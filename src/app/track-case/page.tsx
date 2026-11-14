@@ -3,6 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/track-case",
+  },
   title: "Track a Case | Dental Concepts San Francisco",
   description:
     "Ask Dental Concepts for the current status of a dental lab case, and see how a case moves from receipt to shipping.",

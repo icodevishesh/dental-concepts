@@ -5,6 +5,9 @@ import Footer from "@/components/Footer";
 import { getAllBlogs, formatDate } from "@/lib/blog";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/blog",
+  },
   title: "Articles | Dental Concepts",
   description:
     "Practical notes from the Dental Concepts lab in San Francisco on prescriptions, shade matching, and restorations.",

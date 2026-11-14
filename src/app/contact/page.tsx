@@ -3,6 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/contact",
+  },
   title: "Contact Dental Concepts | San Francisco Dental Lab",
   description:
     "Contact Dental Concepts in San Francisco for new doctor accounts, shade photos, custom shade appointments, and general lab inquiries.",

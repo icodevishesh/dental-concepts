@@ -42,7 +42,7 @@
     var pill = doc.createElement('div');
     pill.className = 'dock';
     pill.innerHTML =
-      '<a class="dock-logo" href="/" aria-label="Dental Concepts home"><img src="/assets/favicon.png" width="28" height="28" alt=""></a>' +
+      '<a class="dock-logo" href="/" aria-label="Dental Concepts home"><img src="/assets/dc_logo.png" width="36" height="36" alt=""></a>' +
       '<span class="dock-progress" aria-hidden="true"><span class="dock-num">0</span>%</span>' +
       '<span class="dock-bar" aria-hidden="true"><span></span></span>' +
       '<button class="dock-menu" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="menu-dialog"><span class="dock-menu-label">Menu</span><span class="dock-burger" aria-hidden="true"><i></i><i></i></span></button>';

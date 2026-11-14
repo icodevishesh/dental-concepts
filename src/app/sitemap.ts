@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllBlogs } from "@/lib/blog";
 
-const SITE_URL = process.env.SITE_URL || "http://localhost:3000";
+const SITE_URL = process.env.SITE_URL || "https://dentalconceptssf.com";
 
 type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
 
@@ -32,6 +32,8 @@ const STATIC_ROUTES: { path: string; changeFrequency: ChangeFrequency; priority:
   { path: "/guides", changeFrequency: "weekly", priority: 0.6 },
   { path: "/events", changeFrequency: "weekly", priority: 0.6 },
   { path: "/blog", changeFrequency: "daily", priority: 0.8 },
+  { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.2 },
+  { path: "/terms", changeFrequency: "yearly", priority: 0.2 },
 ];
 
 // Regenerated on every request, so a newly published blog post appears in

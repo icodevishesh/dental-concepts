@@ -5,6 +5,9 @@ import { getAllGuides } from "@/lib/guides";
 import { formatDate } from "@/lib/blog";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/guides",
+  },
   title: "Guides | Dental Concepts",
   description:
     "Practical guides from the Dental Concepts lab: completing the RX form, custom shade appointments, and crown material options.",

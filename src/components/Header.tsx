@@ -82,7 +82,7 @@ export default function Header() {
           </div>
         </nav>
         <a className="header-phone" href="tel:+18007005227">1-800-700-LABS</a>
-        <a className="button button-small" href="/send-case">Send a case</a>
+        <a className="button button-small" href="/upload-case">Send a case</a>
       </div>
     </header>
   );

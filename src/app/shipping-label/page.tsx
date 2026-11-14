@@ -5,6 +5,9 @@ import Footer from "@/components/Footer";
 import { getActiveRxFormUrl } from "@/lib/site-settings";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/shipping-label",
+  },
   title: "Shipping Label | Dental Concepts San Francisco",
   description:
     "Request a shipping label from Dental Concepts for a case going to the lab or work coming back, with packing guidance for dental cases.",

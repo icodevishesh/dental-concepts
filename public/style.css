@@ -207,6 +207,8 @@ figcaption a{text-underline-offset:2px}
 .footer-main{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:40px 48px}
 .footer-logo img{width:176px}
 .footer-about p{margin-top:18px;max-width:22em}
+.site-footer .footer-about .footer-legal{display:flex;gap:16px;margin-top:14px;max-width:none;font-size:.85rem !important}
+.site-footer .footer-about .footer-legal a{display:inline;padding:0;text-decoration:underline;text-underline-offset:3px}
 .footer-column h2{font-size:1rem;font-weight:700;letter-spacing:0;margin-bottom:12px}
 .footer-column a,.footer-column span{display:block;padding:5px 0;text-decoration:none}
 .footer-column a:hover{color:var(--blue)}
@@ -870,10 +872,18 @@ a.lab-tile strong::after{content:"";display:inline-block;width:20px;height:1.5px
 .team>div:first-child h2{grid-row:unset}
 .team>div:first-child p{margin:0}
 .team>div:first-child .text-link{justify-self:start}
-.team .people{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(32px,4vw,56px)}
+.team .people{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:clamp(32px,4vw,56px)}
 .people article.is-placeholder{border-style:dashed;border-color:#9cc4ff;background:transparent}
 .people article.is-placeholder .avatar{background:#e6f0ff;color:#005cdf}
-@media (max-width:1100px){.team .people{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.people article p+p{margin-top:12px}
+.people details{margin-top:12px}
+.people details p{margin-top:12px}
+.people details summary{list-style:none;cursor:pointer;display:inline-block;color:var(--blue);font-weight:600}
+.people details summary::-webkit-details-marker{display:none}
+.people details .less-label{display:none}
+.people details[open] .more-label{display:none}
+.people details[open] .less-label{display:inline}
+main .people details>summary{font-size:.95rem !important;padding:0}
 @media (max-width:980px){.team>div:first-child{grid-template-columns:1fr}}
 @media (max-width:640px){.team .people{grid-template-columns:1fr}}
 
@@ -1660,7 +1670,6 @@ main .empty-state h2,main .contact-card h2,main .contact-form h2,main .tool-card
 .pdp-quality-grid p{margin-top:10px;transition:color .3s}
 
 .pdp-quote{background:#fff}
-.pdp-quote-card{max-width:52rem;margin:clamp(28px,3vw,44px) auto 0}
 
 .pdp-start-grid{display:grid;grid-template-columns:minmax(0,1.3fr) auto;gap:32px clamp(40px,6vw,96px);align-items:center;padding:clamp(28px,4vw,56px);background:#005cdf;color:#fff;border:1px solid #005cdf;border-radius:28px}
 .pdp-start-grid p{margin-top:14px;max-width:34em;color:#cce0ff}

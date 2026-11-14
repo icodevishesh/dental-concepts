@@ -6,6 +6,9 @@ import { getActiveRxFormUrl } from "@/lib/site-settings";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/upload-case",
+  },
   title: "Upload a Case | Dental Concepts San Francisco",
   description:
     "Upload a digital case to Dental Concepts: choose the restoration, add your practice details, and upload your intraoral scan files and completed RX form.",
@@ -117,6 +120,7 @@ export default async function UploadCasePage() {
                     <strong>Shade photos <span className="optional">(optional)</span></strong><span>Drag photos here, or <u>browse</u></span><small id="up-photos-help">Include a shade tab in the shot, taken in natural light.</small></label>
                   <ul className="up-list" aria-live="polite"></ul>
                 </div>
+                <p className="form-privacy" id="up-privacy-note">Scans, photos and the completed RX form may include patient information. We use them only to produce this case and don’t share them beyond the lab team working on it. See our <Link href="/privacy-policy">Privacy Policy</Link> for how we handle patient records.</p>
                 <label className="up-consent"><input type="checkbox" name="consent" id="up-consent" required /><span>I confirm I’m authorized to share these records with Dental Concepts for this case.</span></label>
                 <p className="up-err" data-err="consent"></p>
                 <div className="up-submit"><button className="button" type="submit">Upload case</button><button className="pl-reset" type="reset">Start over</button></div>

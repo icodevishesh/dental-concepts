@@ -42,10 +42,12 @@
       var s = step(k); s.disabled = !(i === 0 || !!sel[order[i - 1]]); s.classList.toggle('is-done', !!sel[k]);
     });
     var p = plan(), body = $('#pr-body');
-    body.innerHTML = p ? '<p class="pr-figure">' + esc(p.figure) + '<small>' + (p.isConfirm ? 'Not printed on the RX form' : 'In-lab working days on the RX form') + ' · ' + esc(p.title) + '</small></p>' +
-      '<p class="up-sum-label">Include with this case</p><ul class="pr-list">' + p.list.map(function (l) { return '<li>' + l + '</li>'; }).join('') + '</ul>' +
-      p.notes.map(function (n) { return '<p class="pr-note">' + esc(n) + '</p>'; }).join('') + '<a class="text-link up-about" href="' + p.page + '">About this service</a>'
-      : '<p class="pr-empty">Your turnaround and checklist appear here once you choose the restoration, shade and timing.</p>';
+    if (body) {
+      body.innerHTML = p ? '<p class="pr-figure">' + esc(p.figure) + '<small>' + (p.isConfirm ? 'Not printed on the RX form' : 'In-lab working days on the RX form') + ' · ' + esc(p.title) + '</small></p>' +
+        '<p class="up-sum-label">Include with this case</p><ul class="pr-list">' + p.list.map(function (l) { return '<li>' + l + '</li>'; }).join('') + '</ul>' +
+        p.notes.map(function (n) { return '<p class="pr-note">' + esc(n) + '</p>'; }).join('') + '<a class="text-link up-about" href="' + p.page + '">About this service</a>'
+        : '<p class="pr-empty">Your turnaround and checklist appear here once you choose the restoration, shade and timing.</p>';
+    }
     step('details').classList.toggle('is-done', detailsOk());
     step('files').classList.toggle('is-done', files.scans.length > 0 && files.rx.length > 0 && $('#up-consent').checked);
     var st = { plan: !!p, details: detailsOk(), scans: files.scans.length > 0, rx: files.rx.length > 0 };

@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/implant-crowns",
+  },
   title: "Screw-Retained Implant Crown Lab | Dental Concepts SF",
   description:
     "Get precise screw-retained implant crowns and flexible abutment options from Dental Concepts SF. Discuss your implant details, scan files, and restoration requirements with our team.",
 };
+
+export const dynamic = "force-dynamic";
 
 const faqLd = {
   "@context": "https://schema.org",
@@ -58,7 +64,7 @@ export default function Page() {
           <article><span className="pdp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z" /></svg></span><h3>Retrievable by design</h3><p>A screw-retained crown can be removed by the clinician later, so the implant stays easy to check and maintain.</p></article>
           <article><span className="pdp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg></span><h3>A technician you can call</h3><p>Questions about prep, design or shade go straight to the people making your case.</p></article>
         </div></div></section>
-        <section className="section pdp-quote"><div className="wrap"><div className="center-head"><span className="eyebrow">Testimonials</span><h2>What dentists say</h2></div><figure className="quote-card is-placeholder pdp-quote-card"><blockquote><p>Placeholder: paste a real quote from a dentist about our implant crowns here, in their own words.</p></blockquote><figcaption><strong>Dentist’s name</strong><span>Practice name, city</span></figcaption></figure></div></section>
+        <section className="section pdp-quote"><div className="wrap"><div className="center-head"><span className="eyebrow">Testimonials</span><h2>What dentists say</h2></div><TestimonialsCarousel /></div></section>
         <section className="section pdp-start tinted"><div className="wrap pdp-start-grid"><div><span className="eyebrow">Get started</span><h2>Send your first case in three steps</h2><p>New to the lab? Email <a href="mailto:accounts@dentalconceptssf.com">accounts@dentalconceptssf.com</a> to open an account, download the RX form, then confirm with the team how to send impressions or scans.</p></div><div className="actions"><a className="button" href="/send-case">How to send a case</a><a className="button button-light" href="/contact">Talk to the lab</a></div></div></section>
         <section className="section faq" aria-labelledby="faq-heading"><div className="wrap faq-grid">
           <div className="faq-head"><span className="eyebrow">Need help?</span><h2 id="faq-heading">Frequently asked questions</h2><p>Need a specific answer? Contact the lab team directly.</p><a className="text-link" href="/contact">Talk with the lab</a></div>
