@@ -46,7 +46,7 @@ export default function Page() {
       <main id="main">
         <section className="pdp-hero"><div className="wrap pdp-hero-grid"><div className="pdp-hero-copy"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/services">Lab services</a></li><li><a href="/services#crowns">Crowns &amp; veneers</a></li><li aria-current="page">Gold crowns</li></ol></nav>
         <h1>A gold crowns lab casting custom crowns in three alloys</h1><p className="lead">Custom gold crowns cast in your choice of three alloys, for posterior teeth where a metal restoration is the right call.</p>
-        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/assets/digital-rx.pdf" download>Download the RX form</a></div></div>
+        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/rx-form">Download the RX form</a></div></div>
         <figure className="pdp-hero-media is-gold"><img className="product-img" src="/assets/gold-crown.webp" width={478} height={454} alt="A cast gold crown" fetchPriority="high" decoding="async" /></figure></div></section>
         <section className="pdp-stats" aria-label="At a glance"><div className="wrap"><dl>
           <div><dt>3 alloys</dt><dd className="!text-black !font-semibold">High noble yellow, high noble white and noble white</dd></div>

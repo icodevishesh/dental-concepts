@@ -47,7 +47,7 @@ export default function Page() {
       <main id="main">
         <section className="pdp-hero"><div className="wrap pdp-hero-grid"><div className="pdp-hero-copy"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/services">Lab services</a></li><li><a href="/services#implants">Implants &amp; <span className="nb">All-on-X</span></a></li><li aria-current="page">Custom abutments</li></ol></nav>
         <h1>Custom implant abutment lab work, shaped for one patient</h1><p className="lead">Custom dental abutments in titanium as standard, designed for the implant position and soft tissue in place of a stock part.</p>
-        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/assets/digital-rx.pdf" download>Download the RX form</a></div></div>
+        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/rx-form">Download the RX form</a></div></div>
         <figure className="pdp-hero-media"><img className="product-img" src="/assets/products/custom-abutments.webp" width={1254} height={1254} alt="Titanium custom abutments" fetchPriority="high" decoding="async" /></figure></div></section>
         <section className="pdp-stats" aria-label="At a glance"><div className="wrap"><dl>
           <div><dt>3 materials</dt><dd className="!text-black !font-semibold">Titanium, gold hue, and zirconia where possible</dd></div>

@@ -46,7 +46,7 @@ export default function Page() {
       <main id="main">
         <section className="pdp-hero"><div className="wrap pdp-hero-grid"><div className="pdp-hero-copy"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/services">Lab services</a></li><li><a href="/services#implants">Implants &amp; <span className="nb">All-on-X</span></a></li><li aria-current="page">Full arch restorations</li></ol></nav>
         <h1>An All-on-X dental lab that plans every arch with you</h1><p className="lead">Full arch restorations fixed to implants, made at our digital dental lab in California. Records, try-ins, the provisional and the final prosthesis are all planned with you before the first appointment.</p>
-        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/assets/digital-rx.pdf" download>Download the RX form</a></div></div>
+        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/rx-form">Download the RX form</a></div></div>
         <figure className="pdp-hero-media"><img className="product-img" src="/assets/products/full-arch-restorations.webp" width={1254} height={1254} alt="A full arch implant prosthesis" fetchPriority="high" decoding="async" /></figure></div></section>
         <section className="pdp-stats" aria-label="At a glance"><div className="wrap"><dl>
           <div><dt>3–4 weeks</dt><dd className="!text-black !font-semibold">Implant case timeline listed on our RX form</dd></div>

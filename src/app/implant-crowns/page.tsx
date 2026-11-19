@@ -47,7 +47,7 @@ export default function Page() {
       <main id="main">
         <section className="pdp-hero"><div className="wrap pdp-hero-grid"><div className="pdp-hero-copy"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/services">Lab services</a></li><li><a href="/services#implants">Implants &amp; <span className="nb">All-on-X</span></a></li><li aria-current="page">Implant crowns</li></ol></nav>
         <h1>Screw-retained implant crown lab work designed for a predictable seat</h1><p className="lead">Implant-supported crowns for single implants, designed around the implant position and finished by hand at our California lab. Order them lab cemented as one piece, or as two pieces.</p>
-        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/assets/digital-rx.pdf" download>Download the RX form</a></div></div>
+        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/rx-form">Download the RX form</a></div></div>
         <figure className="pdp-hero-media"><img className="product-img" src="/assets/products/implant-crowns.webp" width={1254} height={1254} alt="An implant crown with its abutment and implant" fetchPriority="high" decoding="async" /></figure></div></section>
         <section className="pdp-stats" aria-label="At a glance"><div className="wrap"><dl>
           <div><dt>15 days</dt><dd className="!text-black !font-semibold">In-lab working days for 1 to 3 units, per our RX form</dd></div>

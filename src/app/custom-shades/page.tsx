@@ -46,7 +46,7 @@ export default function Page() {
       <main id="main">
         <section className="pdp-hero"><div className="wrap pdp-hero-grid"><div className="pdp-hero-copy"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/services">Lab services</a></li><li><a href="/services#other">Other services</a></li><li aria-current="page">Custom shades</li></ol></nav>
         <h1>A dental shade matching service where the technician sees the tooth</h1><p className="lead">Bring your patient to our San Francisco lab, and the technician building the restoration matches the shade in person.</p>
-        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/assets/digital-rx.pdf" download>Download the RX form</a></div></div>
+        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/rx-form">Download the RX form</a></div></div>
         <figure className="pdp-hero-media"><img className="product-img" src="https://images.pexels.com/photos/6627599/pexels-photo-6627599.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=1200" width={1200} height={1200} alt="Shade guide tabs" fetchPriority="high" decoding="async" /></figure></div></section>
         <section className="pdp-stats" aria-label="At a glance"><div className="wrap"><dl>
           <div><dt>15–20 min</dt><dd className="!text-black !font-semibold">Approximate length of a shade visit</dd></div>

@@ -46,7 +46,7 @@ export default function Page() {
       <main id="main">
         <section className="pdp-hero"><div className="wrap pdp-hero-grid"><div className="pdp-hero-copy"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/services">Lab services</a></li><li><a href="/services#crowns">Crowns &amp; veneers</a></li><li aria-current="page">Layered porcelain crowns</li></ol></nav>
         <h1>Layered porcelain dental crowns, built by hand</h1><p className="lead">Layered porcelain crowns for dentists who need translucency, color and surface character to change across the tooth the way natural enamel does. A ceramist builds the porcelain by hand over a milled zirconia core.</p>
-        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/assets/digital-rx.pdf" download>Download the RX form</a></div></div>
+        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/rx-form">Download the RX form</a></div></div>
         <figure className="pdp-hero-media"><img className="product-img" src="/assets/products/layered-porcelain-crowns.webp" width={1254} height={1254} alt="Layered porcelain crowns on zirconia cores" fetchPriority="high" decoding="async" /></figure></div></section>
         <section className="pdp-stats" aria-label="At a glance"><div className="wrap"><dl>
           <div><dt>10 days</dt><dd className="!text-black !font-semibold">In-lab working days for 1 to 3 units, per our RX form</dd></div>

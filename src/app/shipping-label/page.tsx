@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getActiveRxFormUrl } from "@/lib/site-settings";
 
 export const metadata: Metadata = {
   alternates: {
@@ -15,8 +14,7 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-export default async function ShippingLabelPage() {
-  const rxFormUrl = await getActiveRxFormUrl().catch(() => "/assets/digital-rx.pdf");
+export default function ShippingLabelPage() {
   return (
     <>
       <Header />
@@ -61,7 +59,7 @@ export default async function ShippingLabelPage() {
           </div>
           <aside className="tool-aside"><span className="eyebrow">Packing your case</span><h2>Before the box is sealed</h2>
             <ul className="tick-list">
-              <li>Complete the <a href={rxFormUrl} download>RX form</a> and place it in the box with the case.</li>
+              <li>Complete the <a href="/rx-form">RX form</a> and place it in the box with the case.</li>
               <li>Disinfect impressions and seal them in a bag.</li>
               <li>Wrap models and bite registrations so they cannot move.</li>
               <li>Pack one case per bag, labelled with the doctor and case reference.</li>

@@ -46,7 +46,7 @@ export default function Page() {
       <main id="main">
         <section className="pdp-hero"><div className="wrap pdp-hero-grid"><div className="pdp-hero-copy"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/services">Lab services</a></li><li><a href="/services#implants">Implants &amp; <span className="nb">All-on-X</span></a></li><li aria-current="page">Temporary crowns &amp; abutments</li></ol></nav>
         <h1>Temporary implant crowns that protect the site and shape the tissue</h1><p className="lead">Provisional crowns and temporary implant abutments that protect the site, trial shape and bite, and help shape the soft tissue while the final is made.</p>
-        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/assets/digital-rx.pdf" download>Download the RX form</a></div></div>
+        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/rx-form">Download the RX form</a></div></div>
         <figure className="pdp-hero-media"><img className="product-img" src="/assets/products/temporary-crowns-abutments.webp" width={1254} height={1254} alt="A provisional bridge" fetchPriority="high" decoding="async" /></figure></div></section>
         <section className="pdp-stats" aria-label="At a glance"><div className="wrap"><dl>
           <div><dt>10 days</dt><dd className="!text-black !font-semibold">In-lab working days for provisionals, per our RX form</dd></div>

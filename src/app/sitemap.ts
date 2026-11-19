@@ -14,7 +14,6 @@ const STATIC_ROUTES: { path: string; changeFrequency: ChangeFrequency; priority:
   { path: "/upload-case", changeFrequency: "monthly", priority: 0.6 },
   { path: "/track-case", changeFrequency: "monthly", priority: 0.5 },
   { path: "/shipping-label", changeFrequency: "monthly", priority: 0.4 },
-  { path: "/rx", changeFrequency: "monthly", priority: 0.6 },
   { path: "/rx-form", changeFrequency: "monthly", priority: 0.7 },
   { path: "/custom-abutments", changeFrequency: "monthly", priority: 0.7 },
   { path: "/custom-shades", changeFrequency: "monthly", priority: 0.7 },

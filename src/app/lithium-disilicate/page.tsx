@@ -46,7 +46,7 @@ export default function Page() {
       <main id="main">
         <section className="pdp-hero"><div className="wrap pdp-hero-grid"><div className="pdp-hero-copy"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/services">Lab services</a></li><li><a href="/services#crowns">Crowns &amp; veneers</a></li><li aria-current="page">Lithium disilicate (E.max)</li></ol></nav>
         <h1>E.max dental lab work that blends into the smile</h1><p className="lead">Lithium disilicate dental crowns, veneers, inlays and onlays with a natural, translucent finish, designed digitally and stained and glazed by hand at our California lab.</p>
-        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/assets/digital-rx.pdf" download>Download the RX form</a></div></div>
+        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/rx-form">Download the RX form</a></div></div>
         <figure className="pdp-hero-media"><img className="product-img" src="/assets/products/lithium-disilicate.webp" width={1254} height={1254} alt="Lithium disilicate veneers" fetchPriority="high" decoding="async" /></figure></div></section>
         <section className="pdp-stats" aria-label="At a glance"><div className="wrap"><dl>
           <div><dt>10 days</dt><dd className="!text-black !font-semibold">In-lab working days for 1 to 3 units, per our RX form</dd></div>

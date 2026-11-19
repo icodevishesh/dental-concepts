@@ -26,6 +26,15 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async redirects() {
+    return [
+      {
+        source: "/rx",
+        destination: "/rx-form",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

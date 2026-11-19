@@ -45,7 +45,7 @@ export default function Page() {
       <main id="main">
         <section className="pdp-hero"><div className="wrap pdp-hero-grid"><div className="pdp-hero-copy"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/services">Lab services</a></li><li><a href="/services#other">Other services</a></li><li aria-current="page">Model printing</li></ol></nav>
         <h1>3D dental model printing for digital workflows</h1><p className="lead">Resin models printed from your intraoral scan, for checking fit, holding removable dies or showing a planned result.</p>
-        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/assets/digital-rx.pdf" download>Download the RX form</a></div></div>
+        <div className="actions"><a className="button" href="/send-case">Start a case</a><a className="button button-outline" href="/rx-form">Download the RX form</a></div></div>
         <figure className="pdp-hero-media"><img className="product-img" src="/assets/products/model-printing.webp" width={1254} height={1254} alt="A printed resin model with removable dies" fetchPriority="high" decoding="async" /></figure></div></section>
         <section className="pdp-stats" aria-label="At a glance"><div className="wrap"><dl>
           <div><dt>3 uses</dt><dd className="!text-black !font-semibold">Check fit, hold removable dies, or show a planned result</dd></div>
