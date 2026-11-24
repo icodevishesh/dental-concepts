@@ -66,9 +66,9 @@ export default function Header() {
                 <span className="q-ico"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 18a4.5 4.5 0 0 1-.8-8.93A6 6 0 0 1 17.7 8.1 4 4 0 0 1 17 18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /><path d="M12 12v8M8.5 15.5 12 12l3.5 3.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
                 Upload a case
               </a>
-              <a href="/rx-form">
+              <a href="/assets/digital-rx.pdf" download>
                 <span className="q-ico"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" /><path d="M14 3v5h5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" /></svg></span>
-                RX form
+                Download RX form
               </a>
               <a href="/shipping-label">
                 <span className="q-ico"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" /><circle cx="7" cy="17.5" r="1.8" fill="none" stroke="currentColor" strokeWidth="1.6" /><circle cx="17" cy="17.5" r="1.8" fill="none" stroke="currentColor" strokeWidth="1.6" /></svg></span>
