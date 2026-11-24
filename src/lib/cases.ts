@@ -31,6 +31,26 @@ export interface CaseUploadDoc {
   files: CaseFileDoc[];
   status: string;
   createdAt: Date;
+
+  // Extended fields from the "Send a case" online RX form (all optional so
+  // older records and existing admin reads stay valid).
+  license?: string;
+  items?: string[]; // raw item values, e.g. ["fcz", "emax"]
+  itemLabels?: string[]; // human labels, e.g. ["Full contour zirconia"]
+  alloy?: string;
+  implantSystem?: string;
+  access?: string;
+  cement?: string;
+  abutMat?: string;
+  labParts?: boolean;
+  stump?: string;
+  customShade?: boolean;
+  photosFlag?: boolean;
+  delivery?: string; // "digital" | "ship" | "dropoff"
+  box?: string[]; // what's in the physical box
+  needBy?: string;
+  signature?: string;
+  warranty?: boolean;
 }
 
 export const UPLOAD_ROOT = path.join(process.cwd(), "uploads");

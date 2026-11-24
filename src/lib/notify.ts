@@ -27,13 +27,38 @@ export async function sendContactInquiryEmails(input: LeadInput): Promise<void> 
   );
 }
 
-export async function sendUploadCaseEmails(record: { caseId: string; doctor: string; practice: string; email: string; phone: string; patient: string; type: string }): Promise<void> {
+export async function sendUploadCaseEmails(record: {
+  caseId: string;
+  doctor: string;
+  practice: string;
+  email: string;
+  phone: string;
+  patient: string;
+  type: string;
+  itemLabels?: string[];
+  delivery?: string;
+  teeth?: string;
+  shade?: string;
+  needBy?: string;
+}): Promise<void> {
+  const deliveryLabels: Record<string, string> = {
+    digital: "Digital scan",
+    ship: "Shipping it in",
+    dropoff: "Dropping it off",
+  };
+  const extra =
+    (record.itemLabels && record.itemLabels.length ? `\nMaking: ${record.itemLabels.join(", ")}` : "") +
+    (record.teeth ? `\nTeeth: ${record.teeth}` : "") +
+    (record.shade ? `\nShade: ${record.shade}` : "") +
+    (record.delivery ? `\nSending: ${deliveryLabels[record.delivery] || record.delivery}` : "") +
+    (record.needBy ? `\nNeeded by: ${record.needBy}` : "");
+
   await notifyBoth(
     record.email,
     "We've received your case — Dental Concepts SF",
-    `Hi ${record.doctor || "there"},\n\nThank you for uploading a case to Dental Concepts SF. We've received your files and our lab will be in touch to confirm the details.\n\nCase reference: ${record.caseId}\n\nBest,\nDental Concepts SF`,
-    `New case upload: ${record.practice || record.doctor || record.caseId}`,
-    `New case uploaded.\n\nCase ID: ${record.caseId}\nDoctor: ${record.doctor}\nPractice: ${record.practice}\nEmail: ${record.email}\nPhone: ${record.phone || "Not provided"}\nPatient: ${record.patient}\nType: ${record.type}`
+    `Hi ${record.doctor || "there"},\n\nThank you for sending a case to Dental Concepts SF. We've received your RX and files, and our lab will be in touch to confirm the details.\n\nCase reference: ${record.caseId}\n\nBest,\nDental Concepts SF`,
+    `New case: ${record.practice || record.doctor || record.caseId}`,
+    `New case received.\n\nCase ID: ${record.caseId}\nDoctor: ${record.doctor}\nPractice: ${record.practice}\nEmail: ${record.email}\nPhone: ${record.phone || "Not provided"}\nPatient: ${record.patient}\nType: ${record.type}${extra}`
   );
 }
 

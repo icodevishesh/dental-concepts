@@ -33,6 +33,11 @@ const nextConfig: NextConfig = {
         destination: "/rx-form",
         permanent: true,
       },
+      {
+        source: "/upload-case",
+        destination: "/send-case",
+        permanent: true,
+      },
     ];
   },
 };

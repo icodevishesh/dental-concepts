@@ -62,7 +62,7 @@ export default function Header() {
             </button>
             <div className="nav-drop-menu quick-menu" id="quick-menu">
               <p className="quick-label">Tools</p>
-              <a href="/upload-case">
+              <a href="/send-case">
                 <span className="q-ico"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 18a4.5 4.5 0 0 1-.8-8.93A6 6 0 0 1 17.7 8.1 4 4 0 0 1 17 18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /><path d="M12 12v8M8.5 15.5 12 12l3.5 3.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
                 Upload a case
               </a>
@@ -82,7 +82,7 @@ export default function Header() {
           </div>
         </nav>
         <a className="header-phone" href="tel:+18007005227">1-800-700-LABS</a>
-        <a className="button button-small" href="/upload-case">Send a case</a>
+        <a className="button button-small" href="/send-case">Send a case</a>
       </div>
     </header>
   );
